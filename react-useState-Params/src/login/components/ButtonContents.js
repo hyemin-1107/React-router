@@ -3,17 +3,16 @@ import { useNavigate } from 'react-router-dom';
 
 const ButtonContents = () => {
     
+    const navigate = useNavigate();
+
     const practice = () => {
         fetch("https://jsonplaceholder.typicode.com/todos/1")
             .then((response) => response.json())
             .then((json) => console.log(json));
             navigate("/LoginCheck");
     }
-    const navigate = useNavigate();
+   
 
-    // const onClick = () => {
-        
-    // }
     const onClickSignUp = () => {
         navigate("/Join");
     }

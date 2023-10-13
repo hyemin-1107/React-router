@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LoginCheck(props){
+function LoginCheck(){
     return(
     <div>
         <h2>Sign in succeed !</h2>
