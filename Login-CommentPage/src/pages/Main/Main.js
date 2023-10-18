@@ -29,7 +29,6 @@ const Main = () => {
         const { value } = e.target;
 
         setInputComment(value);
-
     };
 
     // Button을 클릭 시, input 내용을 저장하기!
@@ -64,64 +63,82 @@ const Main = () => {
 };
 
 const Section = styled.div`
-    width: 800px;    
     margin: 70px auto;
-    background: #eee;
-    border-radius: 20px;
     padding: 50px 0;
+    
+    width: 800px;    
+    
+    border-radius: 20px;
+    background: #eee;
 `;
+
 const Image = styled.img`
-    display: block; 
+    display: block;
+
     margin: 0 auto;
+    
     width: 400px;
     height: 370px;
 `;
-const Content = styled.div`
-    width: 600px;
-    margin: 40px auto 0;
 
+const Content = styled.div`
+    margin: 40px auto 0;
+    
+    width: 600px;
 `;
+
 const Input = styled.input`
-    width: 84%;
-    height: 35px;
-    background: #eee;
-    border: none;
-    border-bottom: solid 2px grey;
+    box-sizing: border-box;
+    
     margin: 0 20px 0 0;
     padding: 0 14px;
-    box-sizing: border-box;
+    
+    width: 84%;
+    height: 35px;
+    
+    border: none;
+    border-bottom: solid 2px grey;
+    background: #eee;
 `;
+
 const Button = styled.button`
     padding: 9px 19px;
-    border: solid 2px grey;
-    border-radius: 10px;
-    background: #95bad6;
-    color: #fff;
+    
     font-weight: bold;
     font-size: 14px;
     letter-spacing: 1px;
+    
+    border: solid 2px grey;
+    border-radius: 10px;
+    color: #fff;
+    background: #95bad6;
+    
     cursor: pointer;
+    
     &:hover {
         background: skyblue;
         transition: 0.3s;
     }
 `;
+
 const CommentContents = styled.div`
     margin-top: 30px;
     padding-top: 20px;
+    
     border-top: solid 3px #fff;
 `;
+
 const Contents = styled.div`
     display: flex;
-    width: 600px;
+    
     margin: 20px auto 0;
-    // gap: 100px;
+    
+    width: 600px;
 `;
+
 const UserName = styled.div`
     width: 100px;
 `;
-
-
 
 
 export default Main;
