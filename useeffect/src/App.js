@@ -14,18 +14,16 @@ function App() {
     fetch(`https://jsonplaceholder.typicode.com/todos/${page + 1}`)
       .then((response) => response.json())
       .then((data) => setData(data));
-
-    console.log(`page = ${page + 1} fetch 실행됬음`)
   };
 
   useEffect(() => {
-
     getDataFunction();
   }, [page]);
 
   return (
     <div className="App">
       <button onClick={() => onClick()}>버튼 {page}</button>
+      {/* 조건부 렌더링 논리연산자 */}
       {data && <div>{data.title}</div>}
     </div>
   );
