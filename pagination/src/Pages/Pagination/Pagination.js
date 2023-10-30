@@ -47,6 +47,7 @@ const Pagination = () => {
                 <option value={'100'}>100</option>
             </Select>
 
+            {/* 조건부 렌더링 */}
             {responseData &&
                 responseData.map((data) => {
                     return (
@@ -123,6 +124,11 @@ const DataTitle = styled.div`
     align-items: center;
     font-style: italic;
 `
+const ButtonContent = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const Button = styled.button`
     margin: 50px 10px 150px;
@@ -144,12 +150,6 @@ const Button = styled.button`
             background: #666;
             transition: 0.3s;
         }
-`
-
-const ButtonContent = styled.div`
-    display:flex;
-    justify-content: center;
-    align-items: center;
 `
 
 
