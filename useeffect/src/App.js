@@ -13,7 +13,7 @@ function App() {
   const getDataFunction = () => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${page + 1}`)
       .then((response) => response.json())
-      .then((data) => setData(data));
+      .then((data) => setData(data));  
   };
 
   useEffect(() => {

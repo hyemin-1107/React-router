@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import ButtonContents from './ButtonContents';
 import UserInput from './UserInput';
 
@@ -41,16 +40,13 @@ const LoginBox = () => {
     };
 
     return (
-        <LoginContainer>
+        <>
             <UserInput onChange={onChange} />
             <ButtonContents onClickLoginButton={onClickLoginButton} />
-        </LoginContainer>
+        </>
     );
 
 }
 
-const LoginContainer = styled.div`
-    
 
-`
 export default LoginBox;

@@ -5,10 +5,10 @@ import LoginBox from './component/LoginBox';
 const Login = () => {
 
     return (
-        <Login1>
+        <LoginContainer>
             <Header>Login</Header>
             <LoginBox />
-        </Login1>
+        </LoginContainer>
     );
 
 };
@@ -22,7 +22,7 @@ const Header = styled.div`
     color: #333;
 `
 
-const Login1 = styled.div`
+const LoginContainer = styled.div`
     margin: 100px auto;
     padding: 30px 100px 100px;
     

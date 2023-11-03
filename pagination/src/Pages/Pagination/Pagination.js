@@ -14,7 +14,7 @@ const Pagination = () => {
 
     // limit 설정
     const onChangeLimit = e => {
-
+        
         setLimit(e.target.value);
     };
 
@@ -36,15 +36,16 @@ const Pagination = () => {
         getPagination();
     }, [page, limit]);
 
-
+    
+console.log(responseData);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
     return (
         <Main>
             <Header>POST</Header>
             <Select type="number" onChange={(e) => onChangeLimit(e)} value={limit} >
-                <option value={'10'}>10</option>
-                <option value={'20'}>20</option>
-                <option value={'50'}>50</option>
-                <option value={'100'}>100</option>
+                <option value={10}>10</option>
+                <option value={20}>20</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
             </Select>
 
             {/* 조건부 렌더링 */}
