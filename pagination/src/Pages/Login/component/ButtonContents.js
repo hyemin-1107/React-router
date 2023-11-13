@@ -17,16 +17,16 @@ const LoginButton = styled.button`
     text-align: center;
     
     margin-top: 20px;
-    padding: 9px;
+    padding: 10px;
     
     width: 100%;
     
     font-weight: bold;
     font-size: 18px;
 
-    border: 2px solid #000;
+    border: none;
     border-radius: 4px;
-    background: #666;
+    background: #999;
     color: #ffffff;
 
     cursor: pointer;
