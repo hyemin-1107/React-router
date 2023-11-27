@@ -6,26 +6,31 @@ import SelectBox from './component/Select';
 
 const Pagination = () => {
 
+  // 현재 페이지 state
+  const [page, setPage] = useState(1);
+    
+  // page 당 표시할 데이터 수 state
+  const [limit, setLimit] = useState(10);
+
+  const [index, setIndex] = useState(0);
+
+  // API 저장 state
+  const [responseData, setResponseData] = useState();
+
     const [isModal, setIsModal] = useState(false);
 
-    const onClickModal = (index) => {
-        setIsModal(index);
+    const onClickModal = (Number) => {
+
+        setIndex(Number);
+        setIsModal(true);
+
     };
 
     const onClickButton = () => {
         setIsModal(false);
     };
     
-    // 현재 페이지 state
-    const [page, setPage] = useState(1);
-    
-    // page 당 표시할 데이터 수 state
-    const [limit, setLimit] = useState(10);
-
-    const [index, setIndex] = useState(0);
-
-    // API 저장 state
-    const [responseData, setResponseData] = useState();
+  
   
     // limit 설정
     const onChangeLimit = e => {
@@ -62,7 +67,7 @@ const Pagination = () => {
                 responseData.map((data, index) => {
                     return (
                         <>
-                            <Section key={data.id} onClick={() => onClickModal(true)} >
+                            <Section key={data.id} onClick={() => onClickModal(index)} >
                                 <Data >
                                     {data.id}
                                 </Data>
@@ -71,18 +76,19 @@ const Pagination = () => {
                                 </DataTitle>
                             </Section>
                     
-                            <ModalWrap key={data} isModal={isModal}>
-                                <ModalContainer key={data[index]} isModal={isModal}>
-                                    <ModalUserId> UserId : {data.userId}&nbsp;&nbsp;&nbsp;&nbsp;Id : {data.id}</ModalUserId>
-                                    <ModalTitle> Title : {data.title}</ModalTitle>
-                                    <ModalBody>{data.body}</ModalBody>
-                                    <ModalButton onClick={onClickButton}>Close</ModalButton>
-                                </ModalContainer>
-                            </ModalWrap>
+                         
                         </>
                     );
                 })
             }
+               <ModalWrap  key={index}  isModal={isModal}>
+                                <ModalContainer key={index.id} isModal={isModal}>
+                                    <ModalUserId> UserId : {index.userId} Id : {index.id}</ModalUserId>
+                                    <ModalTitle> Title : {index.title}</ModalTitle>
+                                    <ModalBody>{index.body}</ModalBody>
+                                    <ModalButton onClick={onClickButton}>Close</ModalButton>
+                                </ModalContainer>
+                            </ModalWrap>
             <ButtonContents onChangePage={onChangePage} page={page} />
         </Main>
     );
