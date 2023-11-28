@@ -19,7 +19,9 @@ const SelectBox = (props) => {
 };
 const Select = styled.select`
     padding: 7px;
-
+    
     width: 80px;
+    
+    cursor: pointer;
 `
 export default SelectBox;

@@ -1,27 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import MainImage from './Component/Image';
-import CommentSection from './Component/Comment';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CommentLike from './CommentLike/CommentLike';
 
-const App = () => {
-
+function App() {
   return (
-    <Section>
-      <MainImage />
-      <CommentSection />
-    </Section>
-  )
-};
-
-const Section = styled.div`
-  display: flex;
-  
-  margin: 70px auto;
-  gap: 50px;
-
-  width: 1100px;   
- 
-  box-shadow: 15px 15px 15px grey;
-`;
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CommentLike />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;

@@ -1,17 +1,17 @@
 import React from 'react';
-import image from '../Component/img/img.jpeg'
+import Feedimage from '../../img/img.jpeg'
 import styled from 'styled-components';
 
 const MainImage = () => {
 
     return (
         <>  
-            <Image src={image} alt='image' />
+            <FeedImage src={Feedimage} alt='image' />
         </>
     );
 };
 
-const Image = styled.img`
+const FeedImage  = styled.img`
     display: block;
 
     width: 600px;

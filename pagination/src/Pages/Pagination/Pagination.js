@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ButtonContents from './component/ButtonContents';
 import SelectBox from './component/Select';
-
+import Modal from './component/Modal';
 
 const Pagination = () => {
 
-  // 현재 페이지 state
-  const [page, setPage] = useState(1);
-    
-  // page 당 표시할 데이터 수 state
-  const [limit, setLimit] = useState(10);
+    // 현재 페이지 state
+    const [page, setPage] = useState(1);
 
-  const [index, setIndex] = useState(0);
+    // page 당 표시할 데이터 수 state
+    const [limit, setLimit] = useState(10);
 
-  // API 저장 state
-  const [responseData, setResponseData] = useState();
+    const [index, setIndex] = useState(0);
+
+    // API 저장 state
+    const [responseData, setResponseData] = useState();
 
     const [isModal, setIsModal] = useState(false);
 
@@ -29,15 +29,15 @@ const Pagination = () => {
     const onClickButton = () => {
         setIsModal(false);
     };
-    
-  
-  
+
+
+
     // limit 설정
     const onChangeLimit = e => {
 
         setLimit(e.currentTarget.value);
     };
-   
+
     // page 설정
     const onChangePage = value => {
 
@@ -61,7 +61,6 @@ const Pagination = () => {
         <Main>
             <Header>POST</Header>
             <SelectBox onChangeLimit={onChangeLimit} />
-
             {/* 조건부 렌더링 */}
             {responseData &&
                 responseData.map((data, index) => {
@@ -75,24 +74,21 @@ const Pagination = () => {
                                     {data.title}
                                 </DataTitle>
                             </Section>
-                    
-                         
                         </>
                     );
                 })
             }
-               <ModalWrap  key={index}  isModal={isModal}>
-                                <ModalContainer key={index.id} isModal={isModal}>
-                                    <ModalUserId> UserId : {index.userId} Id : {index.id}</ModalUserId>
-                                    <ModalTitle> Title : {index.title}</ModalTitle>
-                                    <ModalBody>{index.body}</ModalBody>
-                                    <ModalButton onClick={onClickButton}>Close</ModalButton>
-                                </ModalContainer>
-                            </ModalWrap>
+            {(index || index === 0) && responseData && (
+                <Modal
+                    data={responseData}
+                    index={index}
+                    isModal={isModal}
+                    onClickButton={onClickButton}
+                />
+            )}
             <ButtonContents onChangePage={onChangePage} page={page} />
         </Main>
     );
-
 };
 
 const Main = styled.main`
@@ -128,9 +124,10 @@ const Section = styled.button`
     transition: 0.3s;
 
     &:hover {
+        transform: scale(1.05);
         background: #999;
         color: #fff;
-        transition: 0.2s;
+        transition: 0.3s;
     }
 `
 
@@ -145,93 +142,6 @@ const DataTitle = styled.div`
     font-style: italic;
 `
 
-const ModalWrap = styled.div`
-    display: ${(props) => (props.isModal ? "block" : "none")};
-    position: fixed;
 
-    top: 0;
-    left: 0;  
-   
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0,0,0,0.2);
-`
-
-const ModalContainer = styled.div`
-    display: ${(props) => (props.isModal ? "block" : "none")};
-   
-    position: relative;
-
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-
-    text-align: center;
-    font-size: 20px;    
-
-    overflow: hidden;
-
-    width: 650px;
-    height: 360px;
-
-    background: #fff;
-    box-shadow: 3px 3px 3px #333;
-
-    border-radius: 10px;
-    
-    animation: modal 0.5s ease;
-    @keyframes modal {
-        from {
-          transform: translate(-50%, -62%);
-        }
-        to {
-          transform: translate(-50%, -50%);
-        }
-      }
-    
-`
-
-const ModalButton = styled.button`
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    padding: 10px;
-
-    width: 400px;
-    
-    color: #fff;
-    background: #888;
-    border: none;
-    border-radius: 10px;
-    
-    font-size: 20px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.4s;
-
-        &:hover {
-            background: #000;
-            transition: 0.3s;
-        }
-
-`
-
-const ModalUserId = styled.h3`
-    border-bottom: 2px solid #999;
-    padding-bottom: 20px;
-`
-
-const ModalTitle = styled.h4`
-    margin: 0 22px;
-`
-
-const ModalBody = styled.p`
-    margin: 22px; 
-`
 
 export default Pagination;
