@@ -48,6 +48,43 @@ const Main = () => {
                         <SpecialDay src={Specialday} alt='특별한 날' />
                     </div>
                 </section>
+                <TraditionalLiquor>
+                    <TraditionalLiquorText>
+                        2,000종이 넘는<br />
+                        다채로운 전통주로 시작해보세요.
+                    </TraditionalLiquorText>
+                    <div style={{
+                        textAlign: 'center',
+                        marginTop: '40px',
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        lineHeight: '1',
+                        color: '#707070'
+                    }}>
+                        <p>우리나라 술 <span style={{ color: '#FFBA00' }}>2,030</span>종</p>
+                        <p>전국 각지 양조장 <span style={{ color: '#FFBA00' }}>1,234</span>곳</p>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '54px', marginTop: '80px' }}>
+                        <div>
+                            <div style={{ background: '#FFBA00', width: '50px', height: '200px' }}></div>
+                            <div></div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <div style={{ background: '#FFBA00', width: '50px', height: '200px' }}></div>
+                            <div></div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <div style={{ background: '#FFBA00', width: '50px', height: '200px' }}></div>
+                            <div></div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </TraditionalLiquor>
             </main>
         </>
     )
@@ -118,4 +155,24 @@ const SpecialDay = styled.img`
     height: 170px;
 `
 
+const TraditionalLiquor = styled.section`
+    margin-top: 200px;
+
+    width: 100%;
+    height: 800px;
+
+    background: #F8F8F8;
+`
+
+const TraditionalLiquorText = styled.p`
+    text-align: center;
+
+    padding-top: 80px;
+    
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.6;
+    
+    color: #707070;
+`
 export default Main;
