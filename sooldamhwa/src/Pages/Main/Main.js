@@ -7,11 +7,11 @@ import Specialday from '../../image/liquor.png'
 import Damhwabox from '../../image/damhwabox.png'
 import TraditionalLiquorimg from '../../image/backImg2.png'
 import RecentDamhwaimg from '../../image/bubble_conversation.png'
-import instargram from '../../image/icon_instagram.png'
-import youtube from '../../image/icon_youtube.png'
-import kakao from '../../image/icon_kakao.png'
-import facebook from '../../image/icon_facebook.png'
-import naver from '../../image/icon_naver.png'
+import Instargram from '../../image/icon_instagram.png'
+import Youtube from '../../image/icon_youtube.png'
+import Kakao from '../../image/icon_kakao.png'
+import Facebook from '../../image/icon_facebook.png'
+import Naver from '../../image/icon_naver.png'
 
 const Main = () => {
 
@@ -114,11 +114,11 @@ const Main = () => {
                             <Company>평일 10:00 - 18:00, 주말 휴무</Company>
                         </div>
                         <FooterFnb>
-                            <FooterFnbImg src={instargram} alt='인스타 채널' />
-                            <FooterFnbImg src={youtube} alt='유튜브 채널' />
-                            <FooterFnbImg src={kakao} alt='카카오 채널' />
-                            <FooterFnbImg src={facebook} alt='페이스북 채널' />
-                            <FooterFnbImg src={naver} alt='네이버 채널' />
+                            <FooterFnbImg src={Instargram} alt='인스타 채널' />
+                            <FooterFnbImg src={Youtube} alt='유튜브 채널' />
+                            <FooterFnbImg src={Kakao} alt='카카오 채널' />
+                            <FooterFnbImg src={Facebook} alt='페이스북 채널' />
+                            <FooterFnbImg src={Naver} alt='네이버 채널' />
                         </FooterFnb>
                     </Fnb>
                     <div style={{ display: 'flex' }}>
