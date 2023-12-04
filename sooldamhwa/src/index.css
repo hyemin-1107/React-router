@@ -1,5 +1,7 @@
 *{
   font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  list-style-type: none;
 }
 body {
   margin: 0;
