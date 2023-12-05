@@ -1,35 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
-import Logo from '../../../image/main-logo-christmas.png'
-import Headersearch from '../../../image/searchIcon.svg'
-import Headericon from '../../../image/icon-header-basket.png'
+import { useNavigate } from "react-router-dom";
+import Logo from '../../../IndexImage/main_logo_christmas.png'
+import Headersearch from '../../../IndexImage/searchIcon.svg'
+import Headericon from '../../../IndexImage/icon_header_basket.png'
 
 const Header = () => {
+    const navigate = useNavigate();
 
     return (
-        <Headercontents>
+        <HeaderContents>
             <GnbNav>
                 <Gnb>
-                    <LogoLink to="/">
+                    <LogoLink onClick={() => { navigate("/"); }}>
                         <LogoImage src={Logo} alt='Logo' />
                     </LogoLink>
                     <HeaderGnb>
-                        <li><HeaderGnbList to="/">구독</HeaderGnbList></li>
-                        <li><HeaderGnbList to="/">스토어</HeaderGnbList></li>
-                        <li><HeaderGnbSearch to="/"><img src={Headersearch} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
+                        <li onClick={() => { navigate("/subscribe"); }}><HeaderGnbList>구독</HeaderGnbList></li>
+                        <li onClick={() => { navigate(""); }}><HeaderGnbList>스토어</HeaderGnbList></li>
+                        <li onClick={() => { navigate(""); }}><HeaderGnbSearch><img src={Headersearch} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
                     </HeaderGnb>
                 </Gnb>
                 <GnbSub>
-                    <li><HeaderGnbLogin to="/">로그인/회원가입 {'>'}</HeaderGnbLogin></li>
-                    <li><Link to='/'><HeaderIcon src={Headericon} alt='icon' /></Link></li>
+                    <li onClick={() => { navigate("/login"); }}><HeaderGnbLogin>로그인/회원가입 {'>'}</HeaderGnbLogin></li>
+                    <li onClick={() => { navigate(""); }}><HeaderIcon src={Headericon} alt='icon' /></li>
                 </GnbSub>
             </GnbNav>
-        </Headercontents>
+        </HeaderContents>
     )
 };
 
-const Headercontents = styled.header`
+const HeaderContents = styled.header`
     position: fixed;
     top: 0;
     left: 0;
@@ -56,18 +57,16 @@ const Gnb = styled.div`
     display: flex;
 
     align-items: center;
-    li{
-        padding: 0 10px;
-    }
 `
 
-const LogoLink = styled(Link)`
+const LogoLink = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     
     width: 70px;
     height: 55px;
+    cursor: pointer;
 `
 const LogoImage = styled.img`
     width: 60px;
@@ -82,7 +81,7 @@ const HeaderGnb = styled.ul`
     padding-left: 18px;
 `
 
-const HeaderGnbList = styled(Link)`
+const HeaderGnbList = styled.div`
     text-align: center;
 
     width: 60px;
@@ -91,14 +90,16 @@ const HeaderGnbList = styled(Link)`
     font-weight: 800;
 
     color: #3E3E3E;
+    cursor: pointer;
 `
 
-const HeaderGnbSearch = styled(Link)`
+const HeaderGnbSearch = styled.div`
     display: flex;
     align-items: center;
 
     gap:10px;
     padding-left: 14px;
+    margin-left: 14px;
     
     width: 230px;
     height: 40px;
@@ -111,6 +112,7 @@ const HeaderGnbSearch = styled(Link)`
 
     background-color: #F7F7F7;
     color: #B2B2B2;
+    cursor: pointer;
 `
 
 const GnbSub = styled.ul`
@@ -120,7 +122,7 @@ const GnbSub = styled.ul`
     margin: 0;    
 `
 
-const HeaderGnbLogin = styled(Link)`
+const HeaderGnbLogin = styled.div`
     margin-right: 26px;
     
     padding: 10px 0;
@@ -129,6 +131,7 @@ const HeaderGnbLogin = styled(Link)`
     font-weight: 500;
     
     color: #3E3E3E;
+    cursor: pointer;
 `
 
 const HeaderIcon = styled.img`
@@ -136,6 +139,7 @@ const HeaderIcon = styled.img`
 
     width: 28px;
     height: 29px;
+    cursor: pointer;
 `
 
 export default Header;

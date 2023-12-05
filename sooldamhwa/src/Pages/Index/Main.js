@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
-import Main from './components/Main';
+import MainContents from './components/Maincontents';
 import Footer from './components/Footer';
 
-const Index = () => {
+const Main = () => {
 
     return (
         <>
             <Header />
-            <Main />
+            <MainContents />
             <Footer />
         </>
     )
@@ -16,4 +16,4 @@ const Index = () => {
 };
 
 
-export default Index;
+export default Main;

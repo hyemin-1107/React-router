@@ -1,13 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
-import Instargram from '../../../image/icon_instagram.png'
-import Youtube from '../../../image/icon_youtube.png'
-import Kakao from '../../../image/icon_kakao.png'
-import Facebook from '../../../image/icon_facebook.png'
-import Naver from '../../../image/icon_naver.png'
+import { useNavigate } from "react-router-dom";
+import Instargram from '../../../IndexImage/icon_instagram.png'
+import Youtube from '../../../IndexImage/icon_youtube.png'
+import Kakao from '../../../IndexImage/icon_kakao.png'
+import Facebook from '../../../IndexImage/icon_facebook.png'
+import Naver from '../../../IndexImage/icon_naver.png'
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
+    const FnbIcon = [
+        {
+            id: 1,
+            src: Instargram,
+            alt: "인스타 채널"
+        },
+        {
+            id: 2,
+            src: Youtube,
+            alt: "유튜브 채널"
+        },
+        {
+            id: 3,
+            src: Kakao,
+            alt: "카카오 채널"
+        },
+        {
+            id: 4,
+            src: Facebook,
+            alt: "페이스북 채널"
+        },
+        {
+            id: 5,
+            src: Naver,
+            alt: "네이버 채널"
+        },
+    ];
+
+    const CompanyTerms = [
+
+        {
+            id: 1,
+            Term: "이용약관",
+
+        },
+        {
+            id: 2,
+            Term: "개인정보처리방침",
+
+        },
+        {
+            id: 3,
+            Term: "입점문의",
+
+        },
+
+    ];
 
     return (
         <Footercontents>
@@ -19,24 +69,30 @@ const Footer = () => {
                         <Company>평일 10:00 - 18:00, 주말 휴무</Company>
                     </div>
                     <FooterFnb>
-                        <Link to='/'> <FooterFnbImg src={Instargram} alt='인스타 채널' /></Link>
-                        <Link to='/'>  <FooterFnbImg src={Youtube} alt='유튜브 채널' /></Link>
-                        <Link to='/'> <FooterFnbImg src={Kakao} alt='카카오 채널' /></Link>
-                        <Link to='/'> <FooterFnbImg src={Facebook} alt='페이스북 채널' /></Link>
-                        <Link to='/'> <FooterFnbImg src={Naver} alt='네이버 채널' /></Link>
+                        {FnbIcon.map((el) => {
+                            return (
+                                <>
+                                    <FooterFnbImg onClick={() => { navigate(""); }} src={el.src} />
+                                </>
+                            )
+                        })}
                     </FooterFnb>
                 </Fnb>
 
                 <FooterTerms>
-                    <Link to='/'>이용약관</Link>
-                    <Link to='/'>개인정보처리방침</Link>
-                    <Link to='/'>입점문의</Link>
+                    {CompanyTerms.map((el) => {
+                        return (
+                            <>
+                                <div onClick={() => { navigate(""); }}>{el.Term}</div>
+                            </>
+                        )
+                    })}
                 </FooterTerms>
 
                 <CompanyInformationText>
                     <span>대표 : 이재욱</span>
                     <span>사업자등록번호 : 620-81-58299</span>
-                    <Link to='/'> 사업자확인 </Link>
+                    <div onClick={() => { navigate(""); }}> 사업자확인 </div>
                     <span>통신판매 신고번호: 2021-서울서초-2084</span>
                 </CompanyInformationText>
                 <CompanyInformationText>
@@ -51,7 +107,7 @@ const Footer = () => {
                         술담화는 통신판매중개자로서 통신판매 당사자가 아니며, 판매자가 등록한 상품정보 및 거래에 대해 술담화는 책임을 지지 않습니다. <br />
                         고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 NICE구매안전 (에스크로) 서비스를 이용하실 수 있습니다.
                     </p>
-                    <Link to='/'>서비스가입사실 확인</Link>
+                    <div onClick={() => { navigate(""); }}>서비스가입사실 확인</div>
                 </SubscriptionInformation>
 
             </FooterInfo>
@@ -103,6 +159,8 @@ const FooterFnb = styled.div`
 const FooterFnbImg = styled.img`
     width: 35px;
     height: 35px;
+
+    cursor: pointer;
 `
 
 const FooterTerms = styled.div`
@@ -114,8 +172,8 @@ const FooterTerms = styled.div`
     font-size: 12px;
     font-weight: 800;
 
-    a{
-        color:#3E3E3E;
+    div{
+        cursor: pointer;
     }
 `
 
@@ -129,8 +187,7 @@ const CompanyInformationText = styled.div`
     font-weight: 600;
     
     color: #707070;
-    a{
-        color:#707070;
+    div{
         text-decoration: underline;
     }
 `
@@ -142,9 +199,7 @@ const SubscriptionInformation = styled.div`
     font-weight: 500;
 
     color: #B2B2B2;
-    a{  
-        color:#B2B2B2;
-
+    div{  
         text-decoration: underline;
     }
 `

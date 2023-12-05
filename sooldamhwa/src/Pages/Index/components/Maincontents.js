@@ -1,14 +1,18 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-import Mainimg from '../../../image/landingImgPc3.jpg'
-import Specialday from '../../../image/liquor.png'
-import Damhwabox from '../../../image/damhwabox.png'
-import TraditionalLiquorimg from '../../../image/backImg2.png'
-import RecentDamhwaimg from '../../../image/bubble_conversation.png'
-import commaleft from '../../../image/commaLeft.png'
-import commaright from '../../../image/commaRight.png'
+import Mainimg from '../../../IndexImage/landingImgPc3.jpg'
+import Specialday from '../../../IndexImage/liquor.png'
+import Damhwabox from '../../../IndexImage/damhwaBox.png'
+import TraditionalLiquorimg from '../../../IndexImage/backImg2.png'
+import RecentDamhwaimg from '../../../IndexImage/bubbleConversation.png'
+import commaleft from '../../../IndexImage/commaLeft.png'
+import commaright from '../../../IndexImage/commaRight.png'
 
-const Main = () => {
+
+const MainContents = () => {
+
+    const navigate = useNavigate();
 
     return (
         <main>
@@ -65,7 +69,7 @@ const Main = () => {
                     <span> '굉장히 신경 쓴' </span>
                     구독서비스, <br /> 한번 구경해볼까요?
                 </DamhwaText>
-                <SubscribeButton>구독하러 가기 {'>'}</SubscribeButton>
+                <SubscribeButton onClick={() => { navigate("/subscribe"); }}>구독하러 가기 {'>'}</SubscribeButton>
             </LifeAlcohol>
 
             <TraditionalLiquorShoppingMall>
@@ -74,13 +78,13 @@ const Main = () => {
                 <DamhwaText>근데 <span>우리 제법 깐깐해요.</span> <br />
                     우리가 만족한 술만 들이고 있거든요!
                 </DamhwaText>
-                <ShoppingButton>쇼핑하러 가기 {'>'}</ShoppingButton>
+                <ShoppingButton onClick={() => { navigate(""); }}>쇼핑하러 가기 {'>'}</ShoppingButton>
             </TraditionalLiquorShoppingMall>
 
             <RecentDamhwa>
                 <RecentDamhwaText>최근 담화, 함께 볼까요?</RecentDamhwaText>
                 <RecentDamhwaReview>
-                    <img src={commaleft} />
+                    <img src={commaleft} alt='left' />
                     <div>
                         <Review>한 달에 한번씩 <br /> 나에게 주는 선물</Review>
                         <ReviewUser>@shin_tea97</ReviewUser>
@@ -93,7 +97,7 @@ const Main = () => {
                         <Review>한 달에 한번씩 <br /> 나에게 주는 선물</Review>
                         <ReviewUser>@shin_tea97</ReviewUser>
                     </div> */}
-                    <img src={commaright} />
+                    <img src={commaright} alt='right' />
                 </RecentDamhwaReview>
                 <RecentDamhwaImg src={RecentDamhwaimg} />
             </RecentDamhwa>
@@ -105,6 +109,7 @@ const Main = () => {
 const MainText = styled.div`
     position: relative;
 
+    width: 100%;
     height: 430px;
 
     padding-top: 55px;
@@ -436,4 +441,4 @@ const RecentDamhwaImg = styled.img`
     height: 160px;
 `
 
-export default Main;
+export default MainContents;

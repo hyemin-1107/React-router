@@ -52,10 +52,10 @@ const ButtonContents = (props) => {
             <Button onClick={() => onChangePage(9)} isSelected={page === 9}>9</Button>
             <Button onClick={() => onChangePage(10)} isSelected={page === 10}>10</Button> */}
             
-            {ButtonArray.map((a) => {
+            {ButtonArray.map((el) => {
                 return (
-                    <Button onClick={() => onChangePage(a.id)} isSelected={page === a.id}>
-                        {a.id}
+                    <Button onClick={() => onChangePage(el.id)} isSelected={page === el.id}>
+                        {el.id}
                     </Button>
                 )
             })}
@@ -95,7 +95,7 @@ const Button = styled.button`
             background: ${(props) => (props.isSelected ? "white" : "white")};
             color: ${(props) => (props.isSelected ? "black" : "black")} ;
             
-            ransition: 0.3s; 
+            transition: 0.3s; 
         }
 `
 
