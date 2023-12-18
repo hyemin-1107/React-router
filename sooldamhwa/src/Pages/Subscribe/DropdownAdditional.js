@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Dropdown4 = () => {
+const DropdownAdditional = () => {
 
     return (
 
@@ -21,4 +21,4 @@ const CheckInAdvanceAnswer = styled.div`
     color: #00000099;
 
 `
-export default Dropdown4;
+export default DropdownAdditional;

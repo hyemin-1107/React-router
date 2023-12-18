@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-import Mainimg from '../../../IndexImage/landingImgPc3.jpg'
-import Specialday from '../../../IndexImage/liquor.png'
-import Damhwabox from '../../../IndexImage/damhwaBox.png'
-import TraditionalLiquorimg from '../../../IndexImage/backImg2.png'
-import RecentDamhwaimg from '../../../IndexImage/bubbleConversation.png'
-import commaleft from '../../../IndexImage/commaLeft.png'
-import commaright from '../../../IndexImage/commaRight.png'
+import Mainimg from '../../../mainImage/landingImgPc3.jpg'
+import Specialday from '../../../mainImage/liquor.png'
+import Damhwabox from '../../../mainImage/damhwaBox.png'
+import TraditionalLiquorimg from '../../../mainImage/backImg2.png'
+import RecentDamhwaimg from '../../../mainImage/bubbleConversation.png'
+import commaleft from '../../../mainImage/commaLeft.png'
+import commaright from '../../../mainImage/commaRight.png'
 
 
 const MainContents = () => {

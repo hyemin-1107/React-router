@@ -1,63 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
-import Instargram from '../../../IndexImage/icon_instagram.png'
-import Youtube from '../../../IndexImage/icon_youtube.png'
-import Kakao from '../../../IndexImage/icon_kakao.png'
-import Facebook from '../../../IndexImage/icon_facebook.png'
-import Naver from '../../../IndexImage/icon_naver.png'
+import Instargram from '../../../mainImage/icon_instagram.png'
+import Youtube from '../../../mainImage/icon_youtube.png'
+import Kakao from '../../../mainImage/icon_kakao.png'
+import Facebook from '../../../mainImage/icon_facebook.png'
+import Naver from '../../../mainImage/icon_naver.png'
 
 const Footer = () => {
 
     const navigate = useNavigate();
-
-    const FnbIcon = [
-        {
-            id: 1,
-            src: Instargram,
-            alt: "인스타 채널"
-        },
-        {
-            id: 2,
-            src: Youtube,
-            alt: "유튜브 채널"
-        },
-        {
-            id: 3,
-            src: Kakao,
-            alt: "카카오 채널"
-        },
-        {
-            id: 4,
-            src: Facebook,
-            alt: "페이스북 채널"
-        },
-        {
-            id: 5,
-            src: Naver,
-            alt: "네이버 채널"
-        },
-    ];
-
-    const CompanyTerms = [
-
-        {
-            id: 1,
-            Term: "이용약관",
-
-        },
-        {
-            id: 2,
-            Term: "개인정보처리방침",
-
-        },
-        {
-            id: 3,
-            Term: "입점문의",
-
-        },
-
-    ];
 
     return (
         <Footercontents>
@@ -69,7 +21,7 @@ const Footer = () => {
                         <Company>평일 10:00 - 18:00, 주말 휴무</Company>
                     </div>
                     <FooterFnb>
-                        {FnbIcon.map((el) => {
+                        {Fnb_Icon.map((el) => {
                             return (
                                 <>
                                     <FooterFnbImg onClick={() => { navigate(""); }} src={el.src} />
@@ -80,7 +32,7 @@ const Footer = () => {
                 </Fnb>
 
                 <FooterTerms>
-                    {CompanyTerms.map((el) => {
+                    {Company_Terms.map((el) => {
                         return (
                             <>
                                 <div onClick={() => { navigate(""); }}>{el.Term}</div>
@@ -204,5 +156,52 @@ const SubscriptionInformation = styled.div`
     }
 `
 
+const Fnb_Icon = [
+    {
+        id: 1,
+        src: Instargram,
+        alt: "인스타 채널"
+    },
+    {
+        id: 2,
+        src: Youtube,
+        alt: "유튜브 채널"
+    },
+    {
+        id: 3,
+        src: Kakao,
+        alt: "카카오 채널"
+    },
+    {
+        id: 4,
+        src: Facebook,
+        alt: "페이스북 채널"
+    },
+    {
+        id: 5,
+        src: Naver,
+        alt: "네이버 채널"
+    },
+];
+
+const Company_Terms = [
+
+    {
+        id: 1,
+        Term: "이용약관",
+
+    },
+    {
+        id: 2,
+        Term: "개인정보처리방침",
+
+    },
+    {
+        id: 3,
+        Term: "입점문의",
+
+    },
+
+];
 
 export default Footer;

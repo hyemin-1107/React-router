@@ -1,38 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { useNavigate } from "react-router-dom";
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import './swiper.css'
+
 import styled from 'styled-components';
 import Header from '../Index/components/Header';
 import Footer from '../Index/components/Footer';
-import Main1 from '../../SubscribeImage/img_main.jpg'
-import Main2 from '../../SubscribeImage/img_main1.jpg'
-import Main3 from '../../SubscribeImage/img_main2.jpg'
-import Main4 from '../../SubscribeImage/img_main3.jpg'
-import Main5 from '../../SubscribeImage/img_main4.jpg'
-import Main6 from '../../SubscribeImage/img_main5.jpg'
-import Basicimg from '../../SubscribeImage/icon_basic_damhwabox.png'
-import Sojuimg from '../../SubscribeImage/icon_soju_damhwabox.png'
-import Yakchungjuimg from '../../SubscribeImage/icon_yakchungju_damhwabox.png'
-import New from '../../SubscribeImage/icon_new.png'
-import SpecialTimeImg from '../../SubscribeImage/subscribe_review_02.png'
-import AdvantageContent1 from '../../SubscribeImage/subscribe_selling_point_01.png'
-import AdvantageContent2 from '../../SubscribeImage/subscribe_selling_point_02.png'
-import AdvantageContent3 from '../../SubscribeImage/subscribe_selling_point_03.png'
-import Benefitsimg1 from '../../SubscribeImage/icon_coupon.png'
-import Benefitsimg2 from '../../SubscribeImage/icon_truck_blue2.png'
-import Benefitsimg3 from '../../SubscribeImage/icon_price_down.png'
-import ConceptImg2204 from '../../SubscribeImage/damhwabox_archive_2022_04.png'
-import PcKakaoImg from '../../SubscribeImage/channel_talk_pc.png'
-import Arrow from '../../SubscribeImage/arrow.png'
-import Dropdown1 from './Dropdown1';
-import Dropdown2 from './Dropdown2';
-import Dropdown3 from './Dropdown3';
-import Dropdown4 from './Dropdown4';
-
+import Main1 from '../../subscribeImage/img_main.jpg'
+import Main2 from '../../subscribeImage/img_main1.jpg'
+import Main3 from '../../subscribeImage/img_main2.jpg'
+import Main4 from '../../subscribeImage/img_main3.jpg'
+import Main5 from '../../subscribeImage/img_main4.jpg'
+import Main6 from '../../subscribeImage/img_main5.jpg'
+import Basicimg from '../../subscribeImage/icon_basic_damhwabox.png'
+import Sojuimg from '../../subscribeImage/icon_soju_damhwabox.png'
+import Yakchungjuimg from '../../subscribeImage/icon_yakchungju_damhwabox.png'
+import New from '../../subscribeImage/icon_new.png'
+import SpecialTimeImg from '../../subscribeImage/subscribe_review_02.png'
+import SpecialTimeImg2 from '../../subscribeImage/subscribe_review_03.png'
+import SpecialTimeImg3 from '../../subscribeImage/subscribe_review_04.png'
+import SpecialTimeImg4 from '../../subscribeImage/subscribe_review_05.png'
+import SpecialTimeImg5 from '../../subscribeImage/subscribe_review_07.png'
+import SpecialTimeImg7 from '../../subscribeImage/subscribe_review_06.png'
+import SpecialTimeImg8 from '../../subscribeImage/subscribe_review_09.png'
+import AdvantageContent1 from '../../subscribeImage/subscribe_selling_point_01.png'
+import AdvantageContent2 from '../../subscribeImage/subscribe_selling_point_02.png'
+import AdvantageContent3 from '../../subscribeImage/subscribe_selling_point_03.png'
+import Benefitsimg1 from '../../subscribeImage/icon_coupon.png'
+import Benefitsimg2 from '../../subscribeImage/icon_truck_blue2.png'
+import Benefitsimg3 from '../../subscribeImage/icon_price_down.png'
+import ConceptImg2306 from '../../subscribeImage/damhwabox_archive_2023_06.jpg'
+import ConceptImg2305 from '../../subscribeImage/damhwabox_archive_2023_05.jpg'
+import ConceptImg2304 from '../../subscribeImage/damhwabox_archive_2023_04.jpg'
+import ConceptImg2303 from '../../subscribeImage/damhwabox_archive_2023_03.jpg'
+import ConceptImg2302 from '../../subscribeImage/damhwabox_archive_2023_02.jpg'
+import ConceptImg2301 from '../../subscribeImage/damhwabox_archive_2023_01.jpg'
+import ConceptImg2212 from '../../subscribeImage/damhwabox_archive_2022_12.png'
+import ConceptImg2211 from '../../subscribeImage/damhwabox_archive_2022_11.png'
+import ConceptImg2210 from '../../subscribeImage/damhwabox_archive_2022_10.png'
+import ConceptImg2209 from '../../subscribeImage/damhwabox_archive_2022_09.png'
+import ConceptImg2208 from '../../subscribeImage/damhwabox_archive_2022_08.png'
+import ConceptImg2207 from '../../subscribeImage/damhwabox_archive_2022_07.png'
+import ConceptImg2206 from '../../subscribeImage/damhwabox_archive_2022_06.png'
+import ConceptImg2205 from '../../subscribeImage/damhwabox_archive_2022_05.png'
+import ConceptImg2204 from '../../subscribeImage/damhwabox_archive_2022_04.png'
+import PcKakaoImg from '../../subscribeImage/channel_talk_pc.png'
+import ModalClose from '../../subscribeImage/icon-close-black.png'
+import Arrow from '../../subscribeImage/arrow.png'
+import DropdownAFewGoods from './DropdownAFewGoods';
+import DropdownTakeTurns from './DropdownTakeTurns';
+import DropdownPenalty from './DropdownPenalty';
+import DropdownAdditional from './DropdownAdditional';
+import Popupimg from '../../subscribeImage/popup_img.jpg'
+// import prevIcon from '../../subscribeImage/icon_left_arrow.png'
+// import nextIcon from '../../subscribeImage/icon_right_arrow.png'
 
 const Subscribe = () => {
 
@@ -45,8 +71,18 @@ const Subscribe = () => {
     const [isDropdownView3, setDropdownView3] = useState(false)
     const [isDropdownView4, setDropdownView4] = useState(false)
 
+    // const navigationPrevRef = useRef(null);
+    // const navigationNextRef = useRef(null);
+  
+    const [isModal, setIsModal] = useState(false);
+    const onClickModal = () => {
+        setIsModal(true);
+    };
+    const onClickButton = () => {
+        setIsModal(false);
+    }
 
-
+    // const [isPopup, setIsPopup] = useState();
 
     return (
         <>
@@ -56,6 +92,8 @@ const Subscribe = () => {
                     modules={[Navigation, Pagination, Autoplay]}
                     loop={true}
                     slidesPerView={1}
+                    // navigation={{prevEl: navigationPrevRef.current, 
+                    //     nextEl: navigationNextRef.current}}
                     navigation={true}
                     pagination={{
                         type: 'fraction',
@@ -82,12 +120,16 @@ const Subscribe = () => {
                     <SwiperSlide>
                         <MainImg src={Main6} onClick={() => { navigate(""); }} />
                     </SwiperSlide>
+                    {/* <PrevButton ref={navigationPrevRef}>
+                     <img alt="prevButton" src={prevIcon} />
+                    </PrevButton>
+                    <NextButton ref={navigationNextRef}>
+                    <img alt="nextButton" src={nextIcon} />
+                    </NextButton> */}
                 </Swiper>
 
             </Link>
-            <div>
-
-            </div>
+            
 
             <SubscriptionImg>
                 <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
@@ -140,7 +182,25 @@ const Subscribe = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
+                            <ReviewImg src={SpecialTimeImg2} />
+                            <ReviewText>
+                                <div>역시 캠핑은 모다? #술담화 #술담화구독</div>
+                                <p>@hahhaya_modern</p>
+                            </ReviewText>
+                        </ReviewCarousel>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <ReviewCarousel>
+                            <ReviewImg src={SpecialTimeImg3} />
+                            <ReviewText>
+                                <div>위스키 진 럼도 좋지만 늦게서야 알게된 전통주 매력에 홀딱!</div>
+                                <p>@hahhaya_modern</p>
+                            </ReviewText>
+                        </ReviewCarousel>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <ReviewCarousel>
+                            <ReviewImg src={SpecialTimeImg4} />
                             <ReviewText>
                                 <div>디자인 보고 끌렸고 컨셉에서 구매 결정!</div>
                                 <p>@hahhaya_modern</p>
@@ -149,63 +209,27 @@ const Subscribe = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
+                            <ReviewImg src={SpecialTimeImg5} />
                             <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
+                                <div>병도 이쁘고 맛도 이쁘고 다음달 구독박스도 기대 되쟈낭😎</div>
                                 <p>@hahhaya_modern</p>
                             </ReviewText>
                         </ReviewCarousel>
                     </SwiperSlide>
                     <SwiperSlide>
                         <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
+                            <ReviewImg src={SpecialTimeImg7} />
                             <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
+                                <div>술도 알아가는 재미, 내 취향인 술을 찾는 재미가 정말 톡톡!</div>
                                 <p>@hahhaya_modern</p>
                             </ReviewText>
                         </ReviewCarousel>
                     </SwiperSlide>
                     <SwiperSlide>
                         <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
+                            <ReviewImg src={SpecialTimeImg8} />
                             <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
-                                <p>@hahhaya_modern</p>
-                            </ReviewText>
-                        </ReviewCarousel>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
-                            <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
-                                <p>@hahhaya_modern</p>
-                            </ReviewText>
-                        </ReviewCarousel>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
-                            <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
-                                <p>@hahhaya_modern</p>
-                            </ReviewText>
-                        </ReviewCarousel>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
-                            <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
-                                <p>@hahhaya_modern</p>
-                            </ReviewText>
-                        </ReviewCarousel>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ReviewCarousel>
-                            <ReviewImg src={SpecialTimeImg} />
-                            <ReviewText>
-                                <div>🥇2월 저의 베스트 강추!</div>
+                                <div>족발이 갑자기 땡겼던 날, 그렇다면? 술담화지!</div>
                                 <p>@hahhaya_modern</p>
                             </ReviewText>
                         </ReviewCarousel>
@@ -294,8 +318,12 @@ const Subscribe = () => {
                 </BenefitsImg>
 
             </PurchaseBenefits>
-            <SubscribeLandingBox id="DetailInfo" src="https://d38cxpfv0ljg7q.cloudfront.net/admin_contents/origin/a7lU-1699579312456-subscription_PC_background.jpg" ></SubscribeLandingBox>
 
+            <SubscribeLandingBox>
+            <SubscribeLandingBoxBg id="DetailInfo" src="https://d38cxpfv0ljg7q.cloudfront.net/admin_contents/origin/a7lU-1699579312456-subscription_PC_background.jpg" ></SubscribeLandingBoxBg>
+            <></>
+            </SubscribeLandingBox>
+            
             <DamhwaConcept>
                 <DamhwaConceptTitle>
                     이번 달엔 어떤 술을 < br />
@@ -304,86 +332,106 @@ const Subscribe = () => {
                 <DamhwaConceptImgContets>
                     <Swiper
                         slidesPerView={7.5}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Pagination]}
+                        navigation={true}
+                        centeredSlides={true}
+                        modules={[Navigation]}
                     >
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2306}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.06
+                                <div>초여름밤</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2305}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.05
+                                <div>어른이 날</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2304}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.04
+                                <div>꽃 놀이의 계절!</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2303}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.03
+                                <div>새로운 전통의 맛</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2302}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.02
+                                <div>발렌타인 데이</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2301}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2023.01
+                                <div>2023년의 시작</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2212}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2022.12
+                                <div>연말 모임</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2211}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2022.11
+                                <div>가을 끝자락의 정취</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2210}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2022.10
+                                <div>할로윈</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2209}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2022.09
+                                <div>가을 열매 바구니</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <DamhwaConceptImg src={ConceptImg2204}></DamhwaConceptImg>
+                            <DamhwaConceptImg src={ConceptImg2208}></DamhwaConceptImg>
                             <DamhwaConceptImgText>
-                                2022.04
-                                <div>봄날의 응원</div>
+                                2022.08
+                                <div>풍요로운 추석</div>
+                            </DamhwaConceptImgText>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <DamhwaConceptImg src={ConceptImg2207}></DamhwaConceptImg>
+                            <DamhwaConceptImgText>
+                                2022.07
+                                <div>신(맛)들의 잔치</div>
+                            </DamhwaConceptImgText>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <DamhwaConceptImg src={ConceptImg2206}></DamhwaConceptImg>
+                            <DamhwaConceptImgText>
+                                2022.06
+                                <div>상생</div>
+                            </DamhwaConceptImgText>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <DamhwaConceptImg src={ConceptImg2205}></DamhwaConceptImg>
+                            <DamhwaConceptImgText>
+                                2022.05
+                                <div>농부를 위한</div>
                             </DamhwaConceptImgText>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -409,7 +457,7 @@ const Subscribe = () => {
                             </CheckInAdvanceQuestion>
                             <ArrowImg src={Arrow} />
                         </CheckInAdvanceQuestionContents>
-                        {isDropdownView1 && <Dropdown1 />}
+                        {isDropdownView1 && <DropdownAFewGoods />}
                     </li>
                     <li>
                         <CheckInAdvanceQuestionContents onClick={e => setDropdownView2(!isDropdownView2)}>
@@ -418,8 +466,7 @@ const Subscribe = () => {
                             </CheckInAdvanceQuestion>
                             <ArrowImg src={Arrow} />
                         </CheckInAdvanceQuestionContents>
-                        {isDropdownView2 && <Dropdown2 />}
-
+                        {isDropdownView2 && <DropdownTakeTurns />}
                     </li>
                     <li>
                         <CheckInAdvanceQuestionContents onClick={e => setDropdownView3(!isDropdownView3)}>
@@ -428,7 +475,7 @@ const Subscribe = () => {
                             </CheckInAdvanceQuestion>
                             <ArrowImg src={Arrow} />
                         </CheckInAdvanceQuestionContents>
-                        {isDropdownView3 && <Dropdown3 />}
+                        {isDropdownView3 && <DropdownPenalty />}
                     </li>
                     <li>
                         <CheckInAdvanceQuestionContents onClick={e => setDropdownView4(!isDropdownView4)}>
@@ -437,16 +484,92 @@ const Subscribe = () => {
                             </CheckInAdvanceQuestion>
                             <ArrowImg src={Arrow} />
                         </CheckInAdvanceQuestionContents>
-                        {isDropdownView4 && <Dropdown4 />}
+                        {isDropdownView4 && <DropdownAdditional />}
                     </li>
                 </CheckInAdvanceQnA>
             </CheckInAdvance>
-            <ApplyButton onClick={() => { navigate(" "); }}>지금 신청하기</ApplyButton>
+            <ApplyButton onClick={onClickModal}>지금 신청하기</ApplyButton>
+            
+            <ApplyModalWrap isModal={isModal}>
+                <ModalContainer>
+                    <ModalButton onClick={onClickButton} src={ModalClose}></ModalButton>
+                    <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
+                    <ApplyGoodsBox>
+                        <ApplyGoods></ApplyGoods>
+                        <ApplyGoods></ApplyGoods>
+                        <ApplyGoods></ApplyGoods>
+                    </ApplyGoodsBox>
+                    <SelectButton>이걸로 할게요</SelectButton>
+                </ModalContainer>
+
+            </ApplyModalWrap>
+
             <PcKakao src={PcKakaoImg} onClick={() => { navigate(" "); }} />
             <Footer />
+
+            <Popup>
+                    <PopupImg src={Popupimg}></PopupImg>
+                    <PopupCloseButton>
+                    <PopupOnedayClose>오늘 하루 열지 않음</PopupOnedayClose>
+                    <PopupClose>닫기</PopupClose>
+                    </PopupCloseButton>
+            </Popup>
         </>
     )
 };
+const PopupCloseButton = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+   
+    font-size: 16px;
+    font-weight: 600;
+
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.3);
+`
+
+const PopupOnedayClose = styled.div`
+    padding: 12px;  
+
+    cursor: pointer;  
+`
+
+const PopupClose = styled.div`
+    border-left: 1px solid rgba(0,0,0,0.2);
+    padding: 12px;
+
+    cursor: pointer;
+`
+
+const Popup = styled.div`
+    position: fixed;
+    
+    top: 50%;
+    left: 50%;
+   
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    border-radius: 0 0 10px 10px;
+`
+
+const PopupImg = styled.img`
+    display: block;
+
+    width: 440px;
+    height: 462px;
+
+    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.3);
+    border-radius: 10px 10px 0 0;
+`
+
+
+// const PrevButton = styled.button`
+// `  
+// const NextButton = styled.button`
+// `
+
 
 const MainImg = styled.img`
     display: block;
@@ -650,7 +773,12 @@ const BenefitsSubText = styled.div`
     }
 `
 
-const SubscribeLandingBox = styled.img`
+const SubscribeLandingBox = styled.div`
+
+`
+
+
+const SubscribeLandingBoxBg = styled.img`
     overflow: hidden;
     object-fit: cover;
 
@@ -675,14 +803,17 @@ const DamhwaConceptImgContets = styled.div`
     display: flex;
     
     gap: 20px;
-    margin: 68px 0 0 252px;
+    margin-top: 68px;
 
     overflow: hidden;
 `
 const DamhwaConceptImg = styled.img`
+    display: block;
+    
     width: 190px;
     height: 190px;
 
+    object-fit: cover;
     border-radius: 20px;
 `
 const DamhwaConceptImgText = styled.div`
@@ -767,6 +898,104 @@ const ApplyButton = styled.button`
         background: rgb(45, 123, 195);
         transition: 0.3s ease;
     }
+`
+
+const SelectButton = styled.button`
+    margin-top: 60px;
+
+    width: 100%;
+    height: 50px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 6px;
+
+    color: #fff;
+    background: #0096F3;
+    
+    cursor: pointer;
+    
+    transition: 0.3s ease;
+    &:hover{
+        background: rgb(45, 123, 195);
+        transition: 0.3s ease;
+    }
+`
+
+const ApplyGoodsBox = styled.div`
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin-top: 33px;
+`
+
+const ApplyGoods = styled.div`
+    width: 239px;
+    height: 336px;
+
+    border-radius: 10px;
+    border: 1px solid #888;
+`
+
+const ModalTitle = styled.div`
+    text-align: center;
+    
+    font-size: 20px;
+    font-weight: 800;
+`
+
+const ModalButton = styled.img`
+    position: absolute;
+    
+    right: 30px;
+
+    width: 32px;
+    height: 32px;
+    
+    cursor: pointer;
+`
+
+const ApplyModalWrap = styled.div`
+    display: ${(props) => (props.isModal ? "block" : "none")};
+    position: fixed;
+
+    top: 0;
+    left: 0;  
+   
+    width: 100%;
+    height: 100%;
+   
+    z-index: 99;
+
+    background-color: rgba(0,0,0,0.2);
+`
+
+const ModalContainer = styled.div`
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+
+    padding: 20px 30px 16px;
+
+    text-align: center;
+    font-size: 20px;    
+
+    overflow: hidden;
+
+    width: 800px;
+    height: 550px;
+
+    background: #fff;
+
+    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
 `
 
 const PcKakao = styled.img`

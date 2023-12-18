@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-import Firecracker from '../../../LoginImage/icon_login_greeting.png'
-import Kakao from '../../../LoginImage/ico_kakao_login.png'
-import Naver from '../../../LoginImage/icon_naver_login.png'
-import Email from '../../../LoginImage/icon_email_login.png'
+import Firecracker from '../../../loginImage/icon_login_greeting.png'
+import Kakao from '../../../loginImage/ico_kakao_login.png'
+import Naver from '../../../loginImage/icon_naver_login.png'
+import Email from '../../../loginImage/icon_email_login.png'
 
 const LoginMain = () => {
     

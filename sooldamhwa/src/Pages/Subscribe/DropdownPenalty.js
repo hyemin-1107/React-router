@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Dropdown3 = () => {
+const DropdownPenalty = () => {
 
     return (
                       
@@ -23,4 +23,4 @@ const CheckInAdvanceAnswer = styled.div`
     color: #00000099;
 
 `
-export default Dropdown3;
+export default DropdownPenalty;
