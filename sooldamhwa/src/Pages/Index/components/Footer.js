@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
-import Instargram from '../../../mainImage/icon_instagram.png'
-import Youtube from '../../../mainImage/icon_youtube.png'
-import Kakao from '../../../mainImage/icon_kakao.png'
-import Facebook from '../../../mainImage/icon_facebook.png'
-import Naver from '../../../mainImage/icon_naver.png'
+import Instargram from '../../../images/mainImage/icon_instagram.png'
+import Youtube from '../../../images/mainImage/icon_youtube.png'
+import Kakao from '../../../images/mainImage/icon_kakao.png'
+import Facebook from '../../../images/mainImage/icon_facebook.png'
+import Naver from '../../../images/mainImage/icon_naver.png'
 
 const Footer = () => {
 
@@ -21,7 +21,7 @@ const Footer = () => {
                         <Company>평일 10:00 - 18:00, 주말 휴무</Company>
                     </div>
                     <FooterFnb>
-                        {Fnb_Icon.map((el) => {
+                        {FNB_ICON.map((el) => {
                             return (
                                 <>
                                     <FooterFnbImg onClick={() => { navigate(""); }} src={el.src} />
@@ -32,7 +32,7 @@ const Footer = () => {
                 </Fnb>
 
                 <FooterTerms>
-                    {Company_Terms.map((el) => {
+                    {COMPANY_TERMS.map((el) => {
                         return (
                             <>
                                 <div onClick={() => { navigate(""); }}>{el.Term}</div>
@@ -156,7 +156,7 @@ const SubscriptionInformation = styled.div`
     }
 `
 
-const Fnb_Icon = [
+const FNB_ICON = [
     {
         id: 1,
         src: Instargram,
@@ -184,7 +184,7 @@ const Fnb_Icon = [
     },
 ];
 
-const Company_Terms = [
+const COMPANY_TERMS = [
 
     {
         id: 1,

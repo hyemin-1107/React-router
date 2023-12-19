@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Coin from '../../../loginImage/icon_coin.png'
+import Coin from '../../../images/loginImage/icon_coin.png'
 
 const Accumulate = () => {
 
