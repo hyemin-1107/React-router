@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ModalClose from '../../../images/subscribeImage/icon-close-black.png'
 
-const Modal = (props) => {
+const ApplyModal = (props) => {
 
     const {isModal, onClickButton} = props;
 
@@ -11,7 +11,7 @@ const Modal = (props) => {
 
     <ApplyModalWrap isModal={isModal}>
         <ModalContainer>
-            <ModalButton onClick={onClickButton} src={ModalClose}></ModalButton>
+            <ModalButton onClick={onClickButton} src={ModalClose} />
             <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
             <ApplyGoodsBox>
                 <ApplyGoods></ApplyGoods>
@@ -125,4 +125,4 @@ const ModalContainer = styled.div`
 `
 
 
-export default Modal;
+export default ApplyModal;

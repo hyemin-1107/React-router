@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DropdownContents from './DropdownContents';
 import Arrow from '../../../images/subscribeImage/arrow.png'
 
-const QnA = () => {
+const QnAContents = () => {
 
     const [isDropdownView1, setDropdownView1] = useState(false)
     const [isDropdownView2, setDropdownView2] = useState(false)
@@ -118,4 +118,4 @@ const ArrowImg = styled.img`
     height: 20px;
 `
 
-export default QnA;
+export default QnAContents;

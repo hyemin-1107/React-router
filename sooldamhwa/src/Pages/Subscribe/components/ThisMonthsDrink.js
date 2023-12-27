@@ -21,7 +21,7 @@ import ConceptImg2206 from '../../../images/subscribeImage/damhwabox_archive_202
 import ConceptImg2205 from '../../../images/subscribeImage/damhwabox_archive_2022_05.png'
 import ConceptImg2204 from '../../../images/subscribeImage/damhwabox_archive_2022_04.png'
 
-const DamhwaThisMonthsConcept = () => {
+const ThisMonthsConcept = () => {
 
     return (
 
@@ -191,4 +191,4 @@ const DamhwaConceptImgText = styled.div`
 `
 
 
-export default DamhwaThisMonthsConcept;
+export default ThisMonthsConcept;
