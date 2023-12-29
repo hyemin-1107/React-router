@@ -1,13 +1,16 @@
 .review{
-    margin-left: -100px;
     height: 530px;
 }
+
 .pagination_fraction{
     font-size: 30px;
 }
+/* .swiper-pagination{
+
+} */
 
 .swiper-button-next {
-    margin-right: 30px;
+    margin-right: 40px;
     background: url(../../images/subscribeImage/icon_right_arrow.png) no-repeat;
     background-size: 100%;
     width: 50px;
@@ -23,7 +26,7 @@
 }
   
 .swiper-button-prev {
-    margin-left: 30px;
+    margin-left: 40px;
     background: url(../../images/subscribeImage/icon_left_arrow.png) no-repeat;
     background-size: 100%;
     width: 50px;
@@ -43,4 +46,6 @@
     display: none;
 }
 
-
+/* .month{
+    transform: translate3d(252px, 0px, 0px);
+} */

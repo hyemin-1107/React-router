@@ -28,7 +28,7 @@ const Review = () => {
 
             <Swiper
                 modules={[Autoplay]}
-                slidesPerView={4.7}
+                slidesPerView={4.4}
                 spaceBetween={10}
                 loop={true}
                 autoplay={{

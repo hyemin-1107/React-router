@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, } from "react-router-dom";
 import Logo from '../../../images/mainImage/main_logo_christmas.png'
 import Headersearch from '../../../images/mainImage/search_icon.svg'
 import Headericon from '../../../images/mainImage/icon_header_basket.png'
-
+import JoinPopupCloseIco from '../../../images/subscribeImage/icon_close_black.png'
 const Header = () => {
+
     const navigate = useNavigate();
+    const [isJoinPopup, setIsJoinPopup] = useState(true);
+    const closeJoinPopup = () => {
+        setIsJoinPopup(!isJoinPopup);
+    };
 
     return (
         <HeaderContents>
@@ -16,14 +21,23 @@ const Header = () => {
                         <LogoImage src={Logo} alt='Logo' />
                     </LogoLink>
                     <HeaderGnb>
-                        <li onClick={() => { navigate("/subscribe"); }}><HeaderGnbList>구독</HeaderGnbList></li>
+                        <li onClick={() => { navigate("/subscribe"); }} ><HeaderGnbList>구독</HeaderGnbList></li>
                         <li onClick={() => { navigate(""); }}><HeaderGnbList>스토어</HeaderGnbList></li>
                         <li onClick={() => { navigate(""); }}><HeaderGnbSearch><img src={Headersearch} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
                     </HeaderGnb>
                 </Gnb>
                 <GnbSub>
                     <li onClick={() => { navigate("/login"); }}><HeaderGnbLogin>로그인/회원가입 {'>'}</HeaderGnbLogin></li>
-                    <li onClick={() => { navigate(""); }}><HeaderIcon src={Headericon} alt='icon' /></li>
+                    <li onClick={() => { navigate("/login"); }}><HeaderIcon src={Headericon} alt='장바구니아이콘' /></li>
+                    {isJoinPopup && (
+                        <JoinPopup>
+                            <JoinPopupText>
+                                <JoinPopupCloseImg src={JoinPopupCloseIco} onClick={closeJoinPopup} alt='팝업닫기' />
+                                지금 회원가입하면 <br />
+                                <span>신규 회원 쿠폰 & 최대 4,000 포인트</span> 적립!
+                            </JoinPopupText>
+                        </JoinPopup>
+                    )}
                 </GnbSub>
             </GnbNav>
         </HeaderContents>
@@ -66,6 +80,7 @@ const LogoLink = styled.div`
     
     width: 70px;
     height: 55px;
+    
     cursor: pointer;
 `
 const LogoImage = styled.img`
@@ -82,6 +97,7 @@ const HeaderGnb = styled.ul`
 `
 
 const HeaderGnbList = styled.div`
+    color: ${(props) => (props.isSelected ? "blue" : "#3E3E3E")} ;
     text-align: center;
 
     width: 60px;
@@ -89,7 +105,7 @@ const HeaderGnbList = styled.div`
     font-size: 16px;
     font-weight: 800;
 
-    color: #3E3E3E;
+    /* color: #3E3E3E; */
     cursor: pointer;
 `
 
@@ -98,8 +114,8 @@ const HeaderGnbSearch = styled.div`
     align-items: center;
 
     gap:10px;
-    padding-left: 14px;
     margin-left: 14px;
+    padding-left: 14px;
     
     width: 230px;
     height: 40px;
@@ -112,10 +128,12 @@ const HeaderGnbSearch = styled.div`
 
     background-color: #F7F7F7;
     color: #B2B2B2;
+
     cursor: pointer;
 `
 
 const GnbSub = styled.ul`
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -131,6 +149,7 @@ const HeaderGnbLogin = styled.div`
     font-weight: 500;
     
     color: #3E3E3E;
+
     cursor: pointer;
 `
 
@@ -139,6 +158,40 @@ const HeaderIcon = styled.img`
 
     width: 28px;
     height: 29px;
+
+    cursor: pointer;
+`
+
+const JoinPopup = styled.div`
+    position: absolute;
+    top: 40px;
+    right: 60px;
+
+    padding: 10px 12px;
+    
+    width: 250px;
+
+    background: rgb(237, 245, 255);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 4px 4px;
+`
+
+const JoinPopupText = styled.div`
+    font-size: 13px;
+    font-weight: 500;
+
+    span{
+        font-weight: 700;
+        color: #0096F3;
+    }
+`
+
+const JoinPopupCloseImg = styled.img`
+    float: right;
+    
+    width: 18px;
+    height: 18px;
+
     cursor: pointer;
 `
 

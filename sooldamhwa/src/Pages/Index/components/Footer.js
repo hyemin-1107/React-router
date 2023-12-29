@@ -24,7 +24,7 @@ const Footer = () => {
                         {FNB_ICON.map((el) => {
                             return (
                                 <>
-                                    <FooterFnbImg onClick={() => { navigate(""); }} src={el.src} />
+                                    <a href={el.link} target='_blank' rel="noreferrer"><FooterFnbImg src={el.src}></FooterFnbImg></a>
                                 </>
                             )
                         })}
@@ -141,6 +141,7 @@ const CompanyInformationText = styled.div`
     color: #707070;
     div{
         text-decoration: underline;
+        cursor: pointer;
     }
 `
 
@@ -153,6 +154,7 @@ const SubscriptionInformation = styled.div`
     color: #B2B2B2;
     div{  
         text-decoration: underline;
+        cursor: pointer;
     }
 `
 
@@ -160,27 +162,34 @@ const FNB_ICON = [
     {
         id: 1,
         src: Instargram,
-        alt: "인스타 채널"
+        alt: "인스타 채널",
+        link: "https://www.instagram.com/sooldamhwa/?hl=ko",
+    
     },
     {
         id: 2,
         src: Youtube,
-        alt: "유튜브 채널"
+        alt: "유튜브 채널",
+        link:"https://www.youtube.com/channel/UCuhTvdO3VD-S3md_CkWYtbw",
     },
     {
         id: 3,
         src: Kakao,
-        alt: "카카오 채널"
+        alt: "카카오 채널",
+        link:"https://pf.kakao.com/_xktAgj"
     },
     {
         id: 4,
         src: Facebook,
-        alt: "페이스북 채널"
+        alt: "페이스북 채널",
+        link: "https://www.facebook.com/sooldamhwa",
+
     },
     {
         id: 5,
         src: Naver,
-        alt: "네이버 채널"
+        alt: "네이버 채널",
+        link:"https://blog.naver.com/sooldamhwa",
     },
 ];
 

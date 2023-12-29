@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ModalClose from '../../../images/subscribeImage/icon-close-black.png'
+import ModalClose from '../../../images/subscribeImage/icon_close_black.png'
 
 const ApplyModal = (props) => {
 

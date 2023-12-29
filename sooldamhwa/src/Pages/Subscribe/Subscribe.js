@@ -30,7 +30,7 @@ import PosterImg from '../../images/subscribeImage/poster.png'
 import CreditcardImg from '../../images/subscribeImage/grey_creditcard.png'
 import TruckImg from '../../images/subscribeImage/grey_truck.png'
 
-import ModalClose from '../../images/subscribeImage/icon-close-black.png'
+import ModalClose from '../../images/subscribeImage/icon_close_black.png'
 import PosterModalImg from '../../images/subscribeImage/popup_poster.png'
 import CurationModalImg from '../../images/subscribeImage/popup_curation.png'
 
@@ -219,7 +219,7 @@ const Subscribe = () => {
                             <div>찾아오는 인생술, 술담화입니다.</div>
                             <div style={{ height: '1rem' }}> </div>
                             <div>현재는 고객센터 운영시간이 아닙니다.</div>
-                            <div>성함과 연락처, 문의사항을 남겨주시면 영업 시간 내 순차적으로 안내 드리겠습니다. :)..</div>
+                            <div>성함과 연락처, 문의사항을 남겨주시면 영업 시간 내 순차적으로 안내 드리겠습니다. :)...</div>
                         </Detail>
                     </PcKakaoDetailContainer>
                     <DetailInquiry>문의하기
@@ -371,9 +371,11 @@ const LandingBoxName = styled.div`
     color: rgba(61, 61, 61, 0.3);
     border-radius: 10px 10px 0 0;
     background-color: #DCDCDC;
+
     box-sizing: border-box;
 
     transition: all 0.3s ease 0s;
+
     &:hover{
         background-color: rgb(178, 178, 178);
         color: rgb(112, 112, 112);
@@ -406,10 +408,12 @@ const SubscribePrice = styled.div`
     font-weight: 800;
 
     span{
+        margin-left:18px;
+
+        font-size: 16px;
+        
         text-decoration: line-through;
         color: rgba(61, 61, 61, 0.3);
-        font-size: 16px;
-        margin-left:18px;
     }
 `
 
@@ -467,6 +471,7 @@ const TotalBoxButton = styled.button`
         display: flex;
         align-items: center;
     }
+
     &:hover{
         background-color: rgb(229, 229, 229);
         color: rgb(112, 112, 112);
@@ -516,6 +521,7 @@ const DateboxImg = styled.img`
 
 const DateboxTitle = styled.div`
     font-size: 12px;
+
     div{
         color: rgba(61, 61, 61, 0.6);
     }
@@ -542,7 +548,7 @@ const ApplyButton = styled.button`
     z-index: 1;
     
     transition: 0.3s ease;
-    transform: translate( 52%, -50% );
+    transform: translate( 50%, -50% );
 
     &:hover{
         background: rgb(45, 123, 195);
@@ -567,6 +573,8 @@ const MonthSoolModalWrap = styled.div`
 
 const MonthSoolModalContainer = styled.div`
     position: relative;
+    display: flex;
+    justify-content: center;
 
     top: 50%;
     left: 50%;
@@ -577,9 +585,6 @@ const MonthSoolModalContainer = styled.div`
 
     width: 390px;
     height: 660px;
-
-    display: flex;
-    justify-content: center;
 
     background: #fff;
 
@@ -658,8 +663,8 @@ const ModalImg = styled.img`
 
 
 const PcKakao = styled.img`
-    display: ${(props) => (props.isPcKakoModal ? "none" : "block")};
     position: fixed;
+    display: ${(props) => (props.isPcKakoModal ? "none" : "block")};
     right: 50px;
     bottom: 50px;
 
@@ -677,8 +682,8 @@ const PcKakao = styled.img`
 `
 
 const PcKakaoModalButton = styled.div`
-    display: ${(props) => (props.isPcKakoModal ? "block" : "none")};
     position: fixed;
+    display: ${(props) => (props.isPcKakoModal ? "block" : "none")};
     right: 50px;
     bottom: 50px;
     z-index: 100;
@@ -687,9 +692,10 @@ const PcKakaoModalButton = styled.div`
     rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.15) 0px 8px 30px;
     background: #fff;
     border-radius: 24px;
-    cursor: pointer;
 
+    cursor: pointer;
     transition: ease .3s;
+
     &:hover{
         transition: ease .3s;
         box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
@@ -742,6 +748,7 @@ const PcKakaoDetailContainer = styled.div`
     cursor: pointer;
     
     transition: ease .3s;
+
     &:hover{
         transition: ease .3s;
         border-radius: 20px;
@@ -780,6 +787,7 @@ const PcKakaoModalHeaderSub = styled.div`
     cursor: pointer;
 
     transition: ease .3s;
+
     &:hover{
         transition: ease .3s;
         border-radius: 10px;
@@ -799,6 +807,7 @@ const PcKakaoDetailImg = styled.img`
 
 const Detail = styled.div`
     padding: 8px 0 12px;
+
     width: 252px;
 
     font-size: 14px;
@@ -832,6 +841,7 @@ const DetailInquiry = styled.button`
     cursor: pointer;
     
     transition: 0.3s ease;
+
     &:hover{
         background: rgb(45, 123, 195);
         transition: 0.3s ease;
@@ -867,6 +877,7 @@ const OtherWay = styled.div`
     gap: 6px;
     margin: 14px 16px;
     padding: 14px;
+
     background: #fff;
     border-radius: 20px;
 `
@@ -885,6 +896,13 @@ const KakaoImg = styled.img`
     
     border-radius: 10px;
     cursor: pointer;
+
+    transition: 0.2s ease;
+
+    &:hover{
+        transition: 0.2s ease;
+        transform: scale(1.1);
+    }
 `
 
 const NaverImg = styled.img`
@@ -892,6 +910,13 @@ const NaverImg = styled.img`
 
     border-radius: 10px;
     cursor: pointer;
+
+    transition: 0.2s ease;
+
+    &:hover{
+        transition: 0.2s ease;
+        transform: scale(1.1);
+    }
 `
 
 const CallImgContainer = styled.div`
@@ -905,11 +930,18 @@ const CallImgContainer = styled.div`
     border-radius: 10px;
     background: #329BE733;
     cursor: pointer;
+
+    transition: 0.2s ease;
+
+    &:hover{
+        transition: 0.2s ease;
+        transform: scale(1.1);
+    }
 `
 
 const CallImg = styled.img`
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 `
 
 const ChannelTalk = styled.div`
@@ -925,8 +957,14 @@ const ChannelTalk = styled.div`
     font-weight: 600;
     color: #00000066;
 
+    cursor: pointer;
+
     span{
         font-weight: 400;
+    }
+
+    &:hover{
+        color: #000;
     }
 `
 
@@ -934,7 +972,6 @@ const ChannelImg = styled.img`
     width: 20px;
     height: 20px;
 `
-
 
 
 export default Subscribe;

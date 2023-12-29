@@ -37,6 +37,7 @@ const ThisMonthsConcept = () => {
                     navigation={true}
                     centeredSlides={true}
                     modules={[Navigation]}
+                    className='month'
                 >
                     <SwiperSlide>
                         <DamhwaConceptImg src={ConceptImg2306} alt='이번 달의 술'></DamhwaConceptImg>
