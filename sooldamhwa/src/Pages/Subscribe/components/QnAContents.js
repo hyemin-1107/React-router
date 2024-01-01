@@ -1,7 +1,7 @@
 import React, { useState }from "react";
 import styled from "styled-components";
 import DropdownContents from './DropdownContents';
-import Arrow from '../../../images/subscribeImage/arrow.png'
+import arrow from '../../../images/subscribeImage/arrow.png'
 
 const QnAContents = () => {
 
@@ -21,7 +21,7 @@ const QnAContents = () => {
                             <CheckInAdvanceQuestion >
                                 담화박스 구독 상품에는 몇 가지 상품이 들어있나요?
                             </CheckInAdvanceQuestion>
-                            <ArrowImg src={Arrow} />
+                            <ArrowImg src={arrow} alt="화살표"/>
                         </CheckInAdvanceQuestionContents>
                         {isDropdownView1 &&
                         (<DropdownContents 
@@ -36,7 +36,7 @@ const QnAContents = () => {
                             <CheckInAdvanceQuestion>
                                 여러가지 담화박스를 동시 혹은 번갈아 가며 구독할 수 있나요?
                             </CheckInAdvanceQuestion>
-                            <ArrowImg src={Arrow} />
+                            <ArrowImg src={arrow} />
                         </CheckInAdvanceQuestionContents>
                         {isDropdownView2 &&
                         (<DropdownContents 
@@ -49,7 +49,7 @@ const QnAContents = () => {
                             <CheckInAdvanceQuestion>
                                 최소 구독 기간이나 해지 위약금이 있나요?
                             </CheckInAdvanceQuestion>
-                            <ArrowImg src={Arrow} />
+                            <ArrowImg src={arrow} />
                         </CheckInAdvanceQuestionContents>
                         {isDropdownView3 && 
                         (<DropdownContents 
@@ -62,7 +62,7 @@ const QnAContents = () => {
                             <CheckInAdvanceQuestion>
                                 제주도는 추가 배송비가 있나요?
                             </CheckInAdvanceQuestion>
-                            <ArrowImg src={Arrow} />
+                            <ArrowImg src={arrow} />
                         </CheckInAdvanceQuestionContents>
                         {isDropdownView4 &&
                         (<DropdownContents text='없습니다. 모든 구독자분은 구독 박스 배송비가 무료입니다.'/>)}
@@ -94,6 +94,7 @@ const CheckInAdvanceQnA = styled.ul`
     li{
         border-top: 1px solid #999;
     }
+    
     :first-child{
         border: none;
     }
@@ -103,6 +104,7 @@ const CheckInAdvanceQuestionContents = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     cursor: pointer;
 `
 

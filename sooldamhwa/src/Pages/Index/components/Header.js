@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, } from "react-router-dom";
-import Logo from '../../../images/mainImage/main_logo_christmas.png'
-import Headersearch from '../../../images/mainImage/search_icon.svg'
-import Headericon from '../../../images/mainImage/icon_header_basket.png'
-import JoinPopupCloseIco from '../../../images/subscribeImage/icon_close_black.png'
+import main_logo_christmas from '../../../images/mainImage/main_logo_christmas.png'
+import icon_search from '../../../images/mainImage/icon_search.svg'
+import icon_header_basket from '../../../images/mainImage/icon_header_basket.png'
+import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
+
+
 const Header = () => {
 
     const navigate = useNavigate();
@@ -18,21 +20,21 @@ const Header = () => {
             <GnbNav>
                 <Gnb>
                     <LogoLink onClick={() => { navigate("/"); }}>
-                        <LogoImage src={Logo} alt='Logo' />
+                        <LogoImage src={main_logo_christmas} alt='Logo' />
                     </LogoLink>
                     <HeaderGnb>
                         <li onClick={() => { navigate("/subscribe"); }} ><HeaderGnbList>구독</HeaderGnbList></li>
                         <li onClick={() => { navigate(""); }}><HeaderGnbList>스토어</HeaderGnbList></li>
-                        <li onClick={() => { navigate(""); }}><HeaderGnbSearch><img src={Headersearch} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
+                        <li onClick={() => { navigate(""); }}><HeaderGnbSearch><img src={icon_search} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
                     </HeaderGnb>
                 </Gnb>
                 <GnbSub>
                     <li onClick={() => { navigate("/login"); }}><HeaderGnbLogin>로그인/회원가입 {'>'}</HeaderGnbLogin></li>
-                    <li onClick={() => { navigate("/login"); }}><HeaderIcon src={Headericon} alt='장바구니아이콘' /></li>
+                    <li onClick={() => { navigate("/login"); }}><HeaderIcon src={icon_header_basket} alt='장바구니아이콘' /></li>
                     {isJoinPopup && (
                         <JoinPopup>
                             <JoinPopupText>
-                                <JoinPopupCloseImg src={JoinPopupCloseIco} onClick={closeJoinPopup} alt='팝업닫기' />
+                                <JoinPopupCloseImg src={icon_close_black} onClick={closeJoinPopup} alt='팝업닫기' />
                                 지금 회원가입하면 <br />
                                 <span>신규 회원 쿠폰 & 최대 4,000 포인트</span> 적립!
                             </JoinPopupText>

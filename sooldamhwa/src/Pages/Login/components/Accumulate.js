@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Coin from '../../../images/loginImage/icon_coin.png'
+import icon_coin from '../../../images/loginImage/icon_coin.png'
 
 const Accumulate = () => {
 
@@ -8,7 +8,7 @@ const Accumulate = () => {
 
         <Accumulatecontent>
         지금 회원가입하면 최대 4,000p 적립!
-        <LoginCoin src={Coin} />
+        <LoginCoin src={icon_coin} />
         </Accumulatecontent>
     
     )

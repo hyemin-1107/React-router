@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Benefitsimg1 from '../../../images/subscribeImage/icon_coupon.png'
-import Benefitsimg2 from '../../../images/subscribeImage/icon_truck_blue2.png'
-import Benefitsimg3 from '../../../images/subscribeImage/icon_price_down.png'
+import icon_coupon from '../../../images/subscribeImage/icon_coupon.png'
+import icon_truck_blue2 from '../../../images/subscribeImage/icon_truck_blue2.png'
+import icon_price_down from '../../../images/subscribeImage/icon_price_down.png'
 
 const PurchaseBenefitsContents = () => {
 
@@ -15,21 +15,21 @@ const PurchaseBenefitsContents = () => {
             </BenefitsText>
             <BenefitsImg>
                 <BenefitsImgBox>
-                    <BenefitsIcon src={Benefitsimg1} />
+                    <BenefitsIcon src={icon_coupon} alt="할인쿠폰 아이콘"/>
                     <BenefitsSubText>
                         첫 구독은
                         <div>10% 할인</div>
                     </BenefitsSubText>
                 </BenefitsImgBox>
                 <BenefitsImgBox>
-                    <BenefitsIcon src={Benefitsimg2} />
+                    <BenefitsIcon src={icon_truck_blue2} alt="배송트럭 아이콘"/>
                     <BenefitsSubText>
                         담화박스는
                         <div>언제나 무료배송</div>
                     </BenefitsSubText>
                 </BenefitsImgBox>
                 <BenefitsImgBox>
-                    <BenefitsIcon src={Benefitsimg3} />
+                    <BenefitsIcon src={icon_price_down} alt="가격할인 아이콘"/>
                     <BenefitsSubText>
                         단품구매보다
                         <div>평균 16% 할인</div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
-import Instargram from '../../../images/mainImage/icon_instagram.png'
-import Youtube from '../../../images/mainImage/icon_youtube.png'
-import Kakao from '../../../images/mainImage/icon_kakao.png'
-import Facebook from '../../../images/mainImage/icon_facebook.png'
-import Naver from '../../../images/mainImage/icon_naver.png'
+import icon_instagram from '../../../images/mainImage/icon_instagram.png'
+import icon_youtube from '../../../images/mainImage/icon_youtube.png'
+import icon_kakao from '../../../images/mainImage/icon_kakao.png'
+import icon_facebook from '../../../images/mainImage/icon_facebook.png'
+import icon_naver from '../../../images/mainImage/icon_naver.png'
 
 const Footer = () => {
 
@@ -161,33 +161,33 @@ const SubscriptionInformation = styled.div`
 const FNB_ICON = [
     {
         id: 1,
-        src: Instargram,
+        src: icon_instagram,
         alt: "인스타 채널",
         link: "https://www.instagram.com/sooldamhwa/?hl=ko",
     
     },
     {
         id: 2,
-        src: Youtube,
+        src: icon_youtube,
         alt: "유튜브 채널",
         link:"https://www.youtube.com/channel/UCuhTvdO3VD-S3md_CkWYtbw",
     },
     {
         id: 3,
-        src: Kakao,
+        src: icon_kakao,
         alt: "카카오 채널",
         link:"https://pf.kakao.com/_xktAgj"
     },
     {
         id: 4,
-        src: Facebook,
+        src: icon_facebook,
         alt: "페이스북 채널",
         link: "https://www.facebook.com/sooldamhwa",
 
     },
     {
         id: 5,
-        src: Naver,
+        src: icon_naver,
         alt: "네이버 채널",
         link:"https://blog.naver.com/sooldamhwa",
     },

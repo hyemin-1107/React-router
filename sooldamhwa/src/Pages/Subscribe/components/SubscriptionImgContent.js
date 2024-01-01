@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from 'react-scroll';
-import Basicimg from '../../../images/subscribeImage/icon_basic_damhwabox.png'
-import Sojuimg from '../../../images/subscribeImage/icon_soju_damhwabox.png'
-import Yakchungjuimg from '../../../images/subscribeImage/icon_yakchungju_damhwabox.png'
-import New from '../../../images/subscribeImage/icon_new.png'
+import icon_basic_damhwabox from '../../../images/subscribeImage/icon_basic_damhwabox.png'
+import icon_soju_damhwabox from '../../../images/subscribeImage/icon_soju_damhwabox.png'
+import icon_yakchungju_damhwabox from '../../../images/subscribeImage/icon_yakchungju_damhwabox.png'
+import icon_new from '../../../images/subscribeImage/icon_new.png'
 
 const SubscriptionImgContent = () => {
 
@@ -12,20 +12,20 @@ const SubscriptionImgContent = () => {
         <SubscriptionImg>
             <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
                 <SubscriptionBox>
-                    <SubscriptionAlcohol src={Basicimg} />
+                    <SubscriptionAlcohol src={icon_basic_damhwabox} alt="종합 구독"/>
                     <div>종합 구독</div>
                 </SubscriptionBox>
             </Link>
             <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
                 <SubscriptionBox>
-                    <SubscriptionAlcohol src={Sojuimg} />
+                    <SubscriptionAlcohol src={icon_soju_damhwabox} alt="증류주 구독"/>
                     <div>증류주 구독</div>
                 </SubscriptionBox>
             </Link>
             <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
                 <SubscriptionBox>
-                    <SubscriptionAlcohol src={Yakchungjuimg} />
-                    <SubscriptionAlcoholNew src={New} />
+                    <SubscriptionAlcohol src={icon_yakchungju_damhwabox} alt="약,청주 구독"/>
+                    <SubscriptionAlcoholNew src={icon_new} alt="신상 아이콘"/>
                     <div>약ㆍ청주 구독</div>
                 </SubscriptionBox>
             </Link>

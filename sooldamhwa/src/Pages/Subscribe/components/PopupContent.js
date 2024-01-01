@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from 'react-scroll';
 import styled from "styled-components";
-import Popupimg from '../../../images/subscribeImage/popup_img.jpg'
+import popup_img from '../../../images/subscribeImage/popup_img.jpg'
 
 const PopupContent = () => {
     
@@ -16,7 +16,7 @@ const PopupContent = () => {
         {isPopup && (
             <Popup>
              <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
-             <PopupImg src={Popupimg} />
+             <PopupImg src={popup_img} alt="팝업창 구독 이미지"/>
              </Link>
             <PopupCloseButton>
                 <PopupOnedayClose onClick={closePopup}>오늘 하루 열지 않음</PopupOnedayClose>

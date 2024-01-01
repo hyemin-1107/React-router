@@ -1,30 +1,60 @@
 import React from "react";
 import styled from "styled-components";
-import ModalClose from '../../../images/subscribeImage/icon_close_black.png'
+import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
 
 const ApplyModal = (props) => {
 
-    const {isModal, onClickButton} = props;
+    const { isModal, onClickButton, onClickModal } = props;
 
-    
+
     return (
+        <>
+            <ApplyButton onClick={onClickModal}>지금 신청하기</ApplyButton>
 
-    <ApplyModalWrap isModal={isModal}>
-        <ModalContainer>
-            <ModalButton onClick={onClickButton} src={ModalClose} />
-            <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
-            <ApplyGoodsBox>
-                <ApplyGoods></ApplyGoods>
-                <ApplyGoods></ApplyGoods>
-                <ApplyGoods></ApplyGoods>
-            </ApplyGoodsBox>
-            <SelectButton>이걸로 할게요</SelectButton>
-        </ModalContainer>
-
-    </ApplyModalWrap>
+            <ApplyModalWrap isModal={isModal}>
+                <ModalContainer>
+                    <ModalButton onClick={onClickButton} src={icon_close_black} alt="닫기 버튼" />
+                    <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
+                    <ApplyGoodsBox>
+                        <ApplyGoods></ApplyGoods>
+                        <ApplyGoods></ApplyGoods>
+                        <ApplyGoods></ApplyGoods>
+                    </ApplyGoodsBox>
+                    <SelectButton>이걸로 할게요</SelectButton>
+                </ModalContainer>
+            </ApplyModalWrap>
+        </>
     )
 };
 
+const ApplyButton = styled.button`
+    position: fixed;
+    bottom: 0px;
+    right: 50%;
+
+    width: 300px;
+    height: 50px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 6px;
+
+    color: #fff;
+    background: #0096F3;
+    
+    cursor: pointer;
+    z-index: 1;
+    
+    transition: 0.3s ease;
+    transform: translate( 50%, -50% );
+
+    &:hover{
+        background: rgb(45, 123, 195);
+        transition: 0.3s ease;
+    }
+`
 
 const SelectButton = styled.button`
     margin-top: 60px;

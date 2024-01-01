@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-import Mainimg from '../../../images/mainImage/landingImgPc3.jpg'
-import Specialday from '../../../images/mainImage/liquor.png'
-import Damhwabox from '../../../images/mainImage/damhwaBox.png'
-import TraditionalLiquorimg from '../../../images/mainImage/backImg2.png'
-import RecentDamhwaimg from '../../../images/mainImage/bubbleConversation.png'
-import commaleft from '../../../images/mainImage/commaLeft.png'
-import commaright from '../../../images/mainImage/commaRight.png'
+import landing_img_pc3 from '../../../images/mainImage/landing_img_pc3.jpg'
+import liquor from '../../../images/mainImage/liquor.png'
+import damhwabox from '../../../images/mainImage/damhwabox.png'
+import back2_img from '../../../images/mainImage/back2_img.png'
+import bubble_conversation from '../../../images/mainImage/bubble_conversation.png'
+import comma_left from '../../../images/mainImage/comma_left.png'
+import comma_right from '../../../images/mainImage/comma_right.png'
 
 
 const MainContents = () => {
@@ -17,7 +17,7 @@ const MainContents = () => {
     return (
         <main>
             <MainText>
-                <MainImage src={Mainimg} alt='Main' />
+                <MainImage src={landing_img_pc3} alt='Main' />
                 <MainTitle>
                     고생한 나를<br />
                     좋은 술로 위로하고 싶을 때
@@ -30,7 +30,7 @@ const MainContents = () => {
             <SpecialDayText>
                 <p>특별한 날을 완성시키는<br />
                     가장 쉬운 방법</p>
-                <SpecialDay src={Specialday} alt='특별한 날' />
+                <SpecialDay src={liquor} alt='특별한 날' />
             </SpecialDayText>
 
             <TraditionalLiquor>
@@ -64,7 +64,7 @@ const MainContents = () => {
 
             <LifeAlcohol>
                 <p>한 달에 한 번, <br /> 집 앞으로 찾아오는 인생술</p>
-                <DamhwaBox src={Damhwabox} alt="담화박스" />
+                <DamhwaBox src={damhwabox} alt="담화박스" />
                 <DamhwaText>수많은 분들이 경험하고 있는
                     <span> '굉장히 신경 쓴' </span>
                     구독서비스, <br /> 한번 구경해볼까요?
@@ -73,7 +73,7 @@ const MainContents = () => {
             </LifeAlcohol>
 
             <TraditionalLiquorShoppingMall>
-                <TraditionalLiquorShoppingMallImg src={TraditionalLiquorimg} alt='다양한 전통주' />
+                <TraditionalLiquorShoppingMallImg src={back2_img} alt='다양한 전통주' />
                 <TraditionalLiquorShoppingMallText>4도부터 53도까지<br />다양하게 갖춰진 전통주 쇼핑몰</TraditionalLiquorShoppingMallText>
                 <DamhwaText>근데 <span>우리 제법 깐깐해요.</span> <br />
                     우리가 만족한 술만 들이고 있거든요!
@@ -84,7 +84,7 @@ const MainContents = () => {
             <RecentDamhwa>
                 <RecentDamhwaText>최근 담화, 함께 볼까요?</RecentDamhwaText>
                 <RecentDamhwaReview>
-                    <img src={commaleft} alt='left' />
+                    <img src={comma_left} alt='left' />
                     <div>
                         <Review>한 달에 한번씩 <br /> 나에게 주는 선물</Review>
                         <ReviewUser>@shin_tea97</ReviewUser>
@@ -97,9 +97,9 @@ const MainContents = () => {
                         <Review>한 달에 한번씩 <br /> 나에게 주는 선물</Review>
                         <ReviewUser>@shin_tea97</ReviewUser>
                     </div> */}
-                    <img src={commaright} alt='right' />
+                    <img src={comma_right} alt='right' />
                 </RecentDamhwaReview>
-                <RecentDamhwaImg src={RecentDamhwaimg} />
+                <RecentDamhwaImg src={bubble_conversation} />
             </RecentDamhwa>
         </main>
 

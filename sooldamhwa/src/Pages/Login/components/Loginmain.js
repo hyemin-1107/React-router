@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-import Firecracker from '../../../images/loginImage/icon_login_greeting.png'
-import Kakao from '../../../images/loginImage/ico_kakao_login.png'
-import Naver from '../../../images/loginImage/icon_naver_login.png'
-import Email from '../../../images/loginImage/icon_email_login.png'
+import icon_login_greeting from '../../../images/loginImage/icon_login_greeting.png'
+import icon_kakao_login from '../../../images/loginImage/icon_kakao_login.png'
+import icon_naver_login from '../../../images/loginImage/icon_naver_login.png'
+import icon_email_login from '../../../images/loginImage/icon_email_login.png'
 
 const LoginMain = () => {
     
@@ -14,13 +14,13 @@ const LoginMain = () => {
         <Main>
                 <Title>
                     <TitleText>반가워요!</TitleText>
-                    <TittleImg src={Firecracker} />
+                    <TittleImg src={icon_login_greeting} />
                 </Title>
                 <Titlesub>찾아오는 인생술, 술담화입니다.</Titlesub>
                 <LiginMethod>
-                    <KakaoButton onClick={() => { navigate(""); }}><LoginImg src={Kakao} alt="카카오톡 로그인"/>카카오로 시작하기</KakaoButton>
-                    <NaverButton onClick={() => { navigate(""); }}><LoginImg src={Naver} alt="카카오톡 로그인"/>네이버로 시작하기</NaverButton>
-                    <EmailButton onClick={() => { navigate(""); }}><LoginImg src={Email} alt="카카오톡 로그인"/>이메일로 시작하기</EmailButton>
+                    <KakaoButton onClick={() => { navigate(""); }}><LoginImg src={icon_kakao_login} alt="카카오톡 로그인"/>카카오로 시작하기</KakaoButton>
+                    <NaverButton onClick={() => { navigate(""); }}><LoginImg src={icon_naver_login} alt="카카오톡 로그인"/>네이버로 시작하기</NaverButton>
+                    <EmailButton onClick={() => { navigate(""); }}><LoginImg src={icon_email_login} alt="카카오톡 로그인"/>이메일로 시작하기</EmailButton>
                 </LiginMethod>
         </Main>
     )

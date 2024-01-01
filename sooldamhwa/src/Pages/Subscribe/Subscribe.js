@@ -16,33 +16,28 @@ import ThisMonthsConcept from './components/ThisMonthsDrink';
 import QnAContents from './components/QnAContents';
 import ApplyModal from './components/ApplyModal';
 import Review from './components/ReviewContent';
+
 import Footer from '../Index/components/Footer';
 
-import TotalActiveImg from '../../images/subscribeImage/icon_basic_damhwabox.png'
-import SojuImg from '../../images/subscribeImage/grey_soju_subscription_icon.png'
-import ChungjuImg from '../../images/subscribeImage/grey_chungju_subscription_icon.png'
-import MonthSoolImg from '../../images/subscribeImage/sool_icon.png'
-import GreyArrow from '../../images/subscribeImage/grey_arrow_right.png'
-import CurationCardImg from '../../images/subscribeImage/curation_card.png'
+import icon_basic_damhwabox from '../../images/subscribeImage/icon_basic_damhwabox.png'
+import grey_soju_subscription_icon from '../../images/subscribeImage/grey_soju_subscription_icon.png'
+import grey_chungju_subscription_icon from '../../images/subscribeImage/grey_chungju_subscription_icon.png'
+import sool_icon from '../../images/subscribeImage/sool_icon.png'
+import grey_arrow_right from '../../images/subscribeImage/grey_arrow_right.png'
+import curation_card from '../../images/subscribeImage/curation_card.png'
 
-import PosterImg from '../../images/subscribeImage/poster.png'
+import poster from '../../images/subscribeImage/poster.png'
 
-import CreditcardImg from '../../images/subscribeImage/grey_creditcard.png'
-import TruckImg from '../../images/subscribeImage/grey_truck.png'
+import grey_creditcard from '../../images/subscribeImage/grey_creditcard.png'
+import grey_truck from '../../images/subscribeImage/grey_truck.png'
 
-import ModalClose from '../../images/subscribeImage/icon_close_black.png'
-import PosterModalImg from '../../images/subscribeImage/popup_poster.png'
-import CurationModalImg from '../../images/subscribeImage/popup_curation.png'
+import icon_close_black from '../../images/subscribeImage/icon_close_black.png'
+import hintsool1_img from '../../images/subscribeImage/hintsool1_img.png'
+import popup_poster from '../../images/subscribeImage/popup_poster.png'
+import popup_curation from '../../images/subscribeImage/popup_curation.png'
+import PcKakaoChTalk from './components/PcKakaoChTalk';
 
-import PcKakaoImg from '../../images/subscribeImage/channel_talk_pc.png'
-import MessengerLogo from '../../images/subscribeImage/msg_logo_img.jpeg'
-import DetailLogo from '../../images/subscribeImage/msg_logo.jpeg'
-import Inquiryimg from '../../images/subscribeImage/inquiry_img.png'
-import TimeImg from '../../images/subscribeImage/app_time.png'
-import KakaoIco from '../../images/subscribeImage/app_messenger_kakao.png'
-import NaverIco from '../../images/subscribeImage/app_messenger_naver_talk.png'
-import CallIco from '../../images/subscribeImage/app_messenger_call.png'
-import ChannelIco from '../../images/subscribeImage/ch_logo.png'
+
 
 const Subscribe = () => {
 
@@ -88,7 +83,6 @@ const Subscribe = () => {
         setIsPostModal(false);
     }
 
-
     const onClickPcKakoModal = () => {
         setIsPcKakoModal(true);
     };
@@ -96,7 +90,6 @@ const Subscribe = () => {
     const onClickPcKakoButton = () => {
         setIsPcKakoModal(false);
     }
-
 
 
 
@@ -115,7 +108,6 @@ const Subscribe = () => {
 
             <SubscribeLandingBox>
                 <SubscribeLandingBoxBg id="DetailInfo" src="https://d38cxpfv0ljg7q.cloudfront.net/admin_contents/origin/Pabz-1702000694497-PC_subscription%20concept.jpg" />
-
                 <LandingBox>
                     <LandingTotalBoxTitle>
                         <div>2024년 1월의 종합 담화박스</div>
@@ -124,9 +116,9 @@ const Subscribe = () => {
                     </LandingTotalBoxTitle>
                     <div>
                         <LandingBoxNameContents>
-                            <LandingBoxNameActive><NameActiveImg src={TotalActiveImg} />종합</LandingBoxNameActive>
-                            <LandingBoxName><NameImg src={SojuImg} />증류주</LandingBoxName>
-                            <LandingBoxName><NameImg src={ChungjuImg} />약·청주</LandingBoxName>
+                            <LandingBoxNameActive><NameActiveImg src={icon_basic_damhwabox} alt='종합' />종합</LandingBoxNameActive>
+                            <LandingBoxName><NameImg src={grey_soju_subscription_icon} alt='증류주' />증류주</LandingBoxName>
+                            <LandingBoxName><NameImg src={grey_chungju_subscription_icon} alt='약,청주' />약·청주</LandingBoxName>
                         </LandingBoxNameContents>
                         <TotalBox>
                             <TotalBoxInpo>종합 담화박스</TotalBoxInpo>
@@ -146,46 +138,46 @@ const Subscribe = () => {
 
                             <TotalBoxButton onClick={onClickMonthSoolModal}>
                                 <div>
-                                    <TotalBoxButtonImg src={MonthSoolImg} />
+                                    <TotalBoxButtonImg src={sool_icon} alt='술 아이콘' />
                                     <TotalBoxButtonTitle>1월의 술 3종</TotalBoxButtonTitle>
                                 </div>
                                 <div>
                                     <SeeMore>힌트보기</SeeMore>
-                                    <SeeMoreImg src={GreyArrow} />
+                                    <SeeMoreImg src={grey_arrow_right} alt='열기버튼 화살표' />
                                 </div>
                             </TotalBoxButton>
 
                             <TotalBoxButton onClick={onClickCurationModal}>
                                 <div>
-                                    <TotalBoxButtonImg src={CurationCardImg} />
+                                    <TotalBoxButtonImg src={curation_card} alt='큐레이션 카드' />
                                     <TotalBoxButtonTitle>큐레이션 카드</TotalBoxButtonTitle>
                                 </div>
                                 <div>
                                     <SeeMore>더보기</SeeMore>
-                                    <SeeMoreImg src={GreyArrow} />
+                                    <SeeMoreImg src={grey_arrow_right} alt='열기버튼 화살표' />
                                 </div>
                             </TotalBoxButton>
 
                             <TotalBoxButton onClick={onClickPosterModal}>
                                 <div>
-                                    <TotalBoxButtonImg src={PosterImg} />
+                                    <TotalBoxButtonImg src={poster} alt='poster' />
                                     <TotalBoxButtonTitle>포스터</TotalBoxButtonTitle>
                                 </div>
                                 <div>
                                     <SeeMore>더보기</SeeMore>
-                                    <SeeMoreImg src={GreyArrow} />
+                                    <SeeMoreImg src={grey_arrow_right} alt='열기버튼 화살표' />
                                 </div>
                             </TotalBoxButton>
 
                             <Datebox>
-                                <DateboxImg src={CreditcardImg} />
+                                <DateboxImg src={grey_creditcard} alt='결제 아이콘' />
                                 <DateboxTitle>
                                     결제일
                                     <div>2024년 1월 15일 월요일 오전 8시 30분</div>
                                 </DateboxTitle>
                             </Datebox>
                             <Datebox>
-                                <DateboxImg src={TruckImg} />
+                                <DateboxImg src={grey_truck} alt='배송 날짜' />
                                 <DateboxTitle>
                                     도착일
                                     <div>2024년 1월 18일 목요일</div>
@@ -197,90 +189,91 @@ const Subscribe = () => {
 
             </SubscribeLandingBox>
 
-
-            <ThisMonthsConcept />
-            <QnAContents />
-            <PcKakao src={PcKakaoImg} onClick={onClickPcKakoModal} isPcKakoModal={isPcKakoModal} />
-
-            <PcKakaoModalContainer isPcKakoModal={isPcKakoModal}>
-                <PcKakaoModalHeader>
-                    <PcKakaoModalHeaderImg src={MessengerLogo} />
-                    <div>
-                        <PcKakaoModalHeaderTitle>술담화</PcKakaoModalHeaderTitle>
-                        <PcKakaoModalHeaderSub>운영시간 보기 {'>'}</PcKakaoModalHeaderSub>
-                    </div>
-                </PcKakaoModalHeader>
-                <PcKakaoDetail>
-                    <PcKakaoDetailContainer>
-                        <PcKakaoDetailImg src={DetailLogo} />
-                        <Detail>술담화
-                            <div style={{ height: '2px' }}></div>
-                            <div>안녕하세요, 고객님!</div>
-                            <div>찾아오는 인생술, 술담화입니다.</div>
-                            <div style={{ height: '1rem' }}> </div>
-                            <div>현재는 고객센터 운영시간이 아닙니다.</div>
-                            <div>성함과 연락처, 문의사항을 남겨주시면 영업 시간 내 순차적으로 안내 드리겠습니다. :)...</div>
-                        </Detail>
-                    </PcKakaoDetailContainer>
-                    <DetailInquiry>문의하기
-                        <InquiryImg src={Inquiryimg} />
-                    </DetailInquiry>
-                    <DetailTime>
-                        <DetailTimeImg src={TimeImg} />
-                        오후 1:30부터 운영해요
-                    </DetailTime>
-                </PcKakaoDetail>
-                <OtherWay>
-                    <OtherWayText>다른 방법으로 문의</OtherWayText>
-                    <KakaoImg src={KakaoIco} />
-                    <NaverImg src={NaverIco} />
-                    <CallImgContainer>
-                        <CallImg src={CallIco} />
-                    </CallImgContainer>
-                </OtherWay>
-                <ChannelTalk>
-                    <ChannelImg src={ChannelIco}/>
-                    채널톡<span>이용중</span>
-                </ChannelTalk>
-
-            </PcKakaoModalContainer>
-
-            <PcKakaoModalButton isPcKakoModal={isPcKakoModal} onClick={onClickPcKakoButton}>
-                <PcKakaoModalButtonImg src={ModalClose} />
-            </PcKakaoModalButton>
-
-            <Footer />
-            <PopupContent />
-
-            <ApplyButton onClick={onClickModal}>지금 신청하기</ApplyButton>
-            <ApplyModal isModal={isModal}
-                onClickButton={onClickButton} />
-
             <MonthSoolModalWrap isMonthSoolModal={isMonthSoolModal}>
                 <MonthSoolModalContainer>
-                    <ModalButton onClick={onClickMonthSoolButton} src={ModalClose} />
+                    <ModalButton onClick={onClickMonthSoolButton} src={icon_close_black} alt='닫기' />
+                    <HintHeader>1월의 종합 담화박스
+                        <div>힌트 #1</div>
+                    </HintHeader>
+                    <HintHeaderText>청룡의 해를 맞이하며 ‘용’ 한 잔 어떤가요? <br />
+                        산뜻하고 부드러운 감압 증류식 소주
+                    </HintHeaderText>
+                    <div style={{borderBottom:'2px solid #3D3D3D33'}}></div>
+                    
+                    <HintCardStyleWrap>
+                        <HintCardStyleImg src={hintsool1_img}/>
+                        <HintCardStyleContainer>
+                            <ProductInfo>
+                                <ProductLabel>용량</ProductLabel>
+                                <ProductData>375ml</ProductData>
+                            </ProductInfo>
+                            <ProductInfo>
+                                <ProductLabel>도수</ProductLabel>
+                                <ProductData>25%</ProductData>
+                            </ProductInfo>
+                            <ProductInfo>
+                                <ProductLabel>소매가</ProductLabel>
+                                <ProductData>15,000원</ProductData>
+                            </ProductInfo>
+                            <ProductInfo>
+                                <ProductLabel>유통기한</ProductLabel>
+                                <ProductData>없음</ProductData>
+                            </ProductInfo>
+                        </HintCardStyleContainer>
+                    </HintCardStyleWrap>
+
+                    <HintDetailWrap>
+                        <HintDetailContainer>
+                            <HintDetailInfo>
+                                <HintDetailLabel></HintDetailLabel>
+                                <HintDetailData></HintDetailData>
+                            </HintDetailInfo>
+                        </HintDetailContainer>
+                    </HintDetailWrap>
+
                 </MonthSoolModalContainer>
             </MonthSoolModalWrap>
 
             <CurationModalWrap isCurationModal={isCurationModal}>
                 <ModalContainer>
-                    <ModalButton onClick={onClickCurationButton} src={ModalClose} />
-                    <ModalImg src={CurationModalImg} />
+                    <ModalButton onClick={onClickCurationButton} src={icon_close_black} alt='닫기' />
+                    <ModalImg src={popup_curation} alt='큐레이션 이미지' />
                 </ModalContainer>
             </CurationModalWrap>
 
             <PosterModalWrap isPostModal={isPostModal}>
                 <ModalContainer>
-                    <ModalButton onClick={onClickPostButton} src={ModalClose} />
-                    <ModalImg src={PosterModalImg} />
+                    <ModalButton onClick={onClickPostButton} src={icon_close_black} alt='닫기' />
+                    <ModalImg src={popup_poster} alt='포스터 이미지' />
                 </ModalContainer>
             </PosterModalWrap>
 
+            <ThisMonthsConcept />
+            <QnAContents />
+            <Footer />
+
+            <PopupContent />
+            <PcKakaoChTalk isPcKakoModal={isPcKakoModal} onClickPcKakoButton={onClickPcKakoButton} onClickPcKakoModal={onClickPcKakoModal} />
+            <ApplyModal isModal={isModal} onClickButton={onClickButton} onClickModal={onClickModal} />
         </>
     )
 };
 
+const HintDetailWrap = styled.div`
 
+`
+const HintDetailContainer = styled.div`
+
+`
+const HintDetailInfo = styled.div`
+
+`
+const HintDetailLabel = styled.div`
+
+`
+const HintDetailData = styled.div`
+
+`
 
 const SubscribeLandingBox = styled.div`
     position: relative;
@@ -354,9 +347,10 @@ const LandingBoxNameActive = styled.div`
 `
 
 const NameImg = styled.img`
+    margin-right: 3px;
+
     width: 18px;
     height: 18px;
-    margin-right: 3px;
 `
 
 const LandingBoxName = styled.div`
@@ -527,34 +521,6 @@ const DateboxTitle = styled.div`
     }
 `
 
-const ApplyButton = styled.button`
-    position: fixed;
-    bottom: 0px;
-    right: 50%;
-
-    width: 300px;
-    height: 50px;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    border: none;
-    border-radius: 6px;
-
-    color: #fff;
-    background: #0096F3;
-    
-    cursor: pointer;
-    z-index: 1;
-    
-    transition: 0.3s ease;
-    transform: translate( 50%, -50% );
-
-    &:hover{
-        background: rgb(45, 123, 195);
-        transition: 0.3s ease;
-    }
-`
 
 const MonthSoolModalWrap = styled.div`
     display: ${(props) => (props.isMonthSoolModal ? "block" : "none")};
@@ -573,20 +539,17 @@ const MonthSoolModalWrap = styled.div`
 
 const MonthSoolModalContainer = styled.div`
     position: relative;
-    display: flex;
-    justify-content: center;
-
     top: 50%;
     left: 50%;
-    z-index: 100;
     transform: translate(-50%, -50%);
-
+    
     padding: 20px 20px 30px;
-
-    width: 390px;
-    height: 660px;
-
+    
+    width: 375px;
+    height: 670px;
+    
     background: #fff;
+    z-index: 100;
 
     box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.5);
     box-sizing: border-box;
@@ -595,8 +558,8 @@ const MonthSoolModalContainer = styled.div`
 
 
 const CurationModalWrap = styled.div`
-    display: ${(props) => (props.isCurationModal ? "block" : "none")};
     position: fixed;
+    display: ${(props) => (props.isCurationModal ? "block" : "none")};
 
     top: 0;
     left: 0;  
@@ -610,8 +573,8 @@ const CurationModalWrap = styled.div`
 `
 
 const PosterModalWrap = styled.div`
-    display: ${(props) => (props.isPostModal ? "block" : "none")};
     position: fixed;
+    display: ${(props) => (props.isPostModal ? "block" : "none")};
 
     top: 0;
     left: 0;  
@@ -626,20 +589,20 @@ const PosterModalWrap = styled.div`
 
 const ModalContainer = styled.div`
     position: relative;
-
     top: 50%;
     left: 50%;
-    z-index: 100;
     transform: translate(-50%, -50%);
-    
-    padding: 20px 20px 30px;
-
-    width: 390px;
     
     display: flex;
     justify-content: center;
-
+    
+    padding: 20px 20px 30px;
+    
+    width: 390px;
+    
+    
     background: #fff;
+    z-index: 100;
 
     box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.5);
     box-sizing: border-box;
@@ -661,317 +624,72 @@ const ModalImg = styled.img`
     width: 340px;
 `
 
-
-const PcKakao = styled.img`
-    position: fixed;
-    display: ${(props) => (props.isPcKakoModal ? "none" : "block")};
-    right: 50px;
-    bottom: 50px;
-
-    width: 75px;
-    height: 75px;
-
-    z-index: 1 ;
-    cursor: pointer;
-
-    animation: motion 0.5s linear 0s infinite alternate;
-    @keyframes motion {
-	    0% {bottom: 50px;}
-	    100% {bottom: 60px;}
-}
-`
-
-const PcKakaoModalButton = styled.div`
-    position: fixed;
-    display: ${(props) => (props.isPcKakoModal ? "block" : "none")};
-    right: 50px;
-    bottom: 50px;
-    z-index: 100;
-
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-    rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.15) 0px 8px 30px;
-    background: #fff;
-    border-radius: 24px;
-
-    cursor: pointer;
-    transition: ease .3s;
-
-    &:hover{
-        transition: ease .3s;
-        box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
-    rgba(0, 0, 0, 0.1) 0px 0px 6px 6px, rgba(0, 0, 0, 0.15) 0px 8px 30px;
-    }
-`
-
-const PcKakaoModalButtonImg = styled.img`
-    display: block;
-    padding: 14px;
-    
-    width: 32px;
-    height: 32px;
-`
-
-const PcKakaoModalContainer = styled.div`
-    display: ${(props) => (props.isPcKakoModal ? "block" : "none")};
-    position: fixed;
-    
-    right: 50px;
-    bottom: 120px;
-
-    z-index: 1;
-
-    width: 390px;
-    height: 650px;
-
-    background: #F9F9F9;
-    border-radius: 20px;
-    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.4);
-`
-
-const PcKakaoDetail = styled.div`
-    display: flex;
-    flex-direction: column;
-    
-    gap: 12px;
-    margin: 0 16px;
-    padding: 8px;
-
-    border-radius: 20px;
-    background: #fff;
-`
-
-const PcKakaoDetailContainer = styled.div`
-    display: flex;
-
-    gap: 2px;
-
-    cursor: pointer;
-    
-    transition: ease .3s;
-
-    &:hover{
-        transition: ease .3s;
-        border-radius: 20px;
-        background-color: #F6F6F6;
-    }
-`
-
-const PcKakaoModalHeader = styled.div`
-    display: flex;
-    align-items: center;
-    
-    gap: 14px;
-    margin: 24px;
-`
-
-const PcKakaoModalHeaderImg = styled.img`
-    width: 56px;
-    height: 56px;
-
-    border-radius: 20px;
-`
-
-const PcKakaoModalHeaderTitle = styled.div`
-    padding-left: 3px;
-    
-    font-size: 22px;
-    font-weight: 600;
-`
-
-const PcKakaoModalHeaderSub = styled.div`
-    padding: 3px;
+const HintHeader = styled.div`
+    margin-top: 25px;
 
     font-size: 13px;
-    color: #00000099;
+    font-weight: 800;
+
+    color: #3D3D3D4d;
     
-    cursor: pointer;
-
-    transition: ease .3s;
-
-    &:hover{
-        transition: ease .3s;
-        border-radius: 10px;
-        background-color: #EFEFF0;
-    }
-`
-
-const PcKakaoDetailImg = styled.img`
-    margin: 8px;
-    
-    width: 36px;
-    height: 36px;
-    
-    border-radius: 50%;
-    border: 1px solid #EFEFF0;
-`
-
-const Detail = styled.div`
-    padding: 8px 0 12px;
-
-    width: 252px;
-
-    font-size: 14px;
-    font-weight: 600;
-
     div{
-        font-size: 15px;
-        font-weight: 400;
-    }
-`
+        font-size: 18px;
+        font-weight: 800;
 
-const DetailInquiry = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    gap: 6px;
-    padding: 14px;
-    
-    width: 100%;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    border: none;
-    border-radius: 20px;
-
-    color: #fff;
-    background: #0096F3;
-    
-    cursor: pointer;
-    
-    transition: 0.3s ease;
-
-    &:hover{
-        background: rgb(45, 123, 195);
-        transition: 0.3s ease;
-    }
-`
-
-const InquiryImg = styled.img`
-    width: 20px;
-`
-
-const DetailTime = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 4px;
-    margin-bottom: 8px;
-
-    font-size: 12px;
-    font-weight: 500;
-    
-    color: #00000099;
-`
-
-const DetailTimeImg = styled.img`
-    width: 16px;
-`
-
-const OtherWay = styled.div`
-    display: flex;
-    align-items: center;
-
-    gap: 6px;
-    margin: 14px 16px;
-    padding: 14px;
-
-    background: #fff;
-    border-radius: 20px;
-`
-
-const OtherWayText = styled.div`
-    width: 210px;
-    
-    font-size: 13px;
-    font-weight: 500;
-
-    color: #00000066;
-`
-
-const KakaoImg = styled.img`
-    width: 34px;
-    
-    border-radius: 10px;
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-    &:hover{
-        transition: 0.2s ease;
-        transform: scale(1.1);
-    }
-`
-
-const NaverImg = styled.img`
-    width: 34px;
-
-    border-radius: 10px;
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-    &:hover{
-        transition: 0.2s ease;
-        transform: scale(1.1);
-    }
-`
-
-const CallImgContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 34px;
-    height: 34px;
-    
-    border-radius: 10px;
-    background: #329BE733;
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-    &:hover{
-        transition: 0.2s ease;
-        transform: scale(1.1);
-    }
-`
-
-const CallImg = styled.img`
-    width: 18px;
-    height: 18px;
-`
-
-const ChannelTalk = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 3px;
-
-    height: 30px;
-
-    font-size: 12px;
-    font-weight: 600;
-    color: #00000066;
-
-    cursor: pointer;
-
-    span{
-        font-weight: 400;
-    }
-
-    &:hover{
         color: #000;
     }
 `
 
-const ChannelImg = styled.img`
-    width: 20px;
-    height: 20px;
+const HintHeaderText = styled.p`
+    margin: 16px 0 22px;
+    
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
 `
 
+const HintCardStyleWrap = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 24px auto 20px;
+
+    height: 89px;
+`
+
+const HintCardStyleImg = styled.img`
+    margin: 4px 14px 0 0;
+
+    width: 78px;
+    height: 78px;
+`
+
+const HintCardStyleContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 86px;
+`
+
+const ProductInfo = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    width: 215px;
+`
+
+const ProductLabel = styled.div`
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #3D3D3D99;
+`
+
+const ProductData = styled.div`
+    font-size: 13px;
+    font-weight: 700;
+`
 
 export default Subscribe;
