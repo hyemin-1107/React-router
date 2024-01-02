@@ -16,7 +16,7 @@ import ThisMonthsConcept from './components/ThisMonthsDrink';
 import QnAContents from './components/QnAContents';
 import ApplyModal from './components/ApplyModal';
 import Review from './components/ReviewContent';
-
+import MonthSoolModal from './components/MonthSoolModal';
 import Footer from '../Index/components/Footer';
 
 import icon_basic_damhwabox from '../../images/subscribeImage/icon_basic_damhwabox.png'
@@ -31,11 +31,9 @@ import poster from '../../images/subscribeImage/poster.png'
 import grey_creditcard from '../../images/subscribeImage/grey_creditcard.png'
 import grey_truck from '../../images/subscribeImage/grey_truck.png'
 
-import icon_close_black from '../../images/subscribeImage/icon_close_black.png'
-import hintsool1_img from '../../images/subscribeImage/hintsool1_img.png'
-import popup_poster from '../../images/subscribeImage/popup_poster.png'
-import popup_curation from '../../images/subscribeImage/popup_curation.png'
 import PcKakaoChTalk from './components/PcKakaoChTalk';
+import CurationModal from './components/CurationModal';
+import PosterModal from './components/PosterModal';
 
 
 
@@ -189,65 +187,15 @@ const Subscribe = () => {
 
             </SubscribeLandingBox>
 
-            <MonthSoolModalWrap isMonthSoolModal={isMonthSoolModal}>
-                <MonthSoolModalContainer>
-                    <ModalButton onClick={onClickMonthSoolButton} src={icon_close_black} alt='닫기' />
-                    <HintHeader>1월의 종합 담화박스
-                        <div>힌트 #1</div>
-                    </HintHeader>
-                    <HintHeaderText>청룡의 해를 맞이하며 ‘용’ 한 잔 어떤가요? <br />
-                        산뜻하고 부드러운 감압 증류식 소주
-                    </HintHeaderText>
-                    <div style={{borderBottom:'2px solid #3D3D3D33'}}></div>
-                    
-                    <HintCardStyleWrap>
-                        <HintCardStyleImg src={hintsool1_img}/>
-                        <HintCardStyleContainer>
-                            <ProductInfo>
-                                <ProductLabel>용량</ProductLabel>
-                                <ProductData>375ml</ProductData>
-                            </ProductInfo>
-                            <ProductInfo>
-                                <ProductLabel>도수</ProductLabel>
-                                <ProductData>25%</ProductData>
-                            </ProductInfo>
-                            <ProductInfo>
-                                <ProductLabel>소매가</ProductLabel>
-                                <ProductData>15,000원</ProductData>
-                            </ProductInfo>
-                            <ProductInfo>
-                                <ProductLabel>유통기한</ProductLabel>
-                                <ProductData>없음</ProductData>
-                            </ProductInfo>
-                        </HintCardStyleContainer>
-                    </HintCardStyleWrap>
-
-                    <HintDetailWrap>
-                        <HintDetailContainer>
-                            <HintDetailInfo>
-                                <HintDetailLabel></HintDetailLabel>
-                                <HintDetailData></HintDetailData>
-                            </HintDetailInfo>
-                        </HintDetailContainer>
-                    </HintDetailWrap>
-
-                </MonthSoolModalContainer>
-            </MonthSoolModalWrap>
-
-            <CurationModalWrap isCurationModal={isCurationModal}>
-                <ModalContainer>
-                    <ModalButton onClick={onClickCurationButton} src={icon_close_black} alt='닫기' />
-                    <ModalImg src={popup_curation} alt='큐레이션 이미지' />
-                </ModalContainer>
-            </CurationModalWrap>
-
-            <PosterModalWrap isPostModal={isPostModal}>
-                <ModalContainer>
-                    <ModalButton onClick={onClickPostButton} src={icon_close_black} alt='닫기' />
-                    <ModalImg src={popup_poster} alt='포스터 이미지' />
-                </ModalContainer>
-            </PosterModalWrap>
-
+            <MonthSoolModal 
+                isMonthSoolModal={isMonthSoolModal} 
+                onClickMonthSoolButton={onClickMonthSoolButton}/>
+            <CurationModal isCurationModal={isCurationModal} 
+                onClickCurationButton={onClickCurationButton}/>
+            <PosterModal isPostModal={isPostModal} 
+                onClickPostButton={onClickPostButton}/>
+          
+         
             <ThisMonthsConcept />
             <QnAContents />
             <Footer />
@@ -259,21 +207,8 @@ const Subscribe = () => {
     )
 };
 
-const HintDetailWrap = styled.div`
 
-`
-const HintDetailContainer = styled.div`
 
-`
-const HintDetailInfo = styled.div`
-
-`
-const HintDetailLabel = styled.div`
-
-`
-const HintDetailData = styled.div`
-
-`
 
 const SubscribeLandingBox = styled.div`
     position: relative;
@@ -522,174 +457,10 @@ const DateboxTitle = styled.div`
 `
 
 
-const MonthSoolModalWrap = styled.div`
-    display: ${(props) => (props.isMonthSoolModal ? "block" : "none")};
-    position: fixed;
-
-    top: 0;
-    left: 0;  
-   
-    width: 100%;
-    height: 100%;
-   
-    z-index: 99;
-
-    background-color: rgba(0,0,0,0.2);
-`
-
-const MonthSoolModalContainer = styled.div`
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    padding: 20px 20px 30px;
-    
-    width: 375px;
-    height: 670px;
-    
-    background: #fff;
-    z-index: 100;
-
-    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.5);
-    box-sizing: border-box;
-    border-radius: 20px;
-`
 
 
-const CurationModalWrap = styled.div`
-    position: fixed;
-    display: ${(props) => (props.isCurationModal ? "block" : "none")};
 
-    top: 0;
-    left: 0;  
-   
-    width: 100%;
-    height: 100%;
-   
-    z-index: 99;
 
-    background-color: rgba(0,0,0,0.2);
-`
 
-const PosterModalWrap = styled.div`
-    position: fixed;
-    display: ${(props) => (props.isPostModal ? "block" : "none")};
-
-    top: 0;
-    left: 0;  
-   
-    width: 100%;
-    height: 100%;
-   
-    z-index: 99;
-
-    background-color: rgba(0,0,0,0.2);
-`
-
-const ModalContainer = styled.div`
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    display: flex;
-    justify-content: center;
-    
-    padding: 20px 20px 30px;
-    
-    width: 390px;
-    
-    
-    background: #fff;
-    z-index: 100;
-
-    box-shadow: 2px 2px 30px 1px rgba(0,0,0,0.5);
-    box-sizing: border-box;
-    border-radius: 20px;
-`
-
-const ModalButton = styled.img`
-    position: absolute;
-    
-    right: 26px;
-
-    width: 33px;
-    height: 33px;
-    
-    cursor: pointer;
-`
-
-const ModalImg = styled.img`
-    width: 340px;
-`
-
-const HintHeader = styled.div`
-    margin-top: 25px;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    color: #3D3D3D4d;
-    
-    div{
-        font-size: 18px;
-        font-weight: 800;
-
-        color: #000;
-    }
-`
-
-const HintHeaderText = styled.p`
-    margin: 16px 0 22px;
-    
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.4;
-`
-
-const HintCardStyleWrap = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 24px auto 20px;
-
-    height: 89px;
-`
-
-const HintCardStyleImg = styled.img`
-    margin: 4px 14px 0 0;
-
-    width: 78px;
-    height: 78px;
-`
-
-const HintCardStyleContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: 86px;
-`
-
-const ProductInfo = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    width: 215px;
-`
-
-const ProductLabel = styled.div`
-    font-size: 13px;
-    font-weight: 500;
-
-    color: #3D3D3D99;
-`
-
-const ProductData = styled.div`
-    font-size: 13px;
-    font-weight: 700;
-`
 
 export default Subscribe;

@@ -49,3 +49,37 @@
 /* .month{
     transform: translate3d(252px, 0px, 0px);
 } */
+
+
+.MonthSoolModal{
+    width: 100%;
+    height: 93%;
+}
+.MonthSoolModal .swiper-button-next{
+    margin: 267px 96px 0 0;
+    width: 12px;
+    height: 18px;
+    z-index: 100;
+    background-position: center;
+    background: url(../../images/subscribeImage/modal_right_arrow.png) center;
+    background-size: 100%;
+    cursor: pointer; 
+}
+.MonthSoolModal .swiper-button-next:hover{
+    transform: scale(1.2);
+}
+
+
+.MonthSoolModal .swiper-button-prev{
+    margin: 267px 0 0 96px;
+    width: 12px;
+    height: 18px;
+    z-index: 100;
+    background-position: center;
+    background: url(../../images/subscribeImage/modal_left_arrow.png) center;
+    background-size: 100%;
+    cursor: pointer;  
+}
+.MonthSoolModal .swiper-button-prev:hover{
+    transform: scale(1.2);
+}

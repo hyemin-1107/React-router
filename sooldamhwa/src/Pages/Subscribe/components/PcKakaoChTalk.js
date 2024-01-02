@@ -245,7 +245,7 @@ const DetailInquiry = styled.button`
     font-weight: 600;
 
     border: none;
-    border-radius: 20px;
+    border-radius: 14px;
 
     color: #fff;
     background: #0096F3;
