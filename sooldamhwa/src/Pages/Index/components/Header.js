@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useNavigate, } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import main_logo_christmas from '../../../images/mainImage/main_logo_christmas.png'
 import icon_search from '../../../images/mainImage/icon_search.svg'
 import icon_header_basket from '../../../images/mainImage/icon_header_basket.png'
@@ -14,7 +14,16 @@ const Header = () => {
     const closeJoinPopup = () => {
         setIsJoinPopup(!isJoinPopup);
     };
+  
+    const activeStyle = {
+        color:'rgb(0, 150, 243)'
+    }
+    
+    const style = {
+        color: '#3E3E3E'
+    }
 
+    
     return (
         <HeaderContents>
             <GnbNav>
@@ -23,7 +32,7 @@ const Header = () => {
                         <LogoImage src={main_logo_christmas} alt='Logo' />
                     </LogoLink>
                     <HeaderGnb>
-                        <li onClick={() => { navigate("/subscribe"); }} ><HeaderGnbList>구독</HeaderGnbList></li>
+                        <li><HeaderGnbList><NavLink style={({isActive})=>(isActive ? activeStyle : style)} to="/subscribe">구독</NavLink></HeaderGnbList></li>
                         <li onClick={() => { navigate(""); }}><HeaderGnbList>스토어</HeaderGnbList></li>
                         <li onClick={() => { navigate(""); }}><HeaderGnbSearch><img src={icon_search} alt='검색기능' />무엇을 찾고 계신가요?</HeaderGnbSearch></li>
                     </HeaderGnb>
@@ -96,10 +105,10 @@ const HeaderGnb = styled.ul`
 
     margin: 0;
     padding-left: 18px;
+    
 `
 
 const HeaderGnbList = styled.div`
-    color: ${(props) => (props.isSelected ? "blue" : "#3E3E3E")} ;
     text-align: center;
 
     width: 60px;
@@ -107,7 +116,7 @@ const HeaderGnbList = styled.div`
     font-size: 16px;
     font-weight: 800;
 
-    /* color: #3E3E3E; */
+    color: #3E3E3E;
     cursor: pointer;
 `
 
@@ -141,6 +150,8 @@ const GnbSub = styled.ul`
 
     margin: 0;    
 `
+
+
 
 const HeaderGnbLogin = styled.div`
     margin-right: 26px;

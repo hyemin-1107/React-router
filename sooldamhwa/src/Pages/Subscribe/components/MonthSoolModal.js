@@ -5,10 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
 import hintsool1_img from '../../../images/subscribeImage/hintsool1_img.png'
+import hintsool2_img from '../../../images/subscribeImage/hintsool2_img.png'
+import hintsool3_img from '../../../images/subscribeImage/hintsool3_img.png'
 import icon_ricebowl from '../../../images/subscribeImage/icon_ricebowl.png'
 import icon_apple from '../../../images/subscribeImage/icon_apple.png'
 import icon_rating_three from '../../../images/subscribeImage/icon_rating_three.png'
 import icon_rating_two from '../../../images/subscribeImage/icon_rating_two.png'
+import icon_rating_four from '../../../images/subscribeImage/icon_rating_four.png'
 
 
 const MonthSoolModal = (props) => {
@@ -43,7 +46,7 @@ const MonthSoolModal = (props) => {
                         <div style={{ borderBottom: '2px solid #3D3D3D33' }}></div>
 
                         <HintCardStyleWrap>
-                            <HintCardStyleImg src={hintsool1_img} />
+                            <HintCardStyleImg src={hintsool1_img} alt="이달의 술"/>
                             <HintCardStyleContainer>
                                 <ProductInfo>
                                     <ProductLabel>용량</ProductLabel>
@@ -83,18 +86,18 @@ const MonthSoolModal = (props) => {
                             <HintDetailInfo>
                                 <HintDetailLabel>향의 강도</HintDetailLabel>
                                 <div>
-                                    <DetailGraphImg src={icon_rating_three} />
+                                    <DetailGraphImg src={icon_rating_three} alt="3단계 그래프"/>
                                 </div>
                             </HintDetailInfo>
                         </HintDetailContainer>
                         <HintDetailGraph>
                             <section>
                                 <HintDetailLabel>여운</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <DetailGraphImg src={icon_rating_two} alt="2단계 그래프" />
                             </section>
                             <section style={{ border: 'none' }}>
                                 <HintDetailLabel>바디</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <DetailGraphImg src={icon_rating_two} alt="2단계 그래프" />
                             </section>
                         </HintDetailGraph>
                     </SwiperSlide>
@@ -103,64 +106,49 @@ const MonthSoolModal = (props) => {
                         <HintHeaderSub>
                             <div>힌트 #2</div>
                         </HintHeaderSub>
-                        <HintHeaderText>청룡의 해를 맞이하며 ‘용’ 한 잔 어떤가요? <br />
-                            산뜻하고 부드러운 감압 증류식 소주
+                        <HintHeaderText>효모 박사 형과 양조 박사 동생의 합작품,   <br />
+                        입 안에 부드러운 산미 그윽하게 깔아주는 약주 
                         </HintHeaderText>
                         <div style={{ borderBottom: '2px solid #3D3D3D33' }}></div>
 
                         <HintCardStyleWrap>
-                            <HintCardStyleImg src={hintsool1_img} />
+                            <HintCardStyleImg src={hintsool2_img} alt="이달의 술"/>
                             <HintCardStyleContainer>
                                 <ProductInfo>
                                     <ProductLabel>용량</ProductLabel>
-                                    <ProductData>375ml</ProductData>
+                                    <ProductData>350ml</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>도수</ProductLabel>
-                                    <ProductData>25%</ProductData>
+                                    <ProductData>14.2%</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>소매가</ProductLabel>
-                                    <ProductData>15,000원</ProductData>
+                                    <ProductData>14,000원</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>유통기한</ProductLabel>
-                                    <ProductData>없음</ProductData>
+                                    <ProductData>제조일로부터 6개월</ProductData>
                                 </ProductInfo>
                             </HintCardStyleContainer>
                         </HintCardStyleWrap>
 
-                        <HintDetailContainer>
-                            <HintDetailInfo>
-                                <HintDetailLabel>향의 계열</HintDetailLabel>
-                                <HintDetailData>
-                                    <Data>달콤</Data>
-                                    <DataActive>고소</DataActive>
-                                    <Data>화사</Data>
-                                </HintDetailData>
-                            </HintDetailInfo>
-                            <HintDetailInfo>
-                                <HintDetailLabel>연상되는 향</HintDetailLabel>
-                                <HintDetailTaste>
-                                    <DataHashtag><DataHashtagImg src={icon_ricebowl} alt='쌀밥' />쌀밥</DataHashtag>
-                                    <DataHashtag><DataHashtagImg src={icon_apple} alt='사과' />사과</DataHashtag>
-                                </HintDetailTaste>
-                            </HintDetailInfo>
-                            <HintDetailInfo>
-                                <HintDetailLabel>향의 강도</HintDetailLabel>
-                                <div>
-                                    <DetailGraphImg src={icon_rating_three} />
-                                </div>
-                            </HintDetailInfo>
-                        </HintDetailContainer>
-                        <HintDetailGraph>
+                        <HintDetailGraph style={{borderRadius:'5px'}}>
+                            <section >
+                                <HintDetailLabel>단맛</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_two} alt="2단계 그래프" />
+                            </section>
                             <section>
-                                <HintDetailLabel>여운</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <HintDetailLabel>산미</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_four} alt="4단계 그래프" />
+                            </section>
+                            <section>
+                                <HintDetailLabel>씁쓸</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_three} alt="3단계 그래프" />
                             </section>
                             <section style={{ border: 'none' }}>
                                 <HintDetailLabel>바디</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <DetailGraphImg src={icon_rating_two} alt="2단계 그래프" />
                             </section>
                         </HintDetailGraph>
                     </SwiperSlide>
@@ -169,64 +157,48 @@ const MonthSoolModal = (props) => {
                         <HintHeaderSub>
                             <div>힌트 #3</div>
                         </HintHeaderSub>
-                        <HintHeaderText>청룡의 해를 맞이하며 ‘용’ 한 잔 어떤가요? <br />
-                            산뜻하고 부드러운 감압 증류식 소주
+                        <HintHeaderText>국가무형문화재를 지키기 위한 끈끈한 연대의 힘!<br />
+                                    진달래 풍미 달콤하게 담고 있는 약주 
                         </HintHeaderText>
                         <div style={{ borderBottom: '2px solid #3D3D3D33' }}></div>
-
                         <HintCardStyleWrap>
-                            <HintCardStyleImg src={hintsool1_img} />
+                            <HintCardStyleImg src={hintsool3_img} alt="이달의 술"/>
                             <HintCardStyleContainer>
                                 <ProductInfo>
                                     <ProductLabel>용량</ProductLabel>
-                                    <ProductData>375ml</ProductData>
+                                    <ProductData>360ml</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>도수</ProductLabel>
-                                    <ProductData>25%</ProductData>
+                                    <ProductData>18%</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>소매가</ProductLabel>
-                                    <ProductData>15,000원</ProductData>
+                                    <ProductData>13,000원</ProductData>
                                 </ProductInfo>
                                 <ProductInfo>
                                     <ProductLabel>유통기한</ProductLabel>
-                                    <ProductData>없음</ProductData>
+                                    <ProductData>제조일로부터 90일</ProductData>
                                 </ProductInfo>
                             </HintCardStyleContainer>
                         </HintCardStyleWrap>
 
-                        <HintDetailContainer>
-                            <HintDetailInfo>
-                                <HintDetailLabel>향의 계열</HintDetailLabel>
-                                <HintDetailData>
-                                    <Data>달콤</Data>
-                                    <DataActive>고소</DataActive>
-                                    <Data>화사</Data>
-                                </HintDetailData>
-                            </HintDetailInfo>
-                            <HintDetailInfo>
-                                <HintDetailLabel>연상되는 향</HintDetailLabel>
-                                <HintDetailTaste>
-                                    <DataHashtag><DataHashtagImg src={icon_ricebowl} alt='쌀밥' />쌀밥</DataHashtag>
-                                    <DataHashtag><DataHashtagImg src={icon_apple} alt='사과' />사과</DataHashtag>
-                                </HintDetailTaste>
-                            </HintDetailInfo>
-                            <HintDetailInfo>
-                                <HintDetailLabel>향의 강도</HintDetailLabel>
-                                <div>
-                                    <DetailGraphImg src={icon_rating_three} />
-                                </div>
-                            </HintDetailInfo>
-                        </HintDetailContainer>
-                        <HintDetailGraph>
+                        <HintDetailGraph style={{borderRadius:'5px'}}>
                             <section>
-                                <HintDetailLabel>여운</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <HintDetailLabel>단맛</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_four} alt="4단계 그래프" />
+                            </section>
+                            <section>
+                                <HintDetailLabel>산미</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_two} alt="2단계 그래프" />
+                            </section>
+                            <section>
+                                <HintDetailLabel>씁쓸</HintDetailLabel>
+                                <DetailGraphImg src={icon_rating_three} alt="3단계 그래프" />
                             </section>
                             <section style={{ border: 'none' }}>
                                 <HintDetailLabel>바디</HintDetailLabel>
-                                <DetailGraphImg src={icon_rating_two} ></DetailGraphImg>
+                                <DetailGraphImg src={icon_rating_four} alt="4단계 그래프" />
                             </section>
                         </HintDetailGraph>
                     </SwiperSlide>
