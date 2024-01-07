@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
 import total_damhwabox_img from '../../../images/subscribeImage/total_damhwabox_img.png'
@@ -7,19 +7,25 @@ import chungju_damhwabox_img from '../../../images/subscribeImage/chungju_damhwa
 import basic_subscription_icon from '../../../images/subscribeImage/basic_subscription_icon.png'
 import soju_subscription_icon from '../../../images/subscribeImage/soju_subscription_icon.png'
 import chungju_subscription_icon from '../../../images/subscribeImage/chungju_subscription_icon.png'
+import { onClickModal } from "../../../utills/onClickModal";
 
-const ApplyModal = (props) => {
+const ApplyModal = () => {
 
-    const { isModal, onClickButton, onClickModal } = props;
-
+    const [isApplyModal, setIsApplyModal] = useState(false);
 
     return (
         <>
-            <ApplyButton onClick={onClickModal}>지금 신청하기</ApplyButton>
+            
+            <ApplyButton  
+                isApplyModal={isApplyModal}
+                onClick={() =>
+                onClickModal(isApplyModal, setIsApplyModal)}>
+                지금 신청하기</ApplyButton>
 
-            <ApplyModalWrap isModal={isModal}>
-                <ModalContainer>
-                    <ModalButton onClick={onClickButton} src={icon_close_black} alt="닫기 버튼" />
+            <ApplyModalWrap isApplyModal={isApplyModal} >
+                <ApplyModalContainer>
+                    <ModalButton onClick={() =>
+                onClickModal(isApplyModal, setIsApplyModal)} src={icon_close_black} alt="닫기 버튼" />
                     <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
                     <ApplyGoodsBox>
                         <ApplyGoods>
@@ -68,11 +74,40 @@ const ApplyModal = (props) => {
                         </ApplyGoods>
                     </ApplyGoodsBox>
                     <SelectButton>이걸로 할게요</SelectButton>
-                </ModalContainer>
+                </ApplyModalContainer>
             </ApplyModalWrap>
         </>
     )
 };
+
+const ApplyButton = styled.button`
+    position: fixed;
+    bottom: 0px;
+    right: 50%;
+
+    width: 300px;
+    height: 50px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 6px;
+
+    color: #fff;
+    background: #0096F3;
+    
+    cursor: pointer;
+    z-index: 1;
+    
+    transition: 0.3s ease;
+    transform: translate( 50%, -50% );
+
+    &:hover{
+        background: rgb(45, 123, 195);
+        transition: 0.3s ease;
+    }
+`
 
 const TotalBoxImg = styled.img`
     display: block;
@@ -124,34 +159,7 @@ const TotalBoxText = styled.div`
     font-weight: 500;
 `
 
-const ApplyButton = styled.button`
-    position: fixed;
-    bottom: 0px;
-    right: 50%;
 
-    width: 300px;
-    height: 50px;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    border: none;
-    border-radius: 6px;
-
-    color: #fff;
-    background: #0096F3;
-    
-    cursor: pointer;
-    z-index: 1;
-    
-    transition: 0.3s ease;
-    transform: translate( 50%, -50% );
-
-    &:hover{
-        background: rgb(45, 123, 195);
-        transition: 0.3s ease;
-    }
-`
 
 const SelectButton = styled.button`
     margin-top: 55px;
@@ -235,7 +243,7 @@ const ApplyModalWrap = styled.div`
     background-color: rgba(0,0,0,0.2);
 `
 
-const ModalContainer = styled.div`
+const ApplyModalContainer = styled.div`
     position: relative;
     top: 50%;
     left: 50%;

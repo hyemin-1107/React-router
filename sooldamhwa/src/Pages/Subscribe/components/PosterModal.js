@@ -1,24 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+
 import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
 import popup_poster from '../../../images/subscribeImage/popup_poster.png'
 
 const PosterModal = (props) => {
 
-    const { isPostModal, onClickPostButton } = props;
+    const { isPosterModal, onClickPosterButton } = props;
 
     return (
-        <PosterModalWrap isPostModal={isPostModal}>
-            <ModalContainer>
-                <ModalButton onClick={onClickPostButton} src={icon_close_black} alt='닫기' />
+        
+        <PosterModalWrap isPosterModal={isPosterModal}>
+           
+            <PosterModalContainer>
+                <ModalButton onClick={onClickPosterButton} src={icon_close_black} alt='닫기' />
+                
                 <ModalImg src={popup_poster} alt='포스터 이미지' />
-            </ModalContainer>
+            </PosterModalContainer>
+        
         </PosterModalWrap>
     )
 
 };
 
-const ModalContainer = styled.div`
+const PosterModalContainer = styled.div`
     position: relative;
     top: 50%;
     left: 50%;

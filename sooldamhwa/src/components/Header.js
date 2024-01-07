@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate, NavLink } from "react-router-dom";
-import main_logo_christmas from '../../../images/mainImage/main_logo_christmas.png'
-import icon_search from '../../../images/mainImage/icon_search.svg'
-import icon_header_basket from '../../../images/mainImage/icon_header_basket.png'
-import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
+import main_logo_christmas from '../images/mainImage/main_logo_christmas.png'
+import icon_search from '../images/mainImage/icon_search.svg'
+import icon_header_basket from '../images/mainImage/icon_header_basket.png'
+import icon_close_black from '../images/subscribeImage/icon_close_black.png'
 
 
 const Header = () => {

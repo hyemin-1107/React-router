@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Index/components/Header';
+import Header from '../../components/Header';
 import Accumulate from './components/Accumulate';
 import LoginMain from './components/Loginmain';
 

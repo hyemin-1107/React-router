@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import channel_talk_pc from '../../../images/subscribeImage/channel_talk_pc.png'
 import icon_close_black from '../../../images/subscribeImage/icon_close_black.png'
 import msg_logo_img from '../../../images/subscribeImage/msg_logo_img.jpeg'
 import msg_logo from '../../../images/subscribeImage/msg_logo.jpeg'
@@ -10,23 +9,34 @@ import app_messenger_kakao from '../../../images/subscribeImage/app_messenger_ka
 import app_messenger_naver_talk from '../../../images/subscribeImage/app_messenger_naver_talk.png'
 import app_messenger_call from '../../../images/subscribeImage/app_messenger_call.png'
 import ch_logo from '../../../images/subscribeImage/ch_logo.png'
+import channel_talk_pc from '../../../images/subscribeImage/channel_talk_pc.png'
+import { onClickModal } from "../../../utills/onClickModal";
+// import home_icon from '../../../images/subscribeImage/home_icon.png'
+// import conversation_icon from '../../../images/subscribeImage/conversation_icon.png'
+// import setting_icon from '../../../images/subscribeImage/setting_icon.png'
 
-const PcKakaoChTalk = (props) => {
+const PcKakaoModal= () => {
 
-    const { isPcKakoModal, onClickPcKakoModal, onClickPcKakoButton } = props;
-
-
+    const [isPcKakaoModal, setIsPcKakaoModal] = useState(false);
 
 
     return (
 
         <>
-            <PcKakao src={channel_talk_pc} alt='채널톡 아이콘' onClick={onClickPcKakoModal} isPcKakoModal={isPcKakoModal} />
-            <PcKakaoModalButton isPcKakoModal={isPcKakoModal} onClick={onClickPcKakoButton}>
+              <PcKakao src={channel_talk_pc} alt='채널톡 아이콘'
+                    isPcKakoModal={isPcKakaoModal}
+                    onClick={() =>
+                    onClickModal(isPcKakaoModal, setIsPcKakaoModal)
+                }/>
+
+            <PcKakaoModalButton 
+                isPcKakoModal={isPcKakaoModal}  
+                onClick={() =>
+                onClickModal(isPcKakaoModal, setIsPcKakaoModal)} >
                 <PcKakaoModalButtonImg src={icon_close_black} alt='닫기' />
             </PcKakaoModalButton>
 
-            <PcKakaoModalContainer isPcKakoModal={isPcKakoModal}>
+            <PcKakaoModalContainer isPcKakoModal={isPcKakaoModal}>
                 <PcKakaoModalHeader>
                     <PcKakaoModalHeaderImg src={msg_logo_img} alt='메신저 로고' />
                     <div>
@@ -91,6 +101,7 @@ const PcKakao = styled.img`
 	    100% {bottom: 60px;}
 }
 `
+
 
 const PcKakaoModalButton = styled.div`
     position: fixed;
@@ -385,4 +396,4 @@ const ChannelImg = styled.img`
     height: 20px;
 `
 
-export default PcKakaoChTalk;
+export default PcKakaoModal;

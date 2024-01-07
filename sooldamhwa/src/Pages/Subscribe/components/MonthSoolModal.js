@@ -20,13 +20,16 @@ const MonthSoolModal = (props) => {
 
     return (
 
-
         <MonthSoolModalWrap isMonthSoolModal={isMonthSoolModal}>
 
             <MonthSoolModalContainer>
+                
                 <ModalButton onClick={onClickMonthSoolButton} src={icon_close_black} alt='닫기' />
-                <HintHeader>1월의 종합 담화박스
+                
+                <HintHeader>
+                    1월의 종합 담화박스
                 </HintHeader>
+                
                 <Swiper
                     modules={[Navigation, Pagination]}
                     slidesPerView={1}
@@ -204,10 +207,7 @@ const MonthSoolModal = (props) => {
                     </SwiperSlide>
                 </Swiper>
             </MonthSoolModalContainer>
-
         </MonthSoolModalWrap>
-
-
     )
 };
 

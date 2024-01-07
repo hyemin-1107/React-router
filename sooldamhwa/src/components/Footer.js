@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
-import icon_instagram from '../../../images/mainImage/icon_instagram.png'
-import icon_youtube from '../../../images/mainImage/icon_youtube.png'
-import icon_kakao from '../../../images/mainImage/icon_kakao.png'
-import icon_facebook from '../../../images/mainImage/icon_facebook.png'
-import icon_naver from '../../../images/mainImage/icon_naver.png'
+import icon_instagram from '../images/mainImage/icon_instagram.png'
+import icon_youtube from '../images/mainImage/icon_youtube.png'
+import icon_kakao from '../images/mainImage/icon_kakao.png'
+import icon_facebook from '../images/mainImage/icon_facebook.png'
+import icon_naver from '../images/mainImage/icon_naver.png'
 
 const Footer = () => {
 
