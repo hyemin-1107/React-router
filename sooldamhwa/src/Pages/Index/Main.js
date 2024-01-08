@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import MainContents from './components/Maincontents';
+import MainCarousel from './components/MainCarousel';
 import Footer from '../../components/Footer';
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
         <>
             <Header />
             <MainContents />
+            <MainCarousel />
             <Footer />
         </>
     )

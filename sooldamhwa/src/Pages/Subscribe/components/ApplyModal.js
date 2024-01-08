@@ -15,17 +15,17 @@ const ApplyModal = () => {
 
     return (
         <>
-            
-            <ApplyButton  
+            <ApplyButton
                 isApplyModal={isApplyModal}
                 onClick={() =>
-                onClickModal(isApplyModal, setIsApplyModal)}>
-                지금 신청하기</ApplyButton>
+                    onClickModal(isApplyModal, setIsApplyModal)}>
+                지금 신청하기
+            </ApplyButton>
 
             <ApplyModalWrap isApplyModal={isApplyModal} >
                 <ApplyModalContainer>
                     <ModalButton onClick={() =>
-                onClickModal(isApplyModal, setIsApplyModal)} src={icon_close_black} alt="닫기 버튼" />
+                        onClickModal(isApplyModal, setIsApplyModal)} src={icon_close_black} alt="닫기 버튼" />
                     <ModalTitle>구독하실 상품을 선택해주세요!</ModalTitle>
                     <ApplyGoodsBox>
                         <ApplyGoods>
