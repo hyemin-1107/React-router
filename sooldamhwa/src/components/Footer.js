@@ -61,12 +61,10 @@ const Footer = () => {
                     </p>
                     <div onClick={() => { navigate(""); }}>서비스가입사실 확인</div>
                 </SubscriptionInformation>
-
             </FooterInfo>
         </Footercontents>
     )
 };
-
 
 const Footercontents = styled.footer`
     margin: 150px 0 100px;

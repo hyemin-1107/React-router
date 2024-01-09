@@ -9,18 +9,13 @@ const PosterModal = (props) => {
     const { isPosterModal, onClickPosterButton } = props;
 
     return (
-        
         <PosterModalWrap isPosterModal={isPosterModal}>
-           
             <PosterModalContainer>
                 <ModalButton onClick={onClickPosterButton} src={icon_close_black} alt='닫기' />
-                
                 <ModalImg src={popup_poster} alt='포스터 이미지' />
             </PosterModalContainer>
-        
         </PosterModalWrap>
     )
-
 };
 
 const PosterModalContainer = styled.div`
@@ -47,7 +42,7 @@ const PosterModalContainer = styled.div`
 
 const PosterModalWrap = styled.div`
     position: fixed;
-    display: ${(props) => (props.isPostModal ? "block" : "none")};
+    display: ${(props) => (props.isPosterModal ? "block" : "none")};
 
     top: 0;
     left: 0;  

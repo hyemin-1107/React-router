@@ -22,7 +22,6 @@ const Header = () => {
     const style = {
         color: '#3E3E3E'
     }
-
     
     return (
         <HeaderContents>
@@ -150,8 +149,6 @@ const GnbSub = styled.ul`
 
     margin: 0;    
 `
-
-
 
 const HeaderGnbLogin = styled.div`
     margin-right: 26px;

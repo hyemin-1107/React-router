@@ -229,7 +229,7 @@ const ModalButton = styled.img`
 `
 
 const ApplyModalWrap = styled.div`
-    display: ${(props) => (props.isModal ? "block" : "none")};
+    display: ${(props) => (props.isApplyModal ? "block" : "none")};
     position: fixed;
 
     top: 0;

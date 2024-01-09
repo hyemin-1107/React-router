@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -35,72 +35,23 @@ const Review = () => {
                     delay: 3000,
                 }} className='review'
             >
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_02} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>🥇2월 저의 베스트 강추!</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_03} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>역시 캠핑은 모다? #술담화 #술담화구독</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_04} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>위스키 진 럼도 좋지만 늦게서야 알게된 전통주 매력에 홀딱!</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_05} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>디자인 보고 끌렸고 컨셉에서 구매 결정!</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_07} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>병도 이쁘고 맛도 이쁘고 다음달 구독박스도 기대 되쟈낭😎</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_06} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>술도 알아가는 재미, 내 취향인 술을 찾는 재미가 정말 톡톡!</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReviewCarousel>
-                        <ReviewImg src={subscribe_review_09} alt='베스트리뷰' />
-                        <ReviewText>
-                            <div>족발이 갑자기 땡겼던 날, 그렇다면? 술담화지!</div>
-                            <p>@hahhaya_modern</p>
-                        </ReviewText>
-                    </ReviewCarousel>
-                </SwiperSlide>
+                {SWIPER_SLIDE_DATA.map((data) => {
+                    return (
+                        <Fragment key={data.id}>
+                            <SwiperSlide>
+                                <ReviewCarousel>
+                                    <ReviewImg src={data.imgSrc} alt={data.alt} />
+                                    <ReviewText>
+                                        <div>{data.text}</div>
+                                        <p>{data.userId}</p>
+                                    </ReviewText>
+                                </ReviewCarousel>
+                            </SwiperSlide>
+                        </Fragment>
+                    )
+                })}
             </Swiper>
         </SubscriptionReview>
-
     )
 };
 
@@ -167,5 +118,56 @@ const SpecialTime = styled.div`
     }
 `
 
+const SWIPER_SLIDE_DATA = [
+    {
+        id: 1,
+        imgSrc: subscribe_review_02,
+        alt: '베스트 리뷰',
+        text: '🥇2월 저의 베스트 강추!',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 2,
+        imgSrc: subscribe_review_03,
+        alt: '베스트 리뷰',
+        text: '역시 캠핑은 모다? #술담화 #술담화구독',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 3,
+        imgSrc: subscribe_review_04,
+        alt: '베스트 리뷰',
+        text: '위스키 진 럼도 좋지만 늦게서야 알게된 전통주 매력에 홀딱!',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 4,
+        imgSrc: subscribe_review_05,
+        alt: '베스트 리뷰',
+        text: '디자인 보고 끌렸고 컨셉에서 구매 결정!',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 5,
+        imgSrc: subscribe_review_07,
+        alt: '베스트 리뷰',
+        text: '병도 이쁘고 맛도 이쁘고 다음달 구독박스도 기대 되쟈낭😎',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 6,
+        imgSrc: subscribe_review_06,
+        alt: '베스트 리뷰',
+        text: '술도 알아가는 재미, 내 취향인 술을 찾는 재미가 정말 톡톡!',
+        userId: '@hahhaya_modern',
+    },
+    {
+        id: 7,
+        imgSrc: subscribe_review_09,
+        alt: '베스트 리뷰',
+        text: '족발이 갑자기 땡겼던 날, 그렇다면? 술담화지!',
+        userId: '@hahhaya_modern',
+    },
+]
 
 export default Review;

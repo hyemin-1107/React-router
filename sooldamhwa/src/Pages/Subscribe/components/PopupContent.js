@@ -5,7 +5,7 @@ import styled from "styled-components";
 import popup_img from '../../../images/subscribeImage/popup_img.jpg'
 
 const PopupContent = () => {
-    
+
     const [isPopup, setIsPopup] = useState(true);
     const closePopup = () => {
         setIsPopup(!isPopup);
@@ -13,20 +13,19 @@ const PopupContent = () => {
 
     return (
         <>
-        {isPopup && (
-            <Popup>
-             <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
-             <PopupImg src={popup_img} alt="팝업창 구독 이미지"/>
-             </Link>
-            <PopupCloseButton>
-                <PopupOnedayClose onClick={closePopup}>오늘 하루 열지 않음</PopupOnedayClose>
-                <PopupClose onClick={closePopup}>닫기</PopupClose>
-            </PopupCloseButton>
-            </Popup>
-        )}
+            {isPopup && (
+                <Popup>
+                    <Link to="DetailInfo" spy={true} smooth={true} style={{ cursor: 'pointer' }}>
+                        <PopupImg src={popup_img} alt="팝업창 구독 이미지" />
+                    </Link>
+                    <PopupCloseButton>
+                        <PopupOnedayClose onClick={closePopup}>오늘 하루 열지 않음</PopupOnedayClose>
+                        <PopupClose onClick={closePopup}>닫기</PopupClose>
+                    </PopupCloseButton>
+                </Popup>
+            )}
         </>
     )
-
 };
 
 const PopupCloseButton = styled.div`

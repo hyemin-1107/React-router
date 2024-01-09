@@ -24,14 +24,12 @@ const PcKakaoModal = () => {
                 onClick={() =>
                     onClickModal(isPcKakaoModal, setIsPcKakaoModal)
                 } />
-
             <PcKakaoModalButton
                 isPcKakoModal={isPcKakaoModal}
                 onClick={() =>
                     onClickModal(isPcKakaoModal, setIsPcKakaoModal)} >
                 <PcKakaoModalButtonImg src={icon_close_black} alt='닫기' />
             </PcKakaoModalButton>
-
             <PcKakaoModalContainer isPcKakoModal={isPcKakaoModal}>
                 {navState === "home" && (
                     <PcKakaoMain navStateHandle={navStateHandle} />

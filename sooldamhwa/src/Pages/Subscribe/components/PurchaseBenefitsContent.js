@@ -7,7 +7,6 @@ import icon_price_down from '../../../images/subscribeImage/icon_price_down.png'
 const PurchaseBenefitsContents = () => {
 
     return (
-
         <PurchaseBenefits>
             <BenefitsText>
                 계속 추가되는 < br />
@@ -37,9 +36,7 @@ const PurchaseBenefitsContents = () => {
                 </BenefitsImgBox>
             </BenefitsImg>
         </PurchaseBenefits>
-
     )
-
 };
 
 const PurchaseBenefits = styled.div`

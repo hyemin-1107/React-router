@@ -5,6 +5,7 @@ import conversation_icon from '../../../images/subscribeImage/conversation_icon.
 import setting_icon from '../../../images/subscribeImage/setting_icon.png'
 import msg_logo from '../../../images/subscribeImage/msg_logo.jpeg'
 import inquiry_img from '../../../images/subscribeImage/inquiry_img.png'
+
 const Conversation = (props) => {
 
     const { navStateHandle } = props;
@@ -127,8 +128,6 @@ const Detail = styled.div`
         color: #999;
     }
 `
-
-
 
 const PcKakaoNav = styled.div`
     position: absolute;

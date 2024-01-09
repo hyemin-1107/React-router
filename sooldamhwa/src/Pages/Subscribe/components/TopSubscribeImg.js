@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { Link } from 'react-scroll';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -14,48 +14,28 @@ const TopSubscribeImg = () => {
 
     return (
         <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        loop={true}
-        slidesPerView={1}
-        navigation={true}
-        pagination={{
-            type: 'fraction',
-        }}
-        autoplay={{
-            delay: 3000,
-        }}
-    >
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main} />
-            </Link>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main1} />
-            </Link>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main2} />
-            </Link>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main3} />
-            </Link>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main4} />
-            </Link>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Link to="DetailInfo" spy={true} smooth={true}>
-                <MainImg src={img_main5} />
-            </Link>
-        </SwiperSlide>
-
+            modules={[Navigation, Pagination, Autoplay]}
+            loop={true}
+            slidesPerView={1}
+            navigation={true}
+            pagination={{
+                type: 'fraction',
+            }}
+            autoplay={{
+                delay: 3000,
+            }}
+        >
+            {SWIPER_SLIDE_DATA.map((data) => {
+                return (
+                    <Fragment key={data.id}>
+                        <SwiperSlide>
+                            <Link to="DetailInfo" spy={true} smooth={true}>
+                                <MainImg src={data.imgSrc} />
+                            </Link>
+                        </SwiperSlide>
+                    </Fragment>
+                )
+            })}
         </Swiper>
     )
 };
@@ -73,5 +53,32 @@ const MainImg = styled.img`
 
     cursor: pointer;
 `
+
+const SWIPER_SLIDE_DATA = [
+    {
+        id: 1,
+        imgSrc: img_main,
+    },
+    {
+        id: 2,
+        imgSrc: img_main1,
+    },
+    {
+        id: 3,
+        imgSrc: img_main2,
+    },
+    {
+        id: 4,
+        imgSrc: img_main3,
+    },
+    {
+        id: 5,
+        imgSrc: img_main4,
+    },
+    {
+        id: 6,
+        imgSrc: img_main5,
+    },
+]
 
 export default TopSubscribeImg;
