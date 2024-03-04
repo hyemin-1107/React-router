@@ -19,12 +19,12 @@ const CounterContents = () => {
 
   return (
     <Container>
-      <Title>Count: {state}</Title>
+      <Title>Count : {state}</Title>
       <div>
-        <MinusBtn className="minusBtn" onClick={minusNum}>
+        <MinusBtn onClick={minusNum}>
           -
         </MinusBtn>
-        <PlusBtn className="plusBtn" onClick={plusNum}>
+        <PlusBtn onClick={plusNum}>
           +
         </PlusBtn>
       </div>

@@ -5,7 +5,6 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 
 //     state = {
 //         isChecked: false,
-//         notice: ' ',
 //     };
 
 //     onClick = () => {				
@@ -25,7 +24,6 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 //                     {this.state.isChecked ?
 //                     <HeartFilled style={{ color: 'red', fontSize: '25px' }} onClick={this.onClick}/> :	
 //                     <HeartOutlined style={{ fontSize: '25px' }} onClick={this.onClick}/>}				
-//                     <h3>{this.state.notice}</h3>
 //                 </div>
 //             </React.Fragment> 
 //         )
@@ -37,7 +35,6 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 const LikeButton = () => {
 
     const [isChecked, setChacked] = useState(false);
-    const [notice, setNotice] = useState('');
 
 
     const onClick = () => {
@@ -45,11 +42,10 @@ const LikeButton = () => {
     }
     return (
 
-        <div className="icons-list">
+        <div>
             {isChecked ?
                 <HeartFilled style={{ color: 'red', fontSize: '25px' }} onClick={onClick} /> :
                 <HeartOutlined style={{ fontSize: '25px' }} onClick={onClick} />}
-            <h3>{notice}</h3>
         </div>
 
     )

@@ -44,7 +44,7 @@ const CommentSection = () => {
                 <Button onClick={() => CommentButton()}>Post</Button>
             </Content>
             {userComment.map((data, index) => (
-                <Contents key={index}>
+                <Contents key={index} style={{marginBottom:'8px'}}>
                     <UserName>{data.id}</UserName>
                     <Comment>{data.comment}</Comment>
                     <LikeButton />

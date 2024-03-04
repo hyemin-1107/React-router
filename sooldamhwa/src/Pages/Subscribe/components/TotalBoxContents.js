@@ -109,8 +109,8 @@ const TotalBoxContents = (props) => {
                         </TotalBox>
                     </div>
                 </LandingBox>
-
             </SubscribeLandingBox>
+
             <MonthSoolModal
                 isMonthSoolModal={isMonthSoolModal}
                 onClickMonthSoolButton={() =>
@@ -132,8 +132,6 @@ const TotalBoxContents = (props) => {
     )
 
 };
-
-
 
 const SubscribeLandingBox = styled.div`
     position: relative;
