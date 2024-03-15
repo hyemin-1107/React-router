@@ -12,7 +12,6 @@ import comma_right from '../../../images/mainImage/comma_right.png'
 const MainCarousel = () => {
 
     return (
-
         <RecentDamhwa>
             <RecentDamhwaText>최근 담화, 함께 볼까요?</RecentDamhwaText>
             <RecentDamhwaReview>
@@ -87,7 +86,6 @@ const RecentDamhwaReview = styled.div`
     div{
         width: 100%;
     }
-
 `
 
 const Review = styled.div`
@@ -113,6 +111,5 @@ const RecentDamhwaImg = styled.img`
     width: 160px;
     height: 160px;
 `
-
 
 export default MainCarousel;

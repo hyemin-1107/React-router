@@ -10,7 +10,7 @@ const Pagination = () => {
     const [page, setPage] = useState(1);
 
     // page 당 표시할 데이터 수 state
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(5);
 
     const [index, setIndex] = useState(0);
 

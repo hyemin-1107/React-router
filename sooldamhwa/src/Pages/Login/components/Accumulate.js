@@ -5,12 +5,10 @@ import icon_coin from '../../../images/loginImage/icon_coin.png'
 const Accumulate = () => {
 
     return(
-
         <Accumulatecontent>
         지금 회원가입하면 최대 4,000p 적립!
         <LoginCoin src={icon_coin} />
         </Accumulatecontent>
-    
     )
 
 };

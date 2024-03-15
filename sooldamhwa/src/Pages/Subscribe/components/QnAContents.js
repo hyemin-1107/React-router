@@ -18,7 +18,7 @@ const QnAContents = () => {
                 <CheckInAdvanceQnA>
                     <li>
                         <CheckInAdvanceQuestionContents onClick={e => setDropdownView1(!isDropdownView1)}>
-                            <CheckInAdvanceQuestion >
+                            <CheckInAdvanceQuestion>
                                 담화박스 구독 상품에는 몇 가지 상품이 들어있나요?
                             </CheckInAdvanceQuestion>
                             <ArrowImg src={arrow} alt="화살표"/>
