@@ -11,6 +11,7 @@ import ico_jquery from './images/ico_jquery.png'
 import ico_react from './images/ico_react.png'
 import ico_sc from './images/ico_sc.png'
 import ico_github from './images/ico_github.png'
+import img_logo from './images/img_logo.png'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           <ProfileText>
             <div>pront-end 신입 개발자 박혜민 입니다.</div>
             <ProfileTextAbout>
+              <div>맡은일에 책임감을 갖고 얻게 되는 배움에 가치를 느낍니다.</div>
               <div>긍정적 사고방식으로 개발과정이 즐겁습니다.</div>
               <div>타인과 융통성 있게 소통합니다.</div>
               <div>강한 의지로 문제해결에 집념이 있습니다.</div>
@@ -52,7 +54,6 @@ function App() {
             </ProfileTextAbout>
           </ProfileText>
         </Main>
-        <div>
           <About>
             <Skill>
               SKILL
@@ -82,7 +83,7 @@ function App() {
               </li>
               <li>CSS
                 <ul>
-                  <li>KeyFrame 활용</li>
+                  <li>Animation</li>
                   <li>Media Query 사용경험</li>
                   <li>styled-components</li>
                 </ul>
@@ -120,13 +121,31 @@ function App() {
               </section>
             </Experience>
           </About>
-        </div>
+          <div>
+            <ProjectTitle>
+              <h2>
+                Project
+              </h2>
+              <span></span>
+            </ProjectTitle>
+          </div>
+
+
+          <Footer>
+            <img src={img_logo} alt="로고"/>
+            <p>Park Hyemin portfolio</p>
+            <img src={img_logo} alt="로고"/>
+          </Footer>
       </Body>
     </>
   );
 }
 
 export default App;
+
+const ProjectTitle = styled.div`
+
+` 
 
 
 const Body = styled.body`
@@ -155,17 +174,19 @@ const Main = styled.article`
 
 const ImgFrame = styled.div`
   position: absolute;
-  top: -13px;
-  left: 36px;
+  top: 13px;
+  left: 50px;
 
-  width: 460px;
+  width: 450px;
   height: 347px;
   
-  border: 3px solid #6E6D70;
+  border: 1px solid #6E6D70;
 `
 
 const ProfileText = styled.div`
-  font-size: 22px;
+  text-align: end;
+
+  font-size: 24px;
   font-weight: 500;
 `
 
@@ -185,12 +206,10 @@ const ProfileImg = styled.img`
 `
 
 const About = styled.ul`
-  margin-top: 200px;
+  margin-top: 260px;
 `
 
 const Skill = styled.li`
-  margin-top: 80px;
-  
   text-align: center;
   
   font-size: 24px;
@@ -209,16 +228,13 @@ const Skill = styled.li`
   }
   span{
     position: absolute;
-
+    
     padding: 2px;
 
     font-size: 14px;
     
     border: 1px solid #6E6D70;
     border-radius: 5px;
-  }
-  >ul>li{
-    font-size: 18px;
   }
 `
 
@@ -239,7 +255,7 @@ const SkillLanguage = styled.ul`
   }
   
   >li{
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 500;
   }
  
@@ -251,27 +267,55 @@ const SkillLanguage = styled.ul`
 `
 
 const Experience = styled.div`
-  margin-top: 70px;
+  margin-top: 100px;
 
   font-size: 24px;
   font-weight: 500;
+  
   section{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
     text-align: center;
     padding: 30px 0 0;
   }
 `
 
 const ExperienceText = styled.div`
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
 `
 
 const ExperienceLine = styled.div`
-  border-bottom: 1px solid #6E6D70;
   margin: 30px 0 0;
+  
+  border-bottom: 1px solid #6E6D70;
 `
 
+
+
+
+
+
+
+
+
+
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  gap: 10px;
+  margin-top: 300px;
+  padding: 70px 0;
+
+  border-top: 1px solid #6E6D70;
+  
+  img{
+    width: 30px;
+  }
+`
 
 const SKILL_DATA = [
   {
