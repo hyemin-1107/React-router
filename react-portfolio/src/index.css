@@ -12,7 +12,9 @@ body, input, select, textarea, button, img, fieldset {
   border: none;
 }
 
-
+em, i{
+  font-style: normal;
+}
 
 ul, ol, li {
   list-style: none;
