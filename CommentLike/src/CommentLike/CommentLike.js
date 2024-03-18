@@ -16,7 +16,7 @@ const CommentLike = () => {
 const Section = styled.div`
   display: flex;
   
-  margin: 70px auto;
+  margin: 150px auto;
   gap: 50px;
 
   width: 1100px;   

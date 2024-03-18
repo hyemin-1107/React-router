@@ -11,17 +11,25 @@ import ico_jquery from './images/ico_jquery.png'
 import ico_react from './images/ico_react.png'
 import ico_sc from './images/ico_sc.png'
 import ico_github from './images/ico_github.png'
-import img_logo from './images/img_logo.png'
+// import img_logo from './images/img_logo.png'
 import img_com from './images/img_com.png'
 import img_homepage from './images/img_homepage.png'
+import img_portfolio from './images/img_portfolio.png'
+import img_pagination from './images/img_pagination.png'
+import img_commentlike from './images/img_commentlike.png'
+import ico_phone from './images/ico_phone.png'
+import ico_mail from './images/ico_mail.png'
 
 function App() {
 
   const [isHover, setIsHover] = useState(false);
 
   const [isAlert, setisAlert] = useState(false);
+
+  const [showTopButton, setShowTopButton] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => { setisAlert(true) }, 1700);
+    setTimeout(() => { setisAlert(true) }, 2000);
   })
 
   const handleMouseOver = () => {
@@ -38,9 +46,6 @@ function App() {
       behavior: 'smooth'
     })
   }
-
-
-  const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {
     const handleTopButton = () => {
@@ -91,7 +96,6 @@ function App() {
           )}
         </Main>
 
-
         <About>
           <Skill>
             SKILL
@@ -112,6 +116,7 @@ function App() {
               })}
             </ul>
           </Skill>
+
           <SkillLanguage>
             <li>HTML
               <ul>
@@ -141,6 +146,7 @@ function App() {
               </ul>
             </li>
           </SkillLanguage>
+
           <Experience>
             <section>
               EXPERIENCE
@@ -159,28 +165,33 @@ function App() {
             </section>
           </Experience>
         </About>
-        <div>
-          <ProjectTitle>
-            <h2>
-              PROJECT
-            </h2>
-            <div></div>
-          </ProjectTitle>
+
+        <ProjectTitle>
+          <h2>
+            PROJECT
+          </h2>
+          <div></div>
+        </ProjectTitle>
+
+        <Project>
+
           <ProjectWrap>
+
             <div>
-            <ProjectImg>
-              <ProjectWrapImg src={img_com} alt="로고" />
-              <ProjectHomepageImg src={img_homepage} alt="로고" />
-            </ProjectImg>
-            <ImgShadow></ImgShadow>
+              <ProjectImg>
+                <ProjectWrapImg src={img_com} alt="로고" />
+                <ProjectHomepageImg src={img_homepage} alt="로고" />
+                <ImgShadow></ImgShadow>
+              </ProjectImg>
             </div>
             <ProjectText>
+              <ProjectNumber>01</ProjectNumber>
               <h3>
                 Sooldamhwa Homepage clone coding
               </h3>
               <p>
-              전통주를 소개하고 구독 시스템을 통해
-              매달 집으로 배송 해주는 사이트 입니다.
+                전통주를 소개하고 구독 시스템을 통해
+                매달 집으로 배송 해주는 사이트 입니다.
               </p>
               <span>
                 메인페이지, 구독페이지, 로그인페이지 구현
@@ -193,18 +204,148 @@ function App() {
               <button>Github Source code</button>
             </ProjectText>
           </ProjectWrap>
-        </div>
+
+          <ProjectWrap>
+            <ProjectText>
+              <ProjectNumber>02</ProjectNumber>
+              <h3>
+                Portfolio Site
+              </h3>
+              <p>
+                전통주를 소개하고 구독 시스템을 통해
+                매달 집으로 배송 해주는 사이트 입니다.
+              </p>
+              <span>
+                메인페이지, 구독페이지, 로그인페이지 구현
+              </span>
+              <em>
+                · React
+              </em>
+              <button>Go To</button>
+              <button>Notion Review</button>
+              <button>Github Source code</button>
+            </ProjectText>
+            <div>
+              <ProjectImg>
+                <ProjectWrapImg src={img_com} alt="로고" />
+                <ProjectHomepageImg src={img_portfolio} alt="로고" />
+                <ImgShadow></ImgShadow>
+              </ProjectImg>
+            </div>
+          </ProjectWrap>
+
+          <ProjectWrap>
+            <div>
+              <ProjectImg>
+                <ProjectWrapImg src={img_com} alt="로고" />
+                <ProjectHomepageImg src={img_homepage} alt="로고" />
+                <ImgShadow></ImgShadow>
+              </ProjectImg>
+            </div>
+            <ProjectText>
+              <ProjectNumber>03</ProjectNumber>
+              <h3>
+                Sooldamhwa Homepage clone coding
+              </h3>
+              <p>
+                전통주를 소개하고 구독 시스템을 통해
+                매달 집으로 배송 해주는 사이트 입니다.
+              </p>
+              <span>
+                메인페이지, 구독페이지, 로그인페이지 구현
+              </span>
+              <em>
+                · React
+              </em>
+              <button>Go To</button>
+              <button>Notion Review</button>
+              <button>Github Source code</button>
+            </ProjectText>
+          </ProjectWrap>
+
+          <ProjectWrap>
+
+
+            <SubProject>
+              <SubProjectNumber>04</SubProjectNumber>
+              <SubProjectImg src={img_commentlike} alt=""></SubProjectImg>
+              <div></div>
+              <SubProjectText>
+                <h3>Comment, Like</h3>
+                <p>
+                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                </p>
+                <em>
+                  · React
+                </em>
+                <span></span>
+                <button>Github Source code</button>
+              </SubProjectText>
+            </SubProject>
+
+            <SubProject>
+              <SubProjectNumber>05</SubProjectNumber>
+              <SubProjectImg src={img_pagination} alt=""></SubProjectImg>
+              <div></div>
+              <SubProjectText>
+                <h3>Comment, Like</h3>
+                <p>
+                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                </p>
+                <em>
+                  · React
+                </em>
+                <span></span>
+                <button>Github Source code</button>
+              </SubProjectText>
+            </SubProject>
+
+
+          </ProjectWrap>
+
+        </Project>
+
+
+        <ProjectTitle>
+          <h2>
+            CONTACT
+          </h2>
+          <div></div>
+        </ProjectTitle>
+
+        <ContactWrap>
+          <ContactBox>
+            <div>저의 포트폴리오를 봐주셔서 감사합니다.</div>
+            <Contact>
+              <img src={ico_phone} alt=""></img>
+              <div>PHONE</div>
+            </Contact>
+            <div>010 4042 0706</div>
+            <Contact>
+              <img src={ico_mail} alt=""></img>
+              <div>MAIL</div>
+            </Contact>
+            <div>hyem92.11.07@gmail.com</div>
+          </ContactBox>
+          <StudyPage>
+            <p>더 많고 자세한 저의 기록들이 있습니다.</p>
+            <button>NOTION</button>
+            <button>GITHUB</button>
+          </StudyPage>
+        </ContactWrap>
+
+
 
 
         <Footer>
-          <img src={img_logo} alt="로고" />
+
           <p>Park Hyemin portfolio</p>
-          <img src={img_logo} alt="로고" />
+
         </Footer>
 
         {showTopButton && (
           <ScrollContainer>
-            <TopButton onClick={scrollToTop} type="button" > Top</TopButton>
+            <TopButton onClick={scrollToTop} type="button" >Top</TopButton>
           </ScrollContainer>
         )}
 
@@ -217,45 +358,91 @@ function App() {
 export default App;
 
 
-const ProjectText = styled.div`
-  padding: 0 39px;
+const SubProject = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 26px;
-  font-size: 18px;
 
+  width: 500px;
+  height: 600px;
+  
+  border: 1px solid #999;
+  border-radius: 20px;
+
+  div{
+    border-top: 1px solid #999;
+  }
+`
+
+const SubProjectText = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  margin: 20px 28px;
+  gap: 14px;
+
+  h3{
+    font-size: 22px;
+  }
+  
   em{
-    font-size: 18px;
     font-weight: 600;
   }
-  
+
   button{
-  padding: 5px;
-  
-  font-size: 18px;
-  
-  box-sizing: border-box;
-  color: #6E6D70;
-  border: 1px solid #6E6D70;
-  border-radius: 6px;
-  
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  cursor: pointer;
+    padding: 8px;  
 
-&:hover {
-  color: #fff;
-  background-color: #6E6D70;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
+    font-size: 16px;
 
-&:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
+    border-radius: 10px;
+    color: #6E6D70;
+
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
+        inset 0 2px 0 hsla(0, 0%, 100%, .1),
+        inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+        inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+        inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+        0 .25em .25em hsla(0, 0%, 0%, .05);
+
+  &:hover {
+    color: #fff;
+    background-color: #6E6D70;
+
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
+      inset 0 2px 0 hsla(0, 0%, 100%, .1),
+      inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+      inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+      inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+      0 .25em .25em hsla(0, 0%, 0%, .05);
   }
-` 
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+`
+
+
+const SubProjectNumber = styled.div`
+  position: absolute;
+  
+  font-size: 170px;
+  font-weight: 900;
+  opacity: .1;
+  top: -160px;
+  right: 50%;
+  z-index: -1;
+`
+
+const SubProjectImg = styled.img`
+  width: 500px;
+  border-radius: 20px 20px 0 0;
+`
+
 
 
 
@@ -418,6 +605,7 @@ const SkillLanguage = styled.ul`
  
   ul>li{
     padding-bottom: 10px;
+    
     font-size: 16px;
     font-weight: 400;
   }
@@ -470,20 +658,32 @@ const ProjectTitle = styled.div`
   }
 `
 
+
 const ProjectWrap = styled.section`
   position: relative;
   display: flex;
-  margin-top: 100px;
+  justify-content: space-between;
+  margin-top: 180px;
 `
+
+
+const Project = styled.article`
+  display: flex;
+  flex-direction: column;
+  
+  gap: 200px;
+`
+
 
 const ProjectImg = styled.div`
   position: relative;
 `
+
 const ProjectWrapImg = styled.img`
   position: relative;
   
   width: 600px;
-  height: 430px;
+  height: 410px;
 `
 
 const ProjectHomepageImg = styled.img`
@@ -492,22 +692,180 @@ const ProjectHomepageImg = styled.img`
   left: 57px;
   
   width: 496px;
-  height: 285px;
+  height: 271px;
 `
+
 const ImgShadow = styled.div`
   position: absolute;
-  bottom: -15px;
-  left: 99px;
+  bottom: -10px;
+  left: 98px;
   z-index: -1;
   
-  width: 400px;
-  height: 30px;
+  width: 398px;
+  height: 27px;
   
   box-shadow: 10px 10px 10px rgba(0,0,0,.2);
   /* background-color: rgba(0,0,0,.2); */
   border-radius: 100%;
 `
 
+const ProjectText = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  gap: 22px;
+ 
+  padding: 0 40px;
+ 
+  font-size: 18px;
+  h3{
+    font-size: 22px;
+  }
+  em{
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  button{
+    padding: 8px;  
+
+    font-size: 16px;
+
+    border-radius: 10px;
+    color: #6E6D70;
+
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
+        inset 0 2px 0 hsla(0, 0%, 100%, .1),
+        inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+        inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+        inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+        0 .25em .25em hsla(0, 0%, 0%, .05);
+
+&:hover {
+  color: #fff;
+  background-color: #6E6D70;
+
+  transform: translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
+    inset 0 2px 0 hsla(0, 0%, 100%, .1),
+    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+    0 .25em .25em hsla(0, 0%, 0%, .05);
+}
+
+&:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+}
+`
+
+
+const ProjectNumber = styled.div`
+  position: absolute;
+  
+  font-size: 170px;
+  font-weight: 900;
+  opacity: .1;
+  top: -140px;
+  right: 48%;
+  z-index: -1;
+`
+
+const ContactWrap = styled.section`
+  display: flex;
+  justify-content: space-around;
+  
+  margin: 150px 0;
+`
+
+const ContactBox = styled.div`
+  
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  div{
+    margin-bottom: 8px;
+  }
+  
+  div:nth-child(1) {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  div:nth-child(3){
+    margin-bottom: 42px;
+  }
+`
+
+const Contact = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 8px;
+  
+  img{
+    margin-bottom: 8px;
+    
+    width: 24px;
+    height: 21px;
+  }
+`
+
+const StudyPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  font-size: 18px;
+
+p{
+  margin-bottom: 8px;
+}
+
+button{
+  padding: 14px;  
+
+  font-size: 18px;
+  font-weight: 500;
+
+  border-radius: 10px;
+  color: #6E6D70;
+
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
+    inset 0 2px 0 hsla(0, 0%, 100%, .1),
+    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+    0 .25em .25em hsla(0, 0%, 0%, .05);
+
+&:hover {
+  color: #fff;
+  background-color: #6E6D70;
+
+  transform: translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
+    inset 0 2px 0 hsla(0, 0%, 100%, .1),
+    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+    0 .25em .25em hsla(0, 0%, 0%, .05);
+}
+
+&:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+}
+`
 
 
 
@@ -521,7 +879,7 @@ const Footer = styled.footer`
   align-items: center;
  
   gap: 10px;
-  margin-top: 300px;
+  margin-top: 250px;
   padding: 70px 0;
 
   border-top: 1px solid #6E6D70;
@@ -548,8 +906,8 @@ const TopButton = styled.button`
   font-weight: 500;
   
   box-sizing: border-box;
-  color: #3B3B3B;
-  border: 2px solid #6E6D70;
+  color: #6E6D70;
+  border: 1px solid #6E6D70;
   border-radius: 50%;
   
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
