@@ -83,7 +83,7 @@ function App() {
               </div>
               <ImgFrame></ImgFrame>
               <ProfileText>
-                <div>pront-end 신입 개발자 박혜민 입니다.</div>
+                <div>Front-End 신입 개발자 박혜민 입니다.</div>
                 <ProfileTextAbout>
                   <div>맡은 일에 책임감을 갖고 얻게 되는 배움에 가치를 느낍니다.</div>
                   <div>긍정적 사고방식으로 개발과정이 즐겁습니다.</div>
@@ -142,7 +142,6 @@ function App() {
               <ul>
                 <li>Figma</li>
                 <li>Github</li>
-                <li>AWS 서버 배포</li>
               </ul>
             </li>
           </SkillLanguage>
