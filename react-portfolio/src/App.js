@@ -19,6 +19,10 @@ import img_pagination from './images/img_pagination.png'
 import img_commentlike from './images/img_commentlike.png'
 import ico_phone from './images/ico_phone.png'
 import ico_mail from './images/ico_mail.png'
+import ico_notion from './images/ico_notion.png'
+import ico_notionhover from './images/ico_notionhover.png'
+import ico_contactgithub from './images/ico_contactgithub.png'
+import ico_githubhover from './images/ico_githubhover.png'
 
 function App() {
 
@@ -64,7 +68,7 @@ function App() {
   return (
     <>
       <Body>
-        <Nav>
+        <Header>
           <Typewriter
             options={{
               strings: ['Park Hyemin Portfolio '],
@@ -73,7 +77,7 @@ function App() {
               pauseFor: 10000,
             }}
           />
-        </Nav>
+        </Header>
 
         <Main>
           {isAlert && (
@@ -95,7 +99,16 @@ function App() {
             </>
           )}
         </Main>
-
+        {showTopButton && (
+        <Nav>
+          <li>· Skill</li>
+          <li>· Project Sub</li>
+          <li>· Project Clone</li>
+          <li>· Project Portfolio</li>
+          <li>· Project AWS 배포</li>
+          <li>· Contact</li>
+        </Nav>
+        )}
         <About>
           <Skill>
             SKILL
@@ -176,6 +189,45 @@ function App() {
 
           <ProjectWrap>
 
+
+            <SubProject>
+              <SubProjectNumber>01</SubProjectNumber>
+              <SubProjectImg src={img_commentlike} alt=""></SubProjectImg>
+              <div></div>
+              <SubProjectText>
+                <h3>Comment, Like</h3>
+                <p>
+                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                </p>
+                <em>
+                  · React
+                </em>
+                <span></span>
+                <button>Github Source code</button>
+              </SubProjectText>
+            </SubProject>
+
+            <SubProject>
+              <SubProjectNumber>02</SubProjectNumber>
+              <SubProjectImg src={img_pagination} alt=""></SubProjectImg>
+              <div></div>
+              <SubProjectText>
+                <h3>Pagination</h3>
+                <p>
+                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                </p>
+                <em>
+                  · React
+                </em>
+                <span></span>
+                <button>Github Source code</button>
+              </SubProjectText>
+            </SubProject>
+
+
+          </ProjectWrap>
+          <ProjectWrap>
+
             <div>
               <ProjectImg>
                 <ProjectWrapImg src={img_com} alt="로고" />
@@ -184,7 +236,7 @@ function App() {
               </ProjectImg>
             </div>
             <ProjectText>
-              <ProjectNumber>01</ProjectNumber>
+              <ProjectNumber>03</ProjectNumber>
               <h3>
                 Sooldamhwa Homepage clone coding
               </h3>
@@ -206,7 +258,7 @@ function App() {
 
           <ProjectWrap>
             <ProjectText>
-              <ProjectNumber>02</ProjectNumber>
+              <ProjectNumber>04</ProjectNumber>
               <h3>
                 Portfolio Site
               </h3>
@@ -242,7 +294,7 @@ function App() {
               </ProjectImg>
             </div>
             <ProjectText>
-              <ProjectNumber>03</ProjectNumber>
+              <ProjectNumber>05</ProjectNumber>
               <h3>
                 Sooldamhwa Homepage clone coding
               </h3>
@@ -262,45 +314,6 @@ function App() {
             </ProjectText>
           </ProjectWrap>
 
-          <ProjectWrap>
-
-
-            <SubProject>
-              <SubProjectNumber>04</SubProjectNumber>
-              <SubProjectImg src={img_commentlike} alt=""></SubProjectImg>
-              <div></div>
-              <SubProjectText>
-                <h3>Comment, Like</h3>
-                <p>
-                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
-                </p>
-                <em>
-                  · React
-                </em>
-                <span></span>
-                <button>Github Source code</button>
-              </SubProjectText>
-            </SubProject>
-
-            <SubProject>
-              <SubProjectNumber>05</SubProjectNumber>
-              <SubProjectImg src={img_pagination} alt=""></SubProjectImg>
-              <div></div>
-              <SubProjectText>
-                <h3>Comment, Like</h3>
-                <p>
-                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
-                </p>
-                <em>
-                  · React
-                </em>
-                <span></span>
-                <button>Github Source code</button>
-              </SubProjectText>
-            </SubProject>
-
-
-          </ProjectWrap>
 
         </Project>
 
@@ -328,8 +341,14 @@ function App() {
           </ContactBox>
           <StudyPage>
             <p>더 많고 자세한 저의 기록들이 있습니다.</p>
-            <button>NOTION</button>
-            <button>GITHUB</button>
+            <button>
+              <ContactImg src={ico_notion} alt="" />
+              <ContactImgHover src={ico_notionhover} alt="" />
+              NOTION</button>
+            <button>
+            <ContactImg src={ico_contactgithub} alt="" />
+              <ContactImgHover src={ico_githubhover} alt="" />
+              GITHUB</button>
           </StudyPage>
         </ContactWrap>
 
@@ -344,7 +363,7 @@ function App() {
 
         {showTopButton && (
           <ScrollContainer>
-            <TopButton onClick={scrollToTop} type="button" >Top</TopButton>
+            <TopButton onClick={scrollToTop} type="button">Top</TopButton>
           </ScrollContainer>
         )}
 
@@ -357,90 +376,9 @@ function App() {
 export default App;
 
 
-const SubProject = styled.section`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-
-  width: 500px;
-  height: 600px;
-  
-  border: 1px solid #999;
-  border-radius: 20px;
-
-  div{
-    border-top: 1px solid #999;
-  }
-`
-
-const SubProjectText = styled.section`
-  display: flex;
-  flex-direction: column;
-
-  margin: 20px 28px;
-  gap: 14px;
-
-  h3{
-    font-size: 22px;
-  }
-  
-  em{
-    font-weight: 600;
-  }
-
-  button{
-    padding: 8px;  
-
-    font-size: 16px;
-
-    border-radius: 10px;
-    color: #6E6D70;
-
-    cursor: pointer;
-    transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
-        inset 0 2px 0 hsla(0, 0%, 100%, .1),
-        inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-        inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-        inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
-        0 .25em .25em hsla(0, 0%, 0%, .05);
-
-  &:hover {
-    color: #fff;
-    background-color: #6E6D70;
-
-    transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
-      inset 0 2px 0 hsla(0, 0%, 100%, .1),
-      inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-      inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-      inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
-      0 .25em .25em hsla(0, 0%, 0%, .05);
-  }
-
-  &:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
-}
-`
 
 
-const SubProjectNumber = styled.div`
-  position: absolute;
-  
-  font-size: 170px;
-  font-weight: 900;
-  opacity: .1;
-  top: -160px;
-  right: 50%;
-  z-index: -1;
-`
 
-const SubProjectImg = styled.img`
-  width: 500px;
-  border-radius: 20px 20px 0 0;
-`
 
 
 
@@ -452,7 +390,7 @@ const Body = styled.body`
   width: 1100px;
 `
 
-const Nav = styled.h1`
+const Header = styled.h1`
   text-align: center;
   
   padding: 140px 0; 
@@ -665,6 +603,86 @@ const ProjectWrap = styled.section`
   margin-top: 180px;
 `
 
+const SubProject = styled.section`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+
+  width: 500px;
+  height: 600px;
+  
+  border: 1px solid #999;
+  border-radius: 20px;
+
+  div{
+    border-top: 1px solid #999;
+  }
+`
+
+const SubProjectText = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  margin: 20px 28px;
+  gap: 14px;
+
+  h3{
+    font-size: 22px;
+  }
+  
+  em{
+    font-weight: 600;
+  }
+
+  button{
+  margin-top: 12px;
+  padding: 6px;
+  
+  font-size: 16px;
+  
+  box-sizing: border-box;
+  color: #6E6D70;
+  background-color: #fff;
+  border: 1px solid #6E6D70;
+  border-radius: 3px;
+  
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: #6E6D70;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+`
+
+
+const SubProjectNumber = styled.div`
+  position: absolute;
+  
+  font-size: 170px;
+  font-weight: 900;
+  opacity: .1;
+  top: -160px;
+  right: 50%;
+  z-index: -1;
+`
+
+const SubProjectImg = styled.img`
+  width: 500px;
+  border-radius: 20px 20px 0 0;
+`
+
+
+
 
 const Project = styled.article`
   display: flex;
@@ -697,7 +715,7 @@ const ProjectHomepageImg = styled.img`
 const ImgShadow = styled.div`
   position: absolute;
   bottom: -10px;
-  left: 98px;
+  left: 99px;
   z-index: -1;
   
   width: 398px;
@@ -714,47 +732,40 @@ const ProjectText = styled.div`
   flex-direction: column;
   justify-content: center;
  
-  gap: 22px;
+  gap: 18px;
  
   padding: 0 40px;
  
   font-size: 18px;
   h3{
+    margin-bottom: 8px;
     font-size: 22px;
   }
   em{
+    margin-bottom: 14px;
     font-size: 18px;
     font-weight: 600;
   }
   
   button{
-    padding: 8px;  
-
-    font-size: 16px;
-
-    border-radius: 10px;
-    color: #6E6D70;
-
-    cursor: pointer;
-    transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
-        inset 0 2px 0 hsla(0, 0%, 100%, .1),
-        inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-        inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-        inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
-        0 .25em .25em hsla(0, 0%, 0%, .05);
+  padding: 6px;
+  
+  font-size: 16px;
+  
+  box-sizing: border-box;
+  color: #6E6D70;
+  background-color: #fff;
+  border: 1px solid #6E6D70;
+  border-radius: 3px;
+  
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  cursor: pointer;
 
 &:hover {
   color: #fff;
   background-color: #6E6D70;
-
-  transform: translateY(-2px);
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
-    inset 0 2px 0 hsla(0, 0%, 100%, .1),
-    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
-    0 .25em .25em hsla(0, 0%, 0%, .05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-4px);
 }
 
 &:active {
@@ -789,16 +800,16 @@ const ContactBox = styled.div`
   font-weight: 500;
   text-align: center;
   div{
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   
   div:nth-child(1) {
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
   div:nth-child(3){
-    margin-bottom: 42px;
+    margin-bottom: 40px;
   }
 `
 
@@ -810,11 +821,23 @@ const Contact = styled.div`
   gap: 8px;
   
   img{
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     
-    width: 24px;
+    width: 23px;
     height: 21px;
   }
+`
+
+
+const ContactImg = styled.img`
+  width: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const ContactImgHover = styled.img`
+  width: 22px;
+  display: none;
 `
 
 const StudyPage = styled.div`
@@ -829,6 +852,11 @@ p{
 }
 
 button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6px;
   padding: 14px;  
 
   font-size: 18px;
@@ -838,7 +866,7 @@ button{
   color: #6E6D70;
 
   cursor: pointer;
-  transition: all 250ms cubic-bezier(.23, 1, 0.32, 1); 
+  transition: all .2s cubic-bezier(.23, 1, 0.32, 1); 
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
     inset 0 2px 0 hsla(0, 0%, 100%, .1),
     inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
@@ -857,6 +885,12 @@ button{
     inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
     inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
     0 .25em .25em hsla(0, 0%, 0%, .05);
+    :first-child{
+      display: none;
+    }
+    :nth-child(2){
+      display: block;
+    }
 }
 
 &:active {
@@ -911,6 +945,7 @@ const TopButton = styled.button`
   
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   cursor: pointer;
+  animation: ${fadeInRight} 2s ease-out;
 
 &:hover {
   color: #fff;
@@ -925,7 +960,26 @@ const TopButton = styled.button`
 }
 `
 
+const Nav = styled.ul`
+  position: fixed;
+  padding: 12px 0;
+  /* background-color: beige; */
+  right: 0;
+  top: 250px;
+  animation: ${fadeInRight} 2s ease-out;
+  li{
+    padding: 12px 40px;
+    
+    font-weight: 500;
 
+    color: #6E6D70;
+    cursor: pointer;
+  &:hover{
+    text-decoration-line: underline;
+    text-decoration-style: solid; 
+  }
+}
+`
 
 
 
@@ -970,10 +1024,5 @@ const SKILL_DATA = [
     id: 8,
     imgSrc: ico_github,
     text: 'Github',
-  },
-  {
-    id: 9,
-    imgSrc: ico_html,
-    text: 'HTML',
   },
 ]
