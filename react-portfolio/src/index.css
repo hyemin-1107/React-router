@@ -12,8 +12,10 @@ body, input, select, textarea, button, img, fieldset {
   border: none;
 }
 
-em, i{
+em, i, a{
   font-style: normal;
+  text-decoration: none;
+  color: #6E6D70;
 }
 
 ul, ol, li {
@@ -29,4 +31,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* .nav__items {
+  position: fixed;
+  padding: 12px 28px;
+  background-color: beige;
+  right: 0;
+  top: 250px;
+  animation: ${fadeInRight} 2s ease-out;
+  z-index: 100;
+  background-color: white;
+  margin: 10px;
+  display: flex;
+} */
+
+/* li{
+  font-weight: 500;
+  padding: 10px;
+  color: #6E6D70;
+  cursor: pointer;
+
+} */
+.active{
+  
+  color: black;
+  text-decoration: underline;
+  background-color: #f5ceef;
 }

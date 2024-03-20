@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import Observation from "./hook/Observation";
+
 import Typewriter from 'typewriter-effect';
 import './App.css';
 import img_profile from './images/img_profile.png'
@@ -25,6 +27,8 @@ import ico_contactgithub from './images/ico_contactgithub.png'
 import ico_githubhover from './images/ico_githubhover.png'
 
 function App() {
+  const [activeId, setActiveId] = useState("");
+  Observation(setActiveId);
 
   const [isHover, setIsHover] = useState(false);
 
@@ -65,6 +69,12 @@ function App() {
     }
   }, [])
 
+  
+
+
+
+
+
   return (
     <>
       <Body>
@@ -100,19 +110,46 @@ function App() {
           )}
         </Main>
         {showTopButton && (
-        <Nav>
-          <li>· Skill</li>
-          <li>· Project Sub</li>
-          <li>· Project Clone</li>
-          <li>· Project Portfolio</li>
-          <li>· Project AWS 배포</li>
-          <li>· Contact</li>
-        </Nav>
+          <Nav>
+           
+              <a href="#nav_skill" className={`nav__items ${activeId === "content_skill" ? "active" : ""}`}>
+              · Skill
+              </a>
+            
+           
+                  <a href="#nav_subproject" className={`nav__items ${activeId === "content_subproject" ? "active" : ""}`}>
+              · Sub Project
+              </a>
+           
+            
+                  <a href="#nav_projectclone" className={activeId === "content_clone" ? "active" : ""}>
+              · Clone Coding
+              </a>
+          
+         
+                  <a href="#nav_projectportfolio" className={activeId === "content_portfolio" ? "active" : ""}>
+              · Portfolio
+              </a>
+         
+                  <a href="#nav_projectaws" className={activeId === "content_aws" ? "active" : ""}>
+              · AWS 배포
+              </a>
+           
+         
+                  <a href="#nav_contact" className={activeId === "content_contact" ? "active" : ""}>
+                  · Contact
+              </a>
+           
+                {/* <li></li>
+                <li></li>
+                <li></li>
+            <li></li> */}
+          </Nav>
         )}
         <About>
-          <Skill>
+          <Skill id="nav_skill">
             SKILL
-            <ul>
+            <ul id="content_skill">
               {SKILL_DATA.map((data) => {
                 return (
                   <li
@@ -178,8 +215,8 @@ function App() {
           </Experience>
         </About>
 
-        <ProjectTitle>
-          <h2>
+        <ProjectTitle >
+          <h2 id="nav_subproject">
             PROJECT
           </h2>
           <div></div>
@@ -187,22 +224,22 @@ function App() {
 
         <Project>
 
-          <ProjectWrap>
-
+          <ProjectWrap id="content_subproject">
 
             <SubProject>
               <SubProjectNumber>01</SubProjectNumber>
               <SubProjectImg src={img_commentlike} alt=""></SubProjectImg>
               <div></div>
               <SubProjectText>
-                <h3>Comment, Like</h3>
+                <h3>Comment, Like · React</h3>
                 <p>
-                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                · Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 <br />페이지 입니다.
                 </p>
-                <em>
-                  · React
-                </em>
-                <span></span>
+                <span> 댓글을 저장할 state 생성 </span>
+                <span> 댓글, e.target.value를 state에 저장하는 onChange 함수 작성</span>
+                <span> onChange 함수를 댓글 입력 input tag에 적용</span>
+                <span> Button을 클릭 시, input 내용을 저장</span>
+                <span> @ant-design/icons import, 클릭시 체크되고 해제되는 state 작성</span>
                 <button>Github Source code</button>
               </SubProjectText>
             </SubProject>
@@ -212,23 +249,24 @@ function App() {
               <SubProjectImg src={img_pagination} alt=""></SubProjectImg>
               <div></div>
               <SubProjectText>
-                <h3>Pagination</h3>
+                <h3>Login, Pagination · React</h3>
                 <p>
-                  Comment를 남길 수 있고 Like버튼을 누르고 취소 할 수 있는 페이지 입니다.
+                · Login을 하면 다음 페이지로 이동하며 받아온 외부API를 Modal창과 Pagination으로 랜더링 합니다. 
                 </p>
-                <em>
-                  · React
-                </em>
-                <span></span>
+                <span>ID와 PW를 저장 state 생성, onChange 함수를 input tag에 적용</span>
+                <span>ID와 PW를 비교하는 함수 작성, 일치하면 main page, 틀릴시 alert()</span>
+                <span>useState로 현재 페이지 limit 설정, fetch로 API 호출</span>
+                <span>버튼 컴포넌트를 Styled-components로 조건부 스타일링 설정</span>
+                <span>index 클릭 시 Modal창에 해당 데이터가 자세히 보여지도록 구현</span>
                 <button>Github Source code</button>
               </SubProjectText>
             </SubProject>
 
 
           </ProjectWrap>
-          <ProjectWrap>
+          <ProjectWrap id="nav_projectclone">
 
-            <div>
+            <div id="content_clone">
               <ProjectImg>
                 <ProjectWrapImg src={img_com} alt="로고" />
                 <ProjectHomepageImg src={img_homepage} alt="로고" />
@@ -256,8 +294,8 @@ function App() {
             </ProjectText>
           </ProjectWrap>
 
-          <ProjectWrap>
-            <ProjectText>
+          <ProjectWrap id="nav_projectportfolio">
+            <ProjectText id="content_portfolio">
               <ProjectNumber>04</ProjectNumber>
               <h3>
                 Portfolio Site
@@ -285,8 +323,8 @@ function App() {
             </div>
           </ProjectWrap>
 
-          <ProjectWrap>
-            <div>
+          <ProjectWrap id="nav_projectaws">
+            <div id="content_aws">
               <ProjectImg>
                 <ProjectWrapImg src={img_com} alt="로고" />
                 <ProjectHomepageImg src={img_homepage} alt="로고" />
@@ -318,14 +356,14 @@ function App() {
         </Project>
 
 
-        <ProjectTitle>
+        <ProjectTitle id="nav_contact">
           <h2>
             CONTACT
           </h2>
           <div></div>
         </ProjectTitle>
 
-        <ContactWrap>
+        <ContactWrap id="content_contact">
           <ContactBox>
             <div>저의 포트폴리오를 봐주셔서 감사합니다.</div>
             <Contact>
@@ -346,7 +384,7 @@ function App() {
               <ContactImgHover src={ico_notionhover} alt="" />
               NOTION</button>
             <button>
-            <ContactImg src={ico_contactgithub} alt="" />
+              <ContactImg src={ico_contactgithub} alt="" />
               <ContactImgHover src={ico_githubhover} alt="" />
               GITHUB</button>
           </StudyPage>
@@ -609,14 +647,15 @@ const SubProject = styled.section`
   flex-direction: column;
 
 
-  width: 500px;
-  height: 600px;
+  width: 510px;
+  height: 630px;
   
-  border: 1px solid #999;
+  border: 1px solid #6E6D70;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 7px 13px -3px, rgba(0, 0, 0, 0.1) 0px -4px 0px inset;
 
   div{
-    border-top: 1px solid #999;
+    /* border-top: 1px solid #999; */
   }
 `
 
@@ -624,19 +663,24 @@ const SubProjectText = styled.section`
   display: flex;
   flex-direction: column;
 
-  margin: 20px 28px;
-  gap: 14px;
+  margin: 0 32px;
+  gap: 8px;
 
   h3{
     font-size: 22px;
   }
-  
-  em{
-    font-weight: 600;
+
+  p{
+    margin: 8px 0 12px 0;
+  } 
+
+  span{
+    line-height: 1;
+    font-size: 15px;
   }
 
   button{
-  margin-top: 12px;
+  margin-top: 14px;
   padding: 6px;
   
   font-size: 16px;
@@ -647,14 +691,14 @@ const SubProjectText = styled.section`
   border: 1px solid #6E6D70;
   border-radius: 3px;
   
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 200ms cubic-bezier(.23, 1, 0.32, 1);
   cursor: pointer;
 
   &:hover {
     color: #fff;
     background-color: #6E6D70;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   &:active {
@@ -665,7 +709,7 @@ const SubProjectText = styled.section`
 `
 
 
-const SubProjectNumber = styled.div`
+const SubProjectNumber = styled.span`
   position: absolute;
   
   font-size: 170px;
@@ -677,7 +721,8 @@ const SubProjectNumber = styled.div`
 `
 
 const SubProjectImg = styled.img`
-  width: 500px;
+  width: 510px;
+  height: 310px;
   border-radius: 20px 20px 0 0;
 `
 
@@ -758,14 +803,14 @@ const ProjectText = styled.div`
   border: 1px solid #6E6D70;
   border-radius: 3px;
   
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 200ms cubic-bezier(.23, 1, 0.32, 1);
   cursor: pointer;
 
 &:hover {
   color: #fff;
   background-color: #6E6D70;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 &:active {
@@ -797,7 +842,7 @@ const ContactWrap = styled.section`
 const ContactBox = styled.div`
   
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   div{
     margin-bottom: 6px;
@@ -830,13 +875,13 @@ const Contact = styled.div`
 
 
 const ContactImg = styled.img`
-  width: 22px;
+  width: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
 `
 const ContactImgHover = styled.img`
-  width: 22px;
+  width: 21px;
   display: none;
 `
 
@@ -866,24 +911,24 @@ button{
   color: #6E6D70;
 
   cursor: pointer;
-  transition: all .2s cubic-bezier(.23, 1, 0.32, 1); 
+  transition: all .15s cubic-bezier(.23, 1, 0.32, 1); 
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
     inset 0 2px 0 hsla(0, 0%, 100%, .1),
     inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
     inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+    inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
     0 .25em .25em hsla(0, 0%, 0%, .05);
 
 &:hover {
   color: #fff;
   background-color: #6E6D70;
 
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
     inset 0 2px 0 hsla(0, 0%, 100%, .1),
     inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
     inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-    inset 0 -.28em 0 hsla(0, 0%, 0%, .25),
+    inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
     0 .25em .25em hsla(0, 0%, 0%, .05);
     :first-child{
       display: none;
@@ -960,26 +1005,28 @@ const TopButton = styled.button`
 }
 `
 
-const Nav = styled.ul`
+const Nav = styled.nav`
   position: fixed;
-  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
   /* background-color: beige; */
   right: 0;
   top: 250px;
   animation: ${fadeInRight} 2s ease-out;
-  li{
-    padding: 12px 40px;
-    
+  z-index: 100;
+`
+  /* li{
     font-weight: 500;
-
+    padding: 10px;
     color: #6E6D70;
     cursor: pointer;
-  &:hover{
-    text-decoration-line: underline;
-    text-decoration-style: solid; 
-  }
-}
-`
+
+} */
+// .active{
+//       text-decoration: underline;
+//     }
+// `
 
 
 
