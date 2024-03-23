@@ -44,7 +44,7 @@ const CommentSection = () => {
                 <Button onClick={() => CommentButton()}>Post</Button>
             </Content>
             {userComment.map((data, index) => (
-                <Contents key={index} style={{marginBottom:'8px'}}>
+                <Contents key={index}>
                     <UserName>{data.id}</UserName>
                     <Comment>{data.comment}</Comment>
                     <LikeButton />
@@ -126,6 +126,8 @@ const Button = styled.button`
 
 const Contents = styled.div`
   display: flex;
+
+  margin-bottom: 8px;
 `;
 
 const UserName = styled.div`

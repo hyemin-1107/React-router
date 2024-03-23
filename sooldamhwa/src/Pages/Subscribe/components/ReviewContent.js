@@ -59,7 +59,6 @@ const SubscriptionReview = styled.div`
     height: 1022px;
 
     background: #F5F5F5;
-
 `
 
 const ReviewCarousel = styled.div`

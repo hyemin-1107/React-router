@@ -12,7 +12,7 @@ body, input, select, textarea, button, img, fieldset {
   border: none;
 }
 
-em, i, a{
+em, i, a, button{
   font-style: normal;
   text-decoration: none;
   color: #6E6D70;
@@ -33,29 +33,16 @@ code {
     monospace;
 }
 
-/* .nav__items {
-  position: fixed;
-  padding: 12px 28px;
-  background-color: beige;
-  right: 0;
-  top: 250px;
-  animation: ${fadeInRight} 2s ease-out;
-  z-index: 100;
-  background-color: white;
-  margin: 10px;
-  display: flex;
-} */
-
-/* li{
-  font-weight: 500;
-  padding: 10px;
-  color: #6E6D70;
-  cursor: pointer;
-
-} */
 .active{
-  
-  color: black;
-  text-decoration: underline;
-  background-color: #f5ceef;
+  border-bottom: 1px solid #000;
+  color: #000;
+  /* text-decoration: underline 3px #6E6D70; */
+  transform: scale(1.07);
+  font-weight: 500;
+}
+
+.projectactive{
+  color: #000;
+  transform: scale(1.07);
+  font-weight: 500;
 }
