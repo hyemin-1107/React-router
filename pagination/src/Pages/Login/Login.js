@@ -29,7 +29,7 @@ const LoginContainer = styled.div`
     width: 500px;
    
     border: 2px solid #666;
-    box-shadow: 10px 10px 10px grey;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px 0px 0px inset;
 `;
 
 

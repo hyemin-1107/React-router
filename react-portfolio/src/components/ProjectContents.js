@@ -66,7 +66,7 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <button>Go To</button>
+                        <button style={{visibility:'hidden'}}>Go To</button>
                         <button>Notion Review</button>
                         <button>Github Source code</button>
                     </ProjectText>
@@ -90,7 +90,7 @@ const ProjectContents = () => {
                     <ProjectText>
                         <ProjectNumber>04</ProjectNumber>
                         <h3>
-                            Sooldamhwa Homepage clone coding
+                          AWS 서버 배포
                         </h3>
                         <p>
                             전통주를 소개하고 구독 시스템을 통해
@@ -102,9 +102,9 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <button>Go To</button>
+                        <button style={{visibility:'hidden'}}>Go To</button>
+                        <button style={{visibility:'hidden'}}>Notion Review</button>
                         <button>Notion Review</button>
-                        <button>Github Source code</button>
                     </ProjectText>
                 </ProjectWrap>
 
