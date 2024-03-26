@@ -17,7 +17,7 @@ const Observation = (setActiveId) => {
 
             setActiveId(visibleContent[0]?.target.id);
         };
-
+        //observer 설정
         const observer = new IntersectionObserver(callback, {
             // 바깥 여백을 이용해 Root 범위를 확장하거나 축소
             rootMargin: "-20% 0px",

@@ -5,7 +5,7 @@ import ico_mail from '../images/ico_mail.png'
 import ico_notion from '../images/ico_notion.png'
 import ico_notionhover from '../images/ico_notionhover.png'
 import ico_contactgithub from '../images/ico_contactgithub.png'
-import ico_githubhover from '../images/ico_githubhover.png'
+import ico_github_hover from '../images/ico_github_hover.png'
 
 const ContactContents = () => {
 
@@ -33,19 +33,20 @@ const ContactContents = () => {
                 </ContactBox>
                 <StudyPage>
                     <p>더 많고 자세한 저의 기록들이 있습니다.</p>
-                    <button>
+                    <a href="https://rust-collarbone-363.notion.site/HYEMIN-PORTFOLIO-28404bfd03854947b1dcdc14aff04170?pvs=4" target='blank' rel="noreferrer">
                         <ContactImg src={ico_notion} alt="" />
                         <ContactImgHover src={ico_notionhover} alt="" />
-                        NOTION</button>
-                    <button>
+                        NOTION
+                    </a>
+                    <a href="https://github.com/hyemin-1107" target='blank' rel="noreferrer">
                         <ContactImg src={ico_contactgithub} alt="" />
-                        <ContactImgHover src={ico_githubhover} alt="" />
-                        GITHUB</button>
+                        <ContactImgHover src={ico_github_hover} alt="" />
+                        GITHUB
+                    </a>
                 </StudyPage>
             </ContactWrap>
         </>
     )
-
 };
 
 export default ContactContents;
@@ -103,13 +104,13 @@ const Contact = styled.div`
   align-items: center;
   justify-content: center;
   
-  gap: 8px;
+  gap: 6px;
   
   img{
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     
-    width: 22px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 `
 
@@ -119,6 +120,7 @@ const ContactImg = styled.img`
   justify-content: center;
   align-items: center;
 `
+
 const ContactImgHover = styled.img`
   width: 21px;
   display: none;
@@ -135,7 +137,7 @@ p{
   margin-bottom: 8px;
 }
 
-button{
+a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,9 +148,10 @@ button{
   font-size: 18px;
   font-weight: 500;
 
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   cursor: pointer;
-  transition: all .15s cubic-bezier(.23, 1, 0.32, 1); 
+  transition: all .1s cubic-bezier(.25, 1, 0.35, 1); 
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
     inset 0 2px 0 hsla(0, 0%, 100%, .1),
     inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),

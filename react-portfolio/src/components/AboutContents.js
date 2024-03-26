@@ -12,7 +12,6 @@ import ico_github from '../images/ico_github.png'
 const AboutContents = () => {
 
     return (
-
         <About id="content_skill" className="content">
             <Skill id="nav_skill">
                 SKILL
@@ -26,36 +25,7 @@ const AboutContents = () => {
                     })}
                 </ul>
             </Skill>
-
-            <SkillLanguage>
-                <li>HTML
-                    <ul>
-                        <li>시멘틱 마크업</li>
-                        <li>웹 표준/접근성</li>
-                    </ul>
-                </li>
-                <li>CSS
-                    <ul>
-                        <li>Animation</li>
-                        <li>Media Query 사용경험</li>
-                        <li>styled-components</li>
-                    </ul>
-                </li>
-                <li>JAVASCRIPT
-                    <ul>
-                        <li>ES6</li>
-                        <li>React</li>
-                        <li>Jquery</li>
-                    </ul>
-                </li>
-                <li>ETC
-                    <ul>
-                        <li>Figma</li>
-                        <li>Github</li>
-                    </ul>
-                </li>
-            </SkillLanguage>
-
+            <SkillList />
             <Experience>
                 <section>
                     EXPERIENCE
@@ -74,15 +44,47 @@ const AboutContents = () => {
                 </section>
             </Experience>
         </About>
-
     )
-
 };
 
 export default AboutContents;
 
-
-
+const SkillList = () => {
+    return (
+        <SkillLanguage>
+            <li>
+                HTML
+                <ul>
+                    <li>시멘틱 마크업</li>
+                    <li>웹 표준/접근성</li>
+                </ul>
+            </li>
+            <li>
+                CSS
+                <ul>
+                    <li>Animation</li>
+                    <li>Media Query 사용경험</li>
+                    <li>styled-components</li>
+                </ul>
+            </li>
+            <li>
+                JAVASCRIPT
+                <ul>
+                    <li>ES6</li>
+                    <li>React</li>
+                    <li>Jquery</li>
+                </ul>
+            </li>
+            <li>
+                ETC
+                <ul>
+                    <li>Figma</li>
+                    <li>Github</li>
+                </ul>
+            </li>
+        </SkillLanguage>
+    )
+};
 
 const About = styled.ul`
   margin: 100px 0 ;
@@ -187,18 +189,18 @@ const SKILL_DATA = [
     },
     {
         id: 3,
-        imgSrc: ico_figma,
-        text: 'Figma',
-    },
-    {
-        id: 4,
         imgSrc: ico_javascript,
         text: 'Javascript',
     },
     {
-        id: 5,
+        id: 4,
         imgSrc: ico_jquery,
         text: 'Jquery',
+    },
+    {
+        id: 5,
+        imgSrc: ico_figma,
+        text: 'Figma',
     },
     {
         id: 6,

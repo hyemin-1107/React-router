@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react";
 import Observation from "../utills/Observation";
+import useSetShow from "../utills/useSetShow"
 import styled, { keyframes } from "styled-components";
 import { Link } from 'react-scroll';
 
-const SideToc = () => {
-    // const { ContactWrap } = props;
+const SideNav = () => {
     const [activeId, setActiveId] = useState(" ");
     Observation(setActiveId);
     
-    const [showToc, setShowToc] = useState(false);
+    const [showNav, setShowNav] = useState(false);
+    useSetShow(setShowNav);
 
     useEffect(() => {
-        const handleSideToc = () => {
+        const handleSideNav = () => {
             if (window.scrollY > 400) {
-                setShowToc(true)
+                setShowNav(true)
             } else {
-                setShowToc(false)
+                setShowNav(false)
             }
         }
-        window.addEventListener("scroll", handleSideToc)
+        window.addEventListener("scroll", handleSideNav)
         return () => {
-            window.removeEventListener("scroll", handleSideToc)
+            window.removeEventListener("scroll", handleSideNav)
         }
     }, [])
 
     return (
         <>
-            {showToc && (
+            {showNav && (
                 <Nav>
                     <Link to="nav_skill" smooth={true} style={{ cursor: 'pointer' }}>
                         <div className={activeId === "content_skill" ? "active" : ""}>
@@ -68,7 +69,7 @@ const SideToc = () => {
     );
 };
 
-export default SideToc;
+export default SideNav;
 
 const fadeInRight = keyframes`
 	0% {
@@ -88,25 +89,30 @@ const Nav = styled.nav`
   right: 0;
   top: 0;
   z-index: 100;
-  height: 100vh;
+
   padding-top: 200px;
+  
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.05);
   transition: 0.3s;
   animation: ${fadeInRight} 2s ease-out;
 
-  div{
+    div{
     width: 158px;
     margin: 10px 18px;
-}
-p{
+    }
+
+    p{
     margin: 10px 10px 10px 22px;
     font-size: 14px;
-}
-:hover{
+    }
+    
+    :hover{
     font-weight: 500;
-}
-:nth-child(2):hover{
+    }
+    
+    :nth-child(2):hover{
     font-weight: 400;
-}
+    }
 `
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SideToc from "./components/SideToc"
+import SideNav from "./components/SideNav"
 import Main from "./components/Main";
 import AboutContents from "./components/AboutContents";
 import ContactContents from "./components/ContactContents";
@@ -11,17 +11,15 @@ import ProjectContents from "./components/ProjectContents";
 function App() {
 
   return (
-    <>
       <Body>
         <Main />
-        <SideToc />
+        <SideNav />
         <AboutContents />
         <ProjectContents />
         <ContactContents />
         <FooterContents />
         <ScrollTopButtonContents />
       </Body>
-    </>
   );
 }
 

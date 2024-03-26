@@ -15,11 +15,8 @@ const ProjectContents = () => {
                 </h2>
                 <div></div>
             </ProjectTitle>
-
             <Project>
-
                 <SubProjectContents />
-
                 <ProjectWrap id="nav_projectclone">
 
                     <div id="content_clone" className="content">
@@ -44,12 +41,14 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <button>Go To</button>
-                        <button>Notion Review</button>
-                        <button>Github Source code</button>
+                        <a href="https://hyemin-1107.github.io/" target='_blank' rel="noreferrer">
+                        Go To</a>
+                        <a href="https://rust-collarbone-363.notion.site/a0982db29b504af1b8227c82457264dc?pvs=4" target='_blank' rel="noreferrer">
+                        Notion Review</a>
+                        <a href="https://github.com/hyemin-1107/React-router/tree/main/sooldamhwa" target='_blank' rel="noreferrer">
+                        Github Source code</a>
                     </ProjectText>
                 </ProjectWrap>
-
                 <ProjectWrap id="nav_projectportfolio">
                     <ProjectText id="content_portfolio" className="content">
                         <ProjectNumber>03</ProjectNumber>
@@ -66,9 +65,12 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <button style={{visibility:'hidden'}}>Go To</button>
-                        <button>Notion Review</button>
-                        <button>Github Source code</button>
+                        <a style={{visibility:'hidden'}}>Go To</a>
+                        <a href="https://rust-collarbone-363.notion.site/React-Portfolio-f547ae6274bf4962ac150bca55ee4ab9?pvs=4" target='_blank' rel="noreferrer">
+                        Notion Review</a>
+                        <a href="https://github.com/hyemin-1107/React-router/tree/main/react-portfolio" target='_blank' rel="noreferrer">
+                        Github Source code
+                        </a>
                     </ProjectText>
                     <div>
                         <ProjectImg>
@@ -78,7 +80,6 @@ const ProjectContents = () => {
                         </ProjectImg>
                     </div>
                 </ProjectWrap>
-
                 <ProjectWrap id="nav_projectaws">
                     <div id="content_aws" className="content">
                         <ProjectImg>
@@ -102,20 +103,18 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <button style={{visibility:'hidden'}}>Go To</button>
-                        <button style={{visibility:'hidden'}}>Notion Review</button>
-                        <button>Notion Review</button>
+                        <a style={{visibility:'hidden'}}>Go To</a>
+                        <a style={{visibility:'hidden'}}>Notion Review</a>
+                        <a href="https://rust-collarbone-363.notion.site/AWS-19812f827908477c8ca605fb14f605a9?pvs=4" target='_blank' rel="noreferrer">
+                        Notion Review</a>
                     </ProjectText>
                 </ProjectWrap>
-
             </Project>
         </>
     )
-
-}
+};
 
 export default ProjectContents;
-
 
 const ProjectTitle = styled.div`
   display: flex;
@@ -186,7 +185,6 @@ const ImgShadow = styled.div`
   height: 27px;
   
   box-shadow: 10px 10px 10px rgba(0,0,0,.2);
-  /* background-color: rgba(0,0,0,.1); */
   border-radius: 100%;
 `
 
@@ -211,7 +209,9 @@ const ProjectText = styled.div`
     font-weight: 600;
   }
   
-  button{
+a{
+  text-align: center;
+  
   padding: 6px;
   
   font-size: 16px;
@@ -240,12 +240,12 @@ const ProjectText = styled.div`
 
 const ProjectNumber = styled.div`
   position: absolute;
-  
-  font-size: 170px;
-  font-weight: 900;
-  opacity: .1;
   top: -140px;
   right: 48%;
   z-index: -1;
+  opacity: .1;
+  
+  font-size: 170px;
+  font-weight: 900;
 `
 

@@ -36,7 +36,6 @@ code {
 .active{
   border-bottom: 1px solid #000;
   color: #000;
-  /* text-decoration: underline 3px #6E6D70; */
   transform: scale(1.07);
   font-weight: 500;
 }

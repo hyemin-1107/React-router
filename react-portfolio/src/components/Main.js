@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-
 import styled, { keyframes } from "styled-components";
-import img_profile from '../images/img_profile.png'
 import Typewriter from 'typewriter-effect';
+import img_profile from '../images/img_profile.png'
 
 const Main = () => {
 
     const [isAlert, setIsAlert] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => { setIsAlert(true) }, 2000);
+        setTimeout(() => { setIsAlert(true) }, 1800);
     })
 
     return (
@@ -21,10 +20,10 @@ const Main = () => {
                         autoStart: true,
                         loop: true,
                         pauseFor: 10000,
+                        delay:50,
                     }}
                 />
             </Header>
-
             <MainContent>
                 {isAlert && (
                     <>
@@ -41,9 +40,9 @@ const Main = () => {
                                   이것이 제 삶의 큰 부분을 차지하게 되었습니다. 
                                   </div>
                                   <div>
-                                    그러던 중 컴퓨터 공학을 접하게 되었고, 
+                                  그러던 중 컴퓨터 공학을 접하게 되었고, 
                                   그렇게 퍼블리셔 수업을 시작으로 Javascript를 접하게 되어 프로그래밍에 발을 디뎠습니다. 
-                                  이렇게 시작한 공부는 점점 확장되어 Front-End까지 관심을 가지게 되었습니다.
+                                  이렇게 시작한 공부는 확장되어 Front-End까지 관심을 가지게 되었습니다.
                                   </div>
                                   <div>
                                   웹 개발을 공부하면서 항상 사용자의 입장에서 생각하는 습관을 들였습니다. 
@@ -55,7 +54,6 @@ const Main = () => {
                     </>
                 )}
             </MainContent>
-
         </>
     )
 };
@@ -84,7 +82,6 @@ const MainContent = styled.article`
  height: 328px;
 `
 
-
 const fadeInLeft = keyframes`
 	0% {
 		opacity: 0;
@@ -96,7 +93,6 @@ const fadeInLeft = keyframes`
 		transform: translateZ(0);
 	}
 `
-
 
 const fadeInRight = keyframes`
 	0% {
@@ -138,7 +134,7 @@ const fadeIn = keyframes`
 	100% {
     opacity: 1;
 	}
-  `
+`
 
 const ProfileText = styled.div`
   text-align: end;
@@ -156,7 +152,6 @@ const ProfileTextAbout = styled.div`
   
   text-align: end;
   
-
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;

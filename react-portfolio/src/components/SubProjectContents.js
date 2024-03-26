@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import { onClickModal } from "../utills/onClickModal";
+import { useOnClickOutside } from "../utills/useOnClickOutside";
 import img_pagination from '../images/img_pagination.png'
 import img_commentlike from '../images/img_commentlike.png'
-import { onClickModal } from "../utills/onClickModal";
 import ico_click from '../images/ico_click.png'
 import ico_click_hover from '../images/ico_click_hover.png'
 import ico_close from '../images/ico_close.png'
@@ -14,10 +15,13 @@ const SubProjectContents = () => {
   const [isCommentModal, setIsCommentModal] = useState(false);
   const [isPaginationModal, setIsPaginationModal] = useState(false);
 
+// 값이 변해도 리랜더링 할 수 있다.
+  const modalRef = useRef();
+  useOnClickOutside(modalRef, () => setIsCommentModal(false));
+  useOnClickOutside(modalRef, () => setIsPaginationModal(false));
 
   return (
-
-  <SubProjectWrap id="content_subproject" className="content">
+    <SubProjectWrap id="content_subproject" className="content">
       <SubProject>
         <SubProjectNumber>1-1</SubProjectNumber>
         <SubProjectImg src={img_commentlike} alt="코멘트,좋아요버튼"></SubProjectImg>
@@ -30,18 +34,19 @@ const SubProjectContents = () => {
             · React
           </em>
           <button
+            ref={modalRef}
             onClick={() =>
               onClickModal(isCommentModal, setIsCommentModal)}>
             <ClickImg src={ico_click} alt="클릭" />
             <ClickImgHover src={ico_click_hover} alt="클릭" />
             Click for more
           </button>
-          <button>Github Source code</button>
+          <a href="https://github.com/hyemin-1107/React-router/tree/main/CommentLike"
+            target='blank' rel="noreferrer">Github Source code</a>
         </SubProjectText>
       </SubProject>
-
       {isCommentModal && (
-        <ModalContainer>
+        <ModalContainer ref={modalRef}>
           <ModalHeader>
             <h3>Comment, Like</h3>
             <ModalCloseButton
@@ -64,7 +69,6 @@ const SubProjectContents = () => {
           </ModalText>
         </ModalContainer>
       )}
-
       <SubProject>
         <SubProjectNumber>1-2</SubProjectNumber>
         <SubProjectImg src={img_pagination} alt="페이지네이션"></SubProjectImg>
@@ -84,12 +88,13 @@ const SubProjectContents = () => {
             <ClickImgHover src={ico_click_hover} alt="클릭" />
             Click for more
           </button>
-          <button>Github Source code</button>
+          <a href="https://github.com/hyemin-1107/React-router/tree/main/pagination"
+            target='blank' rel="noreferrer">Github Source code</a>
         </SubProjectText>
       </SubProject>
 
       {isPaginationModal && (
-        <ModalWrapPagination>
+        <ModalWrapPagination ref={modalRef}>
           <ModalHeader>
             <h3>Login, Pagination</h3>
             <ModalCloseButton
@@ -114,13 +119,9 @@ const SubProjectContents = () => {
     </SubProjectWrap>
   )
 
-}
+};
 
 export default SubProjectContents;
-
-
-
-
 
 const ModalContainer = styled.div`
     position: absolute;
@@ -260,7 +261,6 @@ div{
         background-position: center;
     }
 }
-
 `
 
 const ModalTextPagination = styled.div`
@@ -305,8 +305,6 @@ div{
     }
 }
 `
-
-
 
 const SubProjectWrap = styled.section`
   position: relative;
@@ -354,7 +352,7 @@ const SubProjectText = styled.section`
     font-size: 15px;
   }
 
-  button{
+  a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,7 +367,7 @@ const SubProjectText = styled.section`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
-  transition: all 200ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all .2s;
   cursor: pointer;
 
   &:hover {
@@ -387,10 +385,46 @@ const SubProjectText = styled.section`
   }
 
   &:active {
-    box-shadow: none;
     transform: translateY(0);
   }
 }
+
+  button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 6px;
+  
+  font-size: 16px;
+  
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
+  transition: all .2s;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: #6E6D70;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
+    transform: translateY(-2px);
+
+    :first-child{
+      display: none;
+    }
+    :nth-child(2){
+      display: block;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+  }
 `
 
 const SubProjectNumber = styled.span`

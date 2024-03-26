@@ -1,41 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState }from "react";
 import styled, { keyframes } from "styled-components";
+import useSetShow from "../utills/useSetShow"
 
 const ScrollTopButtonContents = () => {
 
-    const [showTopButton, setShowTopButton] = useState(false);
-
-    useEffect(() => {
-        const handleTopButton = () => {
-            if (window.scrollY > 400) {
-                setShowTopButton(true)
-            } else {
-                setShowTopButton(false)
-            }
-        }
-        window.addEventListener("scroll", handleTopButton)
-        return () => {
-            window.removeEventListener("scroll", handleTopButton)
-        }
-    }, [])
+    const [showUnder, setShowUnder] = useState(false);
+    useSetShow(setShowUnder);
 
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: 'smooth',
         })
-    }
+    };
 
     return (
         <>
-            {showTopButton && (
+            {showUnder && (
                 <ScrollContainer>
-                    <TopButton onClick={scrollToTop} type="button">Top</TopButton>
+                    <ToTopButton onClick={scrollToTop} type="button">Top</ToTopButton>
                 </ScrollContainer>
             )}
         </>
     )
-
 };
 
 export default ScrollTopButtonContents;
@@ -51,7 +38,6 @@ const fadeInRight = keyframes`
 	0% {
 		opacity: 0;
 		transform: translate3d(30%, 0, 0);
-    /* transition-delay: calc(var(--delay)* .5s); */
 	}
 	100% {
 		opacity: 1;
@@ -59,7 +45,7 @@ const fadeInRight = keyframes`
 	}
 `
 
-const TopButton = styled.button`
+const ToTopButton = styled.button`
   padding: 12px 22px;
   
   font-size: 16px;
