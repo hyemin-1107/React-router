@@ -65,7 +65,7 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <a style={{visibility:'hidden'}}>Go To</a>
+                        <a>Go To</a>
                         <a href="https://rust-collarbone-363.notion.site/React-Portfolio-f547ae6274bf4962ac150bca55ee4ab9?pvs=4" target='_blank' rel="noreferrer">
                         Notion Review</a>
                         <a href="https://github.com/hyemin-1107/React-router/tree/main/react-portfolio" target='_blank' rel="noreferrer">
@@ -103,8 +103,8 @@ const ProjectContents = () => {
                         <em>
                             · React
                         </em>
-                        <a style={{visibility:'hidden'}}>Go To</a>
-                        <a style={{visibility:'hidden'}}>Notion Review</a>
+                        <a>Go To</a>
+                        <a>Notion Review</a>
                         <a href="https://rust-collarbone-363.notion.site/AWS-19812f827908477c8ca605fb14f605a9?pvs=4" target='_blank' rel="noreferrer">
                         Notion Review</a>
                     </ProjectText>
