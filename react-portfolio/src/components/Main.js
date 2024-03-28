@@ -20,7 +20,7 @@ const Main = () => {
                         autoStart: true,
                         loop: true,
                         pauseFor: 10000,
-                        delay:50,
+                        delay: 50,
                     }}
                 />
             </Header>

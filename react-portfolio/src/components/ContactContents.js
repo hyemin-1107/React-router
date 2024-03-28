@@ -109,7 +109,7 @@ const Contact = styled.div`
   img{
     margin-bottom: 3px;
     
-    width: 24px;
+    width: 25px;
     height: 24px;
   }
 `

@@ -92,7 +92,6 @@ const SubProjectContents = () => {
             target='blank' rel="noreferrer">Github Source code</a>
         </SubProjectText>
       </SubProject>
-
       {isPaginationModal && (
         <ModalWrapPagination ref={modalRef}>
           <ModalHeader>
@@ -118,7 +117,6 @@ const SubProjectContents = () => {
       )}
     </SubProjectWrap>
   )
-
 };
 
 export default SubProjectContents;
@@ -448,6 +446,7 @@ const ClickImg = styled.img`
     margin-top: 2px;
     width: 18px;
 `
+
 const ClickImgHover = styled.img`
     display: none;
     margin-top: 2px;
