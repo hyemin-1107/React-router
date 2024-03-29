@@ -4,6 +4,7 @@ import SubProjectContents from "./SubProjectContents";
 import img_com from '../images/img_com.png'
 import img_homepage from '../images/img_homepage.png'
 import img_portfolio from '../images/img_portfolio.png'
+import img_aws from '../images/img_aws.png'
 
 const ProjectContents = () => {
 
@@ -79,7 +80,7 @@ const ProjectContents = () => {
           <div id="content_aws" className="content">
             <ProjectImg>
               <ProjectWrapImg src={img_com} alt="로고" />
-              <ProjectHomepageImg src={img_homepage} alt="로고" />
+              <ProjectHomepageImg src={img_aws} alt="로고" />
               <ImgShadow></ImgShadow>
             </ProjectImg>
           </div>
