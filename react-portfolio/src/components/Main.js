@@ -35,8 +35,8 @@ const Main = () => {
                             <div>Front-End 신입 개발자 박혜민 입니다.</div>
                             <ProfileTextAbout>
                                 <div>
-                                  어릴 적부터 미술이 취미였습니다. 
-                                  백지 상태에서 나만의 세상을 그려나가는 과정이 항상 즐거웠고, 
+                                  안녕하세요! 저는 어릴 적부터 미술이 취미였습니다.<br/> 
+                                  백지 상태에서 나만의 세상을 그려나가는 과정이 즐거웠고,<br/>  
                                   이것이 제 삶의 큰 부분을 차지하게 되었습니다. 
                                   </div>
                                   <div>
@@ -46,7 +46,7 @@ const Main = () => {
                                   </div>
                                   <div>
                                   웹 개발을 공부하면서 항상 사용자의 입장에서 생각하는 습관을 들였습니다. 
-                                  웹 접근성과 표준화를 중요하게 생각하고, 이를 바탕으로 사용자 친화적인 
+                                  웹 접근성과 표준화를 중요하게 생각하고, 이를 바탕으로 <br/> 사용자 친화적인 
                                   웹 페이지를 제작하는 것을 목표로 하고 있습니다. 
                                   </div>
                             </ProfileTextAbout>
@@ -86,7 +86,6 @@ const fadeInLeft = keyframes`
 	0% {
 		opacity: 0;
 		transform: translate3d(-5%, 0, 0);
-    /* transition-delay: calc(var(--delay)* .5s); */
 	}
 	100% {
 		opacity: .9;
@@ -98,7 +97,6 @@ const fadeInRight = keyframes`
 	0% {
 		opacity: 0;
 		transform: translate3d(30%, 0, 0);
-    /* transition-delay: calc(var(--delay)* .5s); */
 	}
 	100% {
 		opacity: 1;
@@ -110,6 +108,7 @@ const ProfileImg = styled.img`
   width: 440px;
   
   border: 1px solid #6E6D70;
+  border-radius: 4px;
   opacity: .9;
 
   animation: ${fadeInLeft} 2s ease-out;
@@ -118,12 +117,13 @@ const ProfileImg = styled.img`
 const ImgFrame = styled.div`
   position: absolute;
   top: 13px;
-  left: 75px;
+  left: 68px;
 
   width: 450px;
-  height: 347px;
+  height: 343px;
   
   border: 1px solid #6E6D70;
+  border-radius: 4px;
   animation: ${fadeInRight} 2s ease-out;
 `
 
@@ -137,6 +137,7 @@ const fadeIn = keyframes`
 `
 
 const ProfileText = styled.div`
+  margin-left: 30px;
   text-align: end;
   
   font-size: 24px;
@@ -149,8 +150,6 @@ const ProfileTextAbout = styled.div`
   margin-top: 40px;
 
   width: 500px;
-  
-  text-align: end;
   
   font-size: 16px;
   font-weight: 400;

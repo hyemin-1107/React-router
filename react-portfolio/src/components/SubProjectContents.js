@@ -236,41 +236,41 @@ div{
     gap: 12px;
     margin: 0 16px;
 
-    p{
-        position: relative;
-        text-align: justify;
-        word-break: break-all;
-        line-height: 1.6;
-        padding-bottom: 4px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
+  p{
+      position: relative;
+      text-align: justify;
+      word-break: break-all;
+      line-height: 1.6;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-    p::before{
-        content: '';
-        position: absolute;
-        top: 7px;
-        left: -23px;
-
-        width: 14px;
-        height: 14px;
-        
-        background-image: url(${ico_click});
-        background-size: cover;
-        background-position: center;
-    }
+  p::before{
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -23px;
+      
+      width: 14px;
+      height: 14px;
+      
+      background-image: url(${ico_click});
+      background-size: cover;
+      background-position: center;
+  }
 }
 `
 
 const ModalTextPagination = styled.div`
-    display: flex;
-    align-items: center;
-
-    gap: 39px;
-    margin-top: 64px;
-    img{
-      width: 550px;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 7px 13px -3px, rgba(0, 0, 0, 0.1) 0px 0px 0px inset;
-    }
+  display: flex;
+  align-items: center;
+  
+  gap: 39px;
+  margin-top: 64px;
+  img{
+    width: 550px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 7px 13px -3px, rgba(0, 0, 0, 0.1) 0px 0px 0px inset;
+  }
 
 div{
     display: flex;
@@ -279,28 +279,26 @@ div{
     gap: 12px;
     margin: 0 16px;
 
-    p{
-        position: relative;
-        text-align: justify;
-        word-break: break-all;
-        line-height: 1.6;
-        padding-bottom: 4px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    p::before{
-        content: '';
-        position: absolute;
-        top: 7px;
-        left: -23px;
-
-        width: 14px;
-        height: 14px;
-        
-        background-image: url(${ico_click});
-        background-size: cover;
-        background-position: center;
-    }
+  p{
+      position: relative;
+      text-align: justify;
+      word-break: break-all;
+      line-height: 1.6;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  p::before{
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -23px;
+      width: 14px;
+      height: 14px;
+      
+      background-image: url(${ico_click});
+      background-size: cover;
+      background-position: center;
+  }
 }
 `
 
@@ -350,16 +348,16 @@ const SubProjectText = styled.section`
     font-size: 15px;
   }
 
-  a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin-top: 10px;
-    padding: 6px;
-  
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 6px;
+
   font-size: 16px;
-  
+
   box-sizing: border-box;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -367,13 +365,11 @@ const SubProjectText = styled.section`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
   transition: all .2s;
   cursor: pointer;
-
   &:hover {
     color: #fff;
     background-color: #6E6D70;
     box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
     transform: translateY(-2px);
-
     :first-child{
       display: none;
     }
@@ -381,11 +377,10 @@ const SubProjectText = styled.section`
       display: block;
     }
   }
-
   &:active {
     transform: translateY(0);
   }
-}
+} 
 
   button{
   display: flex;

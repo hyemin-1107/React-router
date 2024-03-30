@@ -157,7 +157,7 @@ const ProjectWrapImg = styled.img`
 
 const ProjectHomepageImg = styled.img`
   position: absolute;
-  top: 20px;
+  top: 19px;
   left: 57px;
   
   width: 496px;

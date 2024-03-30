@@ -84,6 +84,7 @@ const ContactBox = styled.div`
 
   font-size: 20px;
   font-weight: 400;
+
   div{
     margin-bottom: 6px;
   }
@@ -94,6 +95,7 @@ const ContactBox = styled.div`
     font-size: 18px;
     font-weight: 400;
   }
+  
   div:nth-child(3){
     margin-bottom: 40px;
   }
@@ -101,8 +103,8 @@ const ContactBox = styled.div`
 
 const Contact = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   
   gap: 6px;
   
@@ -115,10 +117,11 @@ const Contact = styled.div`
 `
 
 const ContactImg = styled.img`
-  width: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 21px;
 `
 
 const ContactImgHover = styled.img`
@@ -133,54 +136,54 @@ const StudyPage = styled.div`
 
   font-size: 18px;
 
-p{
-  margin-bottom: 8px;
-}
+  p{
+    margin-bottom: 8px;
+  }
 
-a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  gap: 6px;
-  padding: 14px;  
+    gap: 6px;
+    padding: 14px;  
 
-  font-size: 18px;
-  font-weight: 500;
+    font-size: 18px;
+    font-weight: 500;
 
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all .1s cubic-bezier(.25, 1, 0.35, 1); 
-  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
-    inset 0 2px 0 hsla(0, 0%, 100%, .1),
-    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-    inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
-    0 .25em .25em hsla(0, 0%, 0%, .05);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2),
+      inset 0 2px 0 hsla(0, 0%, 100%, .1),
+      inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+      inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+      inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
+      0 .25em .25em hsla(0, 0%, 0%, .05);
 
-&:hover {
-  color: #fff;
-  background-color: #6E6D70;
-
-  transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
-    inset 0 2px 0 hsla(0, 0%, 100%, .1),
-    inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
-    inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
-    inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
-    0 .25em .25em hsla(0, 0%, 0%, .05);
-    :first-child{
-      display: none;
+    &:hover {
+      color: #fff;
+      background-color: #6E6D70;
+    
+      transform: translateY(-1px);
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px,
+      /* hsla - 색상 채도 명도 불투명도 */
+        inset 0 2px 0 hsla(0, 0%, 100%, .1),
+        inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+        inset 0 -.2em 0 hsla(0, 0%, 100%, .1),
+        inset 0 -.28em 0 hsla(0, 0%, 0%, .1),
+        0 .25em .25em hsla(0, 0%, 0%, .05);
+        :first-child{
+          display: none;
+        }
+        :nth-child(2){
+          display: block;
+        }
     }
-    :nth-child(2){
-      display: block;
+  
+    &:active {
+      box-shadow: none;
+      transform: translateY(0);
     }
-}
-
-&:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-}
+  }
 `
