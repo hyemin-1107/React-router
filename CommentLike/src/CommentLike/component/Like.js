@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { HeartOutlined, HeartFilled } from '@ant-design/icons';
+import React, { useState } from "react";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 
 // class LikeButton extends React.Component{
 
@@ -7,13 +7,13 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 //         isChecked: false,
 //     };
 
-//     onClick = () => {				
-//         this.state.isChecked ?		
+//     onClick = () => {
+//         this.state.isChecked ?
 //         this.setState({
-//             isChecked: false,		
+//             isChecked: false,
 //         }) :
-//         this.setState({				
-//             isChecked: true,		
+//         this.setState({
+//             isChecked: true,
 //         });
 //     }
 
@@ -22,10 +22,10 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 //             <React.Fragment>
 //                 <div className="icons-list">
 //                     {this.state.isChecked ?
-//                     <HeartFilled style={{ color: 'red', fontSize: '25px' }} onClick={this.onClick}/> :	
-//                     <HeartOutlined style={{ fontSize: '25px' }} onClick={this.onClick}/>}				
+//                     <HeartFilled style={{ color: 'red', fontSize: '25px' }} onClick={this.onClick}/> :
+//                     <HeartOutlined style={{ fontSize: '25px' }} onClick={this.onClick}/>}
 //                 </div>
-//             </React.Fragment> 
+//             </React.Fragment>
 //         )
 //     }
 // };
@@ -33,23 +33,23 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 // export default LikeButton;
 
 const LikeButton = () => {
+  const [isChecked, setChacked] = useState(false);
 
-    const [isChecked, setChacked] = useState(false);
-
-
-    const onClick = () => {
-        setChacked((prevCheked) => !prevCheked);
-    }
-    return (
-
-        <div>
-            {isChecked ?
-                <HeartFilled style={{ color: 'red', fontSize: '25px' }} onClick={onClick} /> :
-                <HeartOutlined style={{ fontSize: '25px' }} onClick={onClick} />}
-        </div>
-
-    )
-}
-
+  const onClick = () => {
+    setChacked((prevCheked) => !prevCheked);
+  };
+  return (
+    <div>
+      {isChecked ? (
+        <HeartFilled
+          style={{ color: "red", fontSize: "25px" }}
+          onClick={onClick}
+        />
+      ) : (
+        <HeartOutlined style={{ fontSize: "25px" }} onClick={onClick} />
+      )}
+    </div>
+  );
+};
 
 export default LikeButton;

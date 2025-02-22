@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import CommentLike from './CommentLike/CommentLike';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CommentLike from "./CommentLike/CommentLike";
 
 function App() {
   return (

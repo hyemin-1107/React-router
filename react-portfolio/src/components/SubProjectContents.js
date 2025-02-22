@@ -15,7 +15,7 @@ const SubProjectContents = () => {
   const [isCommentModal, setIsCommentModal] = useState(false);
   const [isPaginationModal, setIsPaginationModal] = useState(false);
 
-// 값이 변해도 리랜더링 할 수 있다.
+  // 값이 변해도 리랜더링 할 수 있다.
   const modalRef = useRef();
   useOnClickOutside(modalRef, () => setIsCommentModal(false));
   useOnClickOutside(modalRef, () => setIsPaginationModal(false));
@@ -272,34 +272,37 @@ const ModalTextPagination = styled.div`
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 7px 13px -3px, rgba(0, 0, 0, 0.1) 0px 0px 0px inset;
   }
 
-div{
+  div{
     display: flex;
     flex-direction: column;
 
     gap: 12px;
     margin: 0 16px;
 
-  p{
+    p{
       position: relative;
       text-align: justify;
       word-break: break-all;
+      
       line-height: 1.6;
       padding-bottom: 4px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  p::before{
+    }
+
+    p::before{
       content: '';
       position: absolute;
       top: 7px;
       left: -23px;
+      
       width: 14px;
       height: 14px;
       
       background-image: url(${ico_click});
       background-size: cover;
       background-position: center;
+    }
   }
-}
 `
 
 const SubProjectWrap = styled.section`
@@ -348,102 +351,113 @@ const SubProjectText = styled.section`
     font-size: 15px;
   }
 
-a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 10px;
-  padding: 6px;
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 4px;
+    margin-top: 10px;
+    padding: 6px;
 
-  font-size: 16px;
+    font-size: 16px;
 
-  box-sizing: border-box;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
-  transition: all .2s;
-  cursor: pointer;
-  &:hover {
-    color: #fff;
-    background-color: #6E6D70;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
-    transform: translateY(-2px);
-    :first-child{
-      display: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
+    transition: all .2s;
+    cursor: pointer;
+    
+    &:hover {
+      color: #fff;
+      background-color: #6E6D70;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
+      transform: translateY(-2px);
+      :first-child{
+        display: none;
+      }
+      :nth-child(2){
+        display: block;
+      }
     }
-    :nth-child(2){
-      display: block;
+    &:active {
+      transform: translateY(0);
     }
-  }
-  &:active {
-    transform: translateY(0);
-  }
-} 
+  } 
 
   button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 10px;
-  padding: 6px;
-  
-  font-size: 16px;
-  
-  box-sizing: border-box;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
-  transition: all .2s;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 4px;
+    margin-top: 10px;
+    padding: 6px;
+    
+    font-size: 16px;
+    
+    box-sizing: border-box;
+    background-color: #fff;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;
+    transition: all .2s;
+    cursor: pointer;
 
-  &:hover {
-    color: #fff;
-    background-color: #6E6D70;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
-    transform: translateY(-2px);
+    &:hover {
+      color: #fff;
+      background-color: #6E6D70;
+      
+      box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
+      transform: translateY(-2px);
 
-    :first-child{
-      display: none;
+      :first-child{
+        display: none;
+      }
+      :nth-child(2){
+        display: block;
+      }
     }
-    :nth-child(2){
-      display: block;
-    }
-  }
 
-  &:active {
-    transform: translateY(0);
-  }
+    &:active {
+      transform: translateY(0);
+    }
   }
 `
 
 const SubProjectNumber = styled.span`
   position: absolute;
-  
-  font-size: 170px;
-  font-weight: 900;
-  opacity: .1;
   top: -165px;
   left: 10px;
+
+  font-size: 170px;
+  font-weight: 900;
+
+  opacity: .1;
   z-index: -1;
 `
 
 const SubProjectImg = styled.img`
   width: 510px;
   height: 310px;
+  
   border-radius: 6px 6px 0 0;
 `
 
 const ClickImg = styled.img`
-    margin-top: 2px;
-    width: 18px;
+  margin-top: 2px;
+  
+  width: 18px;
 `
 
 const ClickImgHover = styled.img`
-    display: none;
-    margin-top: 2px;
-    width: 18px;
+  display: none;
+  
+  margin-top: 2px;
+  
+  width: 18px;
 `

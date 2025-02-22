@@ -187,11 +187,13 @@ const ProjectText = styled.div`
  
   padding: 0 40px;
  
-    font-size: 18px;
+  font-size: 18px;
+  
   h3{
     margin-bottom: 8px;
     font-size: 22px;
   }
+  
   em{
     margin-bottom: 14px;
     font-size: 18px;
@@ -207,32 +209,35 @@ const ProjectText = styled.div`
 
     box-sizing: border-box;
     background-color: #fff;
+    
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 5px 10px -1px, 0px 0px 0px inset;  transition: all 200ms cubic-bezier(.23, 1, 0.32, 1);
     cursor: pointer;
 
-  &:hover {
-    color: #fff;
-    background-color: #6E6D70;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
-    transform: translateY(-2px);
-  }
+    &:hover {
+      color: #fff;
+      background-color: #6E6D70;
+      
+      box-shadow: rgba(0, 0, 0, 0.2) 0 8px 15px;
+      transform: translateY(-2px);
+    }
 
-  &:active {
-    box-shadow: none;
-    transform: translateY(0);
+    &:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
   }
-}
 `
 
 const ProjectNumber = styled.div`
   position: absolute;
   top: -140px;
   right: 48%;
-  z-index: -1;
-  opacity: .1;
-  
+
   font-size: 170px;
   font-weight: 900;
+
+  z-index: -1;
+  opacity: .1;
 `
